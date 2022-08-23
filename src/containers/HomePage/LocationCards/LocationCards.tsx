@@ -1,4 +1,4 @@
-import LocationCard from 'components/LocationCard/LocationCard';
+import { LocationCard } from 'components/LocationCard/LocationCard';
 import { locations_data } from 'data/locations_data';
 
 export default function LocationCards() {
@@ -8,7 +8,7 @@ export default function LocationCards() {
       <div className="row">
         {locations_data.slice(0, 5).map(location => (
           <div key={location.id} className="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-            <LocationCard data={location} />
+            <LocationCard {...location} />
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import { Route, RouteProps, useHistory } from 'react-router-dom';
+import { Route, RouteProps, useNavigate } from 'react-router-dom';
 
 import { Role } from './types';
 
@@ -18,19 +18,19 @@ const dataFake = {
 
 const GuardedRoute: FC<GuardedRouteProps> = ({ roles, ...rest }) => {
   const { status, data } = dataFake;
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (status === 'idle' || status === 'failure') {
-      history.push('/login');
+      navigate('/login');
     }
     if (!roles.includes(data.role as Role)) {
-      history.push('/role-redirect');
+      navigate('/role-redirect');
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
-
+  console.log(roles, rest);
   return <Route {...rest} />;
 };
 

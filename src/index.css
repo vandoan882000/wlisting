@@ -31,3 +31,33 @@ code {
   top: 0;
   right: 5%;
 }
+.listing-seting-detail[open] summary div{
+  color: red;
+}
+.comment-detail summary::marker {
+  display: none;
+}
+details summary::-webkit-details-marker {
+  display:none;
+}
+.add-listing-detail[open] summary div .fa-plus{
+  display: none;
+}
+.add-listing-detail[open] summary div .fa-minus{
+  display: block;
+}
+.add-listing-detail[open] summary div span {
+  color: #5353c5;
+}
+#checklisting:checked ~ div > span {
+  visibility: visible;
+}
+#checklisting:checked ~ div {
+  visibility: visible;
+  background-color: #5353c5;
+  border: 1px solid #5353c5;
+}
+#checklisting ~ div  {
+  background: none;
+  border: 1px solid #dbdade;
+}

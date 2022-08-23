@@ -7,8 +7,8 @@ export function Categories() {
       <div className="text-22 font-medium text-gray8 mb-6">Find the Best Businesses in Town</div>
       <div className="row">
         {categories_data.slice(0, 4).map(category => (
-          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-2" key={category.category_id}>
-            <Category key={category.category_id} data={category} />
+          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-2" key={category.categoryId}>
+            <Category key={category.categoryId} data={category} />
           </div>
         ))}
         <div className="col-xs-12 col-sm-6 col-md-4 col-lg-2">

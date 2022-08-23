@@ -11,22 +11,47 @@ export const amenity_data: AmenityData[] = [
   },
   {
     amenityId: 2,
-    amenityName: 'Wifi',
+    amenityName: 'Washer',
     amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     amenityId: 3,
-    amenityName: 'Wifi',
+    amenityName: 'Hair dryer',
     amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     amenityId: 4,
-    amenityName: 'Wifi',
+    amenityName: 'Iron',
     amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     amenityId: 5,
-    amenityName: 'Wifi',
+    amenityName: 'TV',
+    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    amenityId: 6,
+    amenityName: 'Air conditioning',
+    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    amenityId: 7,
+    amenityName: 'Full kitchen',
+    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    amenityId: 8,
+    amenityName: 'Bathroom',
+    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    amenityId: 9,
+    amenityName: 'Fire extinguisher',
+    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    amenityId: 10,
+    amenityName: 'Smoke alarm',
     amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
   },
 ];

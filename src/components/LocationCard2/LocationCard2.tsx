@@ -1,12 +1,11 @@
-import { Location } from 'data/locations_data';
 import { FC } from 'react';
 
 interface LocationCardProps {
-  data: Location;
+  name: string;
+  image: string;
+  link: string;
 }
-const LocationCard2: FC<LocationCardProps> = props => {
-  const { data } = props;
-  const { name, image, link } = data;
+export const LocationCard2: FC<LocationCardProps> = ({ name, image, link }) => {
   return (
     <a className="flex flex-col justify-end items-start" href={link}>
       <div
@@ -19,4 +18,3 @@ const LocationCard2: FC<LocationCardProps> = props => {
     </a>
   );
 };
-export default LocationCard2;

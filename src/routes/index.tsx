@@ -1,12 +1,12 @@
 // import { AboutPage } from 'containers/AboutPage';
+import { AddListingPage } from 'containers/AddListingPage/AddListingPage';
 import { HomePage } from 'containers/HomePage/HomePage';
 import { HomePage2 } from 'containers/HomePage2/HomePage2';
 import { ListingDetailPage } from 'containers/ListingDetailPage/ListingDetailPage';
 import { NotFoundPage } from 'containers/NotFoundPage/NotFoundPage';
-// import { NotFoundPage } from 'containers/NotFoundPage';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { SearchPage } from 'containers/SearchPage/SearchPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import GuardedRoute from './GuardedRoute';
 import { Page, Role } from './types';
 
 const adminRoles: Role[] = ['admin'];
@@ -14,35 +14,31 @@ const adminRoles: Role[] = ['admin'];
 export const pages: Page[] = [
   { path: '/', component: HomePage, roles: adminRoles },
   {
-    path: '/home2',
+    path: 'home2',
     component: HomePage2,
     roles: adminRoles,
   },
   {
-    path: '/listing',
+    path: 'listing',
     component: ListingDetailPage,
     roles: adminRoles,
   },
 ];
 
-export const Routes = () => {
+export const ListingRoutes = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        {/* <Route exact={true} path="/">
-          <Redirect from="/" to="/" exact></Redirect>
-        </Route> */}
-        {pages.map(({ component: Component, path, roles }) => {
-          return (
-            <GuardedRoute roles={roles} key={path} path={path} exact>
-              <Component />
-            </GuardedRoute>
-          );
-        })}
-        <Route>
-          <NotFoundPage />
-        </Route>
-      </Switch>
+      <Routes>
+        {/* {pages.map(({ component: Component, path, roles }) => {
+          return <GuardedRoute roles={roles} key={path} path={path} element={<Component />} />;
+        })} */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home2" element={<HomePage2 />} />
+        <Route path="/listing/:id" element={<ListingDetailPage />} />
+        <Route path="/add" element={<AddListingPage />} />
+        <Route path="/search/:key" element={<SearchPage />} />
+        <Route element={<NotFoundPage />} />
+      </Routes>
     </BrowserRouter>
   );
 };

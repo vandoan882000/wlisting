@@ -9,7 +9,7 @@ type ListingCard2FC = FC<ListingCard2Props> & {
 };
 
 export const ListingCard2: ListingCard2FC = () => {
-  return <div>ListingCard2</div>;
+  return <div></div>;
 };
 
 ListingCard2.ListingCard2Header = ListingCard2Header;

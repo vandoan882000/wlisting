@@ -41,8 +41,8 @@ export function CollectionCards() {
           }}
         >
           {listings_data.map(listing => (
-            <SwiperSlide key={listing.listing_id}>
-              <CollectionCard data={listing} />
+            <SwiperSlide key={listing.listingId}>
+              <CollectionCard {...listing} />
             </SwiperSlide>
           ))}
         </Swiper>

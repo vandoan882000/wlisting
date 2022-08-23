@@ -3,7 +3,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import LocationCard2 from 'components/LocationCard2/LocationCard2';
+import { LocationCard2 } from 'components/LocationCard2/LocationCard2';
 import { locations_data } from 'data/locations_data';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -46,7 +46,7 @@ export default function LocationCards2() {
         >
           {locations_data.slice(0, 5).map(location => (
             <SwiperSlide key={location.id}>
-              <LocationCard2 data={location} />
+              <LocationCard2 {...location} />
             </SwiperSlide>
           ))}
         </Swiper>
