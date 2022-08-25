@@ -1,7 +1,8 @@
 import { LocationCard } from 'components/LocationCard/LocationCard';
 import { locations_data } from 'data/locations_data';
+import { FC } from 'react';
 
-export default function LocationCards() {
+export const LocationCards: FC = () => {
   return (
     <div className="container">
       <div className="text-22 text-gray8 font-medium mb-10">Happening Cities</div>
@@ -14,4 +15,4 @@ export default function LocationCards() {
       </div>
     </div>
   );
-}
+};

@@ -14,7 +14,7 @@ export const Content5: FC<Content5Props> = ({ title, children, fontSize }) => {
           {title}
         </div>
       )}
-      <div className="font-normal text-15 text-gray6">{children}</div>
+      <div className="font-normal text-15 text-gray6 mt-5 pb-20">{children}</div>
     </div>
   );
 };

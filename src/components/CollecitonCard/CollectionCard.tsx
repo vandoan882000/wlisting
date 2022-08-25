@@ -3,7 +3,7 @@ import { MiniCategory } from 'components/MiniCategory/MiniCategory';
 import { Rate } from 'components/Rate/Rate';
 import { WishListButton } from 'components/WishListButton/WishListButton';
 import { ListingDateStatus, ListingImage } from 'data/listings_data';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { categories_data, CategoryData } from '../../data/categories_data';
 import { User, users_data } from '../../data/users_data';
@@ -35,6 +35,7 @@ export const CollectionCard: FC<CollectionCardProps> = ({
   listingGallery,
   listingLink,
 }) => {
+  const [wishlist, setWishlist] = useState(isInWishlist);
   const getUser = (userId: number) => {
     const current_user = users_data.find((user: User) => user.userId === userId);
     return current_user ? current_user : users_data[0];
@@ -69,8 +70,13 @@ export const CollectionCard: FC<CollectionCardProps> = ({
         href={listingLink}
         className="absolute top-0 left-0 w-100% h-100% bg-gray7 z-1 opacity-0 rounded-15 group-hover:opacity-20 ease-linear duration-200"
       ></a>
-      <div className="text-light absolute bottom-27 right-20 opacity-0 group-hover:opacity-100 z-2 ease-linear duration-300">
-        <WishListButton isInWishList={isInWishlist} color={'#ffffff'} border={false} />
+      <div
+        className="text-light absolute bottom-27 right-20 opacity-0 group-hover:opacity-100 z-2 ease-linear duration-300"
+        onClick={() => {
+          setWishlist(!wishlist);
+        }}
+      >
+        <WishListButton isInWishList={wishlist} color={'#ffffff'} border={false} />
       </div>
     </div>
   );

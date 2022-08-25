@@ -1,7 +1,8 @@
 import { Category } from 'components/Category/Category';
 import { categories_data } from 'data/categories_data';
+import { FC } from 'react';
 
-export function Categories() {
+export const Categories: FC = () => {
   return (
     <div className="container mt-15 mb-15">
       <div className="text-22 font-medium text-gray8 mb-6">Find the Best Businesses in Town</div>
@@ -27,4 +28,4 @@ export function Categories() {
       </div>
     </div>
   );
-}
+};

@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export function JoinUs() {
+export const JoinUs: FC = () => {
   return (
     <div className="container mt-20 mb-30 relative overflow-hidden rounded-15">
-      <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38">
-        <img className="w-100% bg-cover bg-center rounded-15" src="assets/joinusimg.png" alt="" />
+      <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38 inset-0">
+        <img className="w-100% h-100% inset-0 bg-cover bg-center rounded-15 object-cover" src="assets/joinusimg.png" alt="" />
       </div>
-      <div className="row pt-125 pb-94 pl-61">
+      <div className="row pt-125 pb-94 pl-61 min-h-526">
         <div className="col-lg-5">
           <div className="text-primary text-24 font-black">Listing</div>
           <div className="text-36 font-bold text-gray8 mt-25">Why did you choose us?</div>
@@ -24,4 +24,4 @@ export function JoinUs() {
       </div>
     </div>
   );
-}
+};

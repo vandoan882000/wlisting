@@ -1,6 +1,6 @@
 import Menu from 'components/Menu';
 import Footer from 'containers/Footer/Footer';
-import LocationCards from 'containers/HomePage/LocationCards/LocationCards';
+import { LocationCards } from 'containers/HomePage/LocationCards/LocationCards';
 
 import { Categories } from './Categories/Categories';
 import { CollectionCards } from './CollectionCards/CollectionCards';

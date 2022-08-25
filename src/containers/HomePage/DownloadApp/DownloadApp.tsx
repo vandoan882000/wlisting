@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export function DownloadApp() {
+export const DownloadApp: FC = () => {
   return (
     <div className="container mt-20 mb-30 relative overflow-hidden rounded-15">
-      <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38 ">
-        <img className="w-100% ab bg-cover bg-center rounded-15" src="assets/joinusimg.png" alt="" />
+      <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38 inset-0">
+        <img className="w-100% h-100% ab bg-cover bg-center object-cover rounded-15" src="assets/joinusimg.png" alt="" />
       </div>
       <div className="row pt-125 pb-94 pl-61">
         <div className="col-lg-5">
@@ -23,4 +23,4 @@ export function DownloadApp() {
       </div>
     </div>
   );
-}
+};

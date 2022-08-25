@@ -7,6 +7,10 @@ export const SearchContent = () => {
       <div className="row">
         <div className="col-lg-7">
           <SearchItem />
+          <div className="mb-20"></div>
+          <SearchItem />
+          <div className="mb-20"></div>
+          <SearchItem />
         </div>
         <div className="col-lg-5 bg-gray2 h-1000"></div>
       </div>

@@ -11,7 +11,7 @@ interface AuthorInfoMiniProps {
 export const AuthorInfoMini: FC<AuthorInfoMiniProps> = ({ name, avatar, comment, size, detail = false, fontSize }) => {
   return (
     <div className="flex">
-      <div className="relative bg-cover bg-center rounded-1/2 mr-12" style={{ width: `${size}px`, height: `${size}px` }}>
+      <div className="relative bg-cover bg-center rounded-1/2 mr-12" style={{ width: `${size}px`, height: `${size}px`, minWidth: `${size}px` }}>
         <img className="absolute inset-0 w-100% h-100% top-0 left-0 object-cover rounded-1/2" src={avatar} alt="" />
       </div>
       <div className="flex flex-col">

@@ -4,6 +4,7 @@ import { HomePage } from 'containers/HomePage/HomePage';
 import { HomePage2 } from 'containers/HomePage2/HomePage2';
 import { ListingDetailPage } from 'containers/ListingDetailPage/ListingDetailPage';
 import { NotFoundPage } from 'containers/NotFoundPage/NotFoundPage';
+import { ReviewPage } from 'containers/ReviewPage/ReviewPage';
 import { SearchPage } from 'containers/SearchPage/SearchPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -37,7 +38,8 @@ export const ListingRoutes = () => {
         <Route path="/listing/:id" element={<ListingDetailPage />} />
         <Route path="/add" element={<AddListingPage />} />
         <Route path="/search/:key" element={<SearchPage />} />
-        <Route element={<NotFoundPage />} />
+        <Route path="/review" element={<ReviewPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

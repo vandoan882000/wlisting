@@ -1,4 +1,6 @@
-export const NotFoundPage = () => {
+import { FC } from 'react';
+
+export const NotFoundPage: FC = () => {
   return (
     <div className="container relative  mt-30">
       <div className="lg-max:w-100% lg:w-60% h-100% bg-cover bg-center absolute top-0 right-0">

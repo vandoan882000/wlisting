@@ -9,7 +9,7 @@ import { ListingCards2 } from 'containers/HomePage/ListingCards2/ListingCard2';
 import { Search } from 'containers/HomePage/Search/Search';
 import { FC } from 'react';
 
-import LocationCards2 from './LocationCards2/LocationCards2';
+import { LocationCards2 } from './LocationCards2/LocationCards2';
 
 export const HomePage2: FC = () => {
   return (

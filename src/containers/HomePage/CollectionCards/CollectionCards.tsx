@@ -5,10 +5,11 @@ import 'swiper/css/scrollbar';
 
 import { CollectionCard } from 'components/CollecitonCard/CollectionCard';
 import { listings_data } from 'data/listings_data';
+import { FC } from 'react';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export function CollectionCards() {
+export const CollectionCards: FC = () => {
   return (
     <div className="container mt-15 mb-15">
       <div className="text-gray8 text-22 font-bold hover:text-primary">Recent Collections</div>
@@ -49,4 +50,4 @@ export function CollectionCards() {
       </div>
     </div>
   );
-}
+};

@@ -7,13 +7,13 @@ export const OpenStatusButton: FC<OpenStatusButtonProps> = ({ isOpen }) => {
   return (
     <>
       {isOpen ? (
-        <a href="#" className="inline-block rounded-6 border-gray3 text-12 font-medium text-secondary py-5 px-9 mr-10 bg-light border-1">
+        <div className="inline-block rounded-6 border-gray3 text-12 font-medium text-secondary py-5 px-9 mr-10 bg-light border-1 select-none">
           Open now
-        </a>
+        </div>
       ) : (
-        <a href="#" className="inline-block rounded-6 border-gray3 text-12 font-medium text-secondary py-5 px-9 mr-10 bg-light border-1">
+        <div className="inline-block rounded-6 border-gray3 text-12 font-medium text-secondary py-5 px-9 mr-10 bg-light border-1 select-none">
           Close
-        </a>
+        </div>
       )}
     </>
   );

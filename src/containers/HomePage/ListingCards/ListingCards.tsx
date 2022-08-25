@@ -1,7 +1,8 @@
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { listings_data } from 'data/listings_data';
+import { FC } from 'react';
 
-export function ListingCards() {
+export const ListingCards: FC = () => {
   return (
     <div className="container mt-45 mb-20">
       <div className="font-bold text-22 text-gray8 text-left mb-10">Popular Listings In Our Directory</div>
@@ -14,4 +15,4 @@ export function ListingCards() {
       </div>
     </div>
   );
-}
+};

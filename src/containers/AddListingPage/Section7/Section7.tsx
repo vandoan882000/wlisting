@@ -1,8 +1,12 @@
 import { CheckBox } from 'components/CheckBox/CheckBox';
 import { Content5 } from 'components/Content5/Content5';
-import React from 'react';
+import React, { FC, useState } from 'react';
 
-export const Section7 = () => {
+export const Section7: FC = () => {
+  const [isAgree, setAgree] = useState(false);
+  const toggleAgree = () => {
+    setAgree(!isAgree);
+  };
   return (
     <div className="container">
       <div className="row">
@@ -44,10 +48,14 @@ export const Section7 = () => {
             Quae fuerit causa, nollem me tamen laudandis maioribus meis corrupisti nec voluptas sit.
           </div>
           <div className="flex mt-20">
-            <CheckBox borderStyle="box" />
+            <CheckBox borderStyle="box" onChange={toggleAgree} />
             <div className="font-normal text-14 text-gray6 ml-5">I agree with the above terms</div>
           </div>
-          <div className="font-medium text-16 text-light rounded-6 bg-primary w-100% py-15 flex justify-center items-center cursor-pointer mt-25">
+          <div
+            className={`font-medium text-16 text-light rounded-6 bg-primary w-100% py-15 flex justify-center items-center cursor-pointer mt-25 ${
+              !isAgree ? 'opacity-30 cursor-not-allowed' : ''
+            }`}
+          >
             Continute
           </div>
         </div>

@@ -5,10 +5,11 @@ import 'swiper/css/scrollbar';
 
 import { LocationCard2 } from 'components/LocationCard2/LocationCard2';
 import { locations_data } from 'data/locations_data';
+import { FC } from 'react';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function LocationCards2() {
+export const LocationCards2: FC = () => {
   return (
     <div className="container">
       <div className="text-22 text-gray8 font-medium mb-10">Happening Cities</div>
@@ -53,4 +54,4 @@ export default function LocationCards2() {
       </div>
     </div>
   );
-}
+};

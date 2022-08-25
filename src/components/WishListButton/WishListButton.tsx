@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 interface WishListButtonProps {
   isInWishList: boolean;
@@ -6,15 +6,10 @@ interface WishListButtonProps {
   border: boolean;
 }
 export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, border }) => {
-  const [isWishList, setWishList] = useState(isInWishList);
-  const handleClick = () => {
-    setWishList(!isWishList);
-  };
   return (
     <>
-      {isWishList ? (
+      {isInWishList ? (
         <span
-          onClick={handleClick}
           className={`text-tertiary text-13 z-2 ease-linear w-28 h-28 flex justify-center items-center ${
             border ? 'border-1 border-gray3 rounded-6 bg-light cursor-pointer' : ''
           }`}
@@ -23,7 +18,6 @@ export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, b
         </span>
       ) : (
         <span
-          onClick={handleClick}
           className={`text-light text-13 z-2 ease-linear w-28 h-28 flex items-center justify-center  ${
             border ? 'border-1 border-gray3 rounded-6 bg-light cursor-pointer' : ''
           }`}

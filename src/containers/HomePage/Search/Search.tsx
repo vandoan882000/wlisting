@@ -1,4 +1,6 @@
-export const Search = () => {
+import { FC } from 'react';
+
+export const Search: FC = () => {
   return (
     <div className="container py-70">
       <div className="row justify-center pt-30">
