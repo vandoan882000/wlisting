@@ -1,6 +1,6 @@
 [build]
   publish = "build"
-  command = "react-scripts build"
+  command = "REACT_APP_CONTEXT=$CONTEXT npm run build"
 [build.environment]
   REACT_APP_LISTING = "Hello"
   NODE_VERSION = "16.14.2"
