@@ -1,8 +1,9 @@
+import { Category } from 'components/Category/Category';
 import { DropDownItem } from 'components/DropDownItem/DropDownItem';
-import { MiniCategory } from 'components/MiniCategory/MiniCategory';
 import { Rate1 } from 'components/Rate1/Rate1';
+import { WishListButton } from 'components/WishListButton/WishListButton';
 import { review_data, ReviewData } from 'data/review_data';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 interface ListingDetailContentHead {
   categoryName: string;
@@ -26,6 +27,7 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
   listingAddress,
   listingRatingScore,
 }) => {
+  const [wishlist, setWishlist] = useState(true);
   const getQuantityReview = (listingReviewsIds: number[]) => {
     return review_data.filter((review: ReviewData) => listingReviewsIds.includes(review.reviewId));
   };
@@ -33,19 +35,27 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
   return (
     <>
       <div className="flex items-center justify-between mt-21">
-        <MiniCategory
-          categoryColor={categoryColor}
-          categoryIcon={categoryIcon}
-          categoryLink={categoryLink}
-          textColor="#000000"
-          categoryName={categoryName}
-        />
+        <div className="w-fit">
+          <Category
+            categoryId={1}
+            categoryCount={1}
+            categoryColor={categoryColor}
+            categoryIcon={categoryIcon}
+            categoryLink={categoryLink}
+            textColor="dark"
+            categoryName={categoryName}
+            variant="variant2"
+          />
+        </div>
         <div className="flex justify-center items-center">
           <div className="px-10 py-5 border-1 border-gray4 rounded-4 ml-5 mr-5">
             <i className="fas fa-share mr-5"></i>Share
           </div>
-          <div className="px-10 py-5 border-1 border-gray4 rounded-4 ml-5 mr-5">
-            <i className="far fa-heart"></i> Save
+          <div
+            className="flex items-center px-10 py-5 border-1 border-gray4 rounded-4 ml-5 mr-5 cursor-pointer select-none"
+            onClick={() => setWishlist(!wishlist)}
+          >
+            <WishListButton border={false} color={'#0f0f36'} isInWishList={wishlist} size={18} /> Save
           </div>
           <DropDownItem>
             <div className="px-10 py-5 border-1 border-gray4 rounded-4">

@@ -4,8 +4,9 @@ interface WishListButtonProps {
   isInWishList: boolean;
   color: string;
   border: boolean;
+  size?: number;
 }
-export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, border }) => {
+export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, border, size = 13 }) => {
   return (
     <>
       {isInWishList ? (
@@ -14,7 +15,7 @@ export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, b
             border ? 'border-1 border-gray3 rounded-6 bg-light cursor-pointer' : ''
           }`}
         >
-          <i className="fas fa-heart"></i>
+          <i className="fas fa-heart" style={{ fontSize: `${size}px` }}></i>
         </span>
       ) : (
         <span
@@ -23,7 +24,7 @@ export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, b
           }`}
           style={{ color: `${color}` }}
         >
-          <i className="fal fa-heart"></i>
+          <i className="fal fa-heart" style={{ fontSize: `${size}px` }}></i>
         </span>
       )}
     </>

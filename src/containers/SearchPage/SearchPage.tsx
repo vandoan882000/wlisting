@@ -1,4 +1,4 @@
-import Menu from 'components/Menu';
+import { NavBar } from 'components/NavBar/NavBar';
 import Footer from 'containers/Footer/Footer';
 
 import { SearchContent } from './SearchContent/SearchContent';
@@ -7,7 +7,7 @@ import { SearchFilter } from './SearchFilter/SearchFilter';
 export const SearchPage = () => {
   return (
     <>
-      <Menu title="" />
+      <NavBar />
       <SearchFilter />
       <SearchContent />
       <Footer />

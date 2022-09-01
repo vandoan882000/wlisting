@@ -1,6 +1,5 @@
 import { FC, ReactNode } from 'react';
-
-import { Role } from './types';
+import { Role } from 'types/Page';
 
 export interface GuardedComponentProps {
   /** Children sẽ hiển thị nếu auth role nằm trong mảng prop role hoặc prop condition true */

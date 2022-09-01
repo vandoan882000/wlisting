@@ -1,31 +1,45 @@
-import { CategoryData } from 'data/categories_data';
 import { FC } from 'react';
+import { CategoryData } from 'types/Category';
 
-interface CategoryProps {
-  data: CategoryData;
+type CategoryVariant = 'variant1' | 'variant2';
+type TextColor = 'dark' | 'light';
+interface CategoryProps extends CategoryData {
+  variant?: CategoryVariant;
+  textColor?: TextColor;
 }
 
-export const Category: FC<CategoryProps> = ({ data }) => {
-  const { categoryName, categoryColor, categoryCount, categoryIcon, categoryLink } = data;
+export const Category: FC<CategoryProps> = ({
+  categoryName,
+  categoryColor,
+  categoryCount,
+  categoryIcon,
+  variant = 'variant1',
+  textColor = 'dark',
+}) => {
   return (
-    <a href={categoryLink} className="inline-block relative w-100%">
-      <div className="flex px-20 py-15 rounded-15 border-gray2 border-1 bg-light">
+    <div className="inline-block relative w-100%">
+      <div className={`flex`}>
         <div
-          className={`flex justify-center items-center w-50 h-50 rounded-15 mr-14`}
+          className={`flex justify-center items-center ${variant == 'variant1' ? 'w-50 h-50 rounded-15 mr-14' : 'w-28 h-28 p-4 rounded-6 mr-5'} `}
           style={{
             background: `${categoryColor}`,
           }}
         >
-          <span className="text-20 text-light">
+          <span className={`${variant == 'variant1' ? 'text-20 ' : 'text-14 '} text-light`}>
             <i className={categoryIcon}></i>
           </span>
         </div>
-        <div>
-          <div className="text-16 font-medium text-gray8">{categoryName}</div>
-          <div>{categoryCount} Listings</div>
+        <div className="flex flex-col justify-center">
+          <div
+            className={`${variant == 'variant1' ? 'text-16 font-medium' : 'text-12 font-medium'} ${
+              textColor == 'light' ? 'text-light' : 'text-gray8'
+            }`}
+          >
+            {categoryName}
+          </div>
+          {variant == 'variant1' && <div className={`${textColor == 'light' ? 'text-light' : 'text-gray8'}`}>{categoryCount} Listings</div>}
         </div>
       </div>
-      <div className="absolute w-100% h-36 rounded-15 border-gray2 border-1 z-_1 left-0 bottom-0 translate-y-5"></div>
-    </a>
+    </div>
   );
 };

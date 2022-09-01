@@ -11,6 +11,7 @@ interface SliderProps {
 }
 
 export const Slider: FC<SliderProps> = ({ value, min, max, step, onChange, onChanged }) => {
+  const [valueCurrent, setValueCurrent] = useState(value);
   const [value0, setValue0] = useState(value);
   const [isDragging, setIsDragging] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
@@ -48,6 +49,7 @@ export const Slider: FC<SliderProps> = ({ value, min, max, step, onChange, onCha
   const handleDragEnd = () => {
     if (isDragging) {
       onChanged(getResult());
+      setValueCurrent(Number(getResult()));
     }
     setIsDragging(false);
   };
@@ -69,7 +71,7 @@ export const Slider: FC<SliderProps> = ({ value, min, max, step, onChange, onCha
     window.removeEventListener('touchend', handleDragEnd);
   };
   const handleResize = () => {
-    const currentWidth = (Number(getResult()) / max) * (referenceElement as HTMLElement).offsetWidth;
+    const currentWidth = (valueCurrent / max) * (referenceElement as HTMLElement).offsetWidth;
     setValue0(currentWidth);
   };
   useEffect(() => {
@@ -82,7 +84,7 @@ export const Slider: FC<SliderProps> = ({ value, min, max, step, onChange, onCha
   });
 
   return (
-    <div ref={setReferenceElement} className="veda-slider h-4 bg-gray3 relative">
+    <div ref={setReferenceElement} className="veda-slider h-4 bg-gray3 relative select-none">
       <div
         className="veda-slider__tracked bg-primary h-4 absolute top-0 z-1 "
         style={{ transform: `translateX(${Math.min(value0, 0)}px)`, width: `${Math.abs(value0)}px` }}

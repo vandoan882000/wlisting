@@ -1,8 +1,5 @@
-export interface AmenityData {
-  amenityId: number;
-  amenityName: string;
-  amenityImage: string;
-}
+import { AmenityData } from 'types/Amenity';
+
 export const amenity_data: AmenityData[] = [
   {
     amenityId: 1,

@@ -1,5 +1,5 @@
-import { ListingDateStatus } from 'data/listings_data';
 import { FC } from 'react';
+import { ListingDateStatus } from 'types/Listing';
 
 interface HoursProps {
   listingOpenStatus: ListingDateStatus[];

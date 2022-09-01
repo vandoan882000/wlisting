@@ -6,7 +6,7 @@ import React from 'react';
 export default function Footer() {
   return (
     <div className="container">
-      <div className="row pb-60 pt-52 border-t-gray2 border-t-1 border-b-gray2 border-b-1">
+      <div className="row pb-60 pt-52">
         <div className="col-lg-3 border-1 bg-light border-gray3 rounded-34 p-26 max-w-263 relative after:content-[''] after:w-263 after:h-253 after:border-1 after:border-gray3 after:rounded-34 after:absolute after:bottom-0 after:left-0 after:translate-x-_5 after:translate-y-5 after:z-_1">
           <div className="text-12 font-bold text-gray8 uppercase">Statistic</div>
           <div className="flex mb-12 mt-10">
@@ -90,23 +90,6 @@ export default function Footer() {
               <a href="#">Give Us Feedbacks</a>
             </li>
           </ul>
-        </div>
-      </div>
-      <div className="flex justify-between items-center w-100% h-85">
-        <div className="text-14 font-normal text-gray7">Copyright © 2018 Wiloke.com. Address: 1002312 State Street, 20th Floor Boston A</div>
-        <div className="flex">
-          <span className="text-gray8 ml-15 hover:text-primary">
-            <i className="fab fa-facebook"></i>
-          </span>
-          <span className="text-gray8 ml-15 hover:text-primary">
-            <i className="fab fa-twitter"></i>
-          </span>
-          <span className="text-gray8 ml-15 hover:text-primary">
-            <i className="fab fa-instagram"></i>
-          </span>
-          <span className="text-gray8 ml-15 hover:text-primary">
-            <i className="fab fa-facebook"></i>
-          </span>
         </div>
       </div>
     </div>

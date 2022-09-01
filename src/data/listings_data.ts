@@ -1,32 +1,5 @@
-export interface ListingCardData {
-  listingId: number;
-  listingTitle: string;
-  listingAddress: string;
-  listingCategoryId: number;
-  listingUserId: number;
-  listingRatingScore: number;
-  listingLink: string;
-  isInWishlist: boolean;
-  listingDescription: string;
-  listingAmenitiesIds: number[];
-  listingGallery: ListingImage[];
-  listingOpenStatus: ListingDateStatus[];
-  listingMaxPrice: string;
-  listingMinPrice: string;
-  listingReviewsIds: number[];
-}
-export interface ListingImage {
-  listingImageName: string;
-  listingImageUrl: string;
-}
-export type ListingDate = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun';
-export interface ListingDateStatus {
-  listingDayId: number;
-  listingDate: ListingDate;
-  listingOpenTime: string;
-  listingCloseTime: string;
-  listingOpenStatus: boolean;
-}
+import { ListingCardData } from 'types/Listing';
+
 export const listings_data: ListingCardData[] = [
   {
     listingId: 1,

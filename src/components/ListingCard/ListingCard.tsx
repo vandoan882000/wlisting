@@ -1,11 +1,13 @@
 import { Avatar } from 'components/Avatar/Avatar';
-import { MiniCategory } from 'components/MiniCategory/MiniCategory';
+import { Category } from 'components/Category/Category';
 import { OpenStatusButton } from 'components/OpenStatusButton/OpenStatusButton';
 import { WishListButton } from 'components/WishListButton/WishListButton';
-import { categories_data, CategoryData } from 'data/categories_data';
-import { ListingCardData, ListingDateStatus } from 'data/listings_data';
-import { User, users_data } from 'data/users_data';
+import { categories_data } from 'data/categories_data';
+import { users_data } from 'data/users_data';
 import { FC, useState } from 'react';
+import { CategoryData } from 'types/Category';
+import { ListingCardData, ListingDateStatus } from 'types/Listing';
+import { User } from 'types/User';
 
 import { Rate } from '../Rate/Rate';
 
@@ -65,8 +67,12 @@ export const ListingCard: FC<ListingCardProps> = ({
           src={listingGallery[0].listingImageUrl}
           alt={listingTitle}
         />
-        <div className={`${isHover ? 'group-hover:opacity-100 opacity-0 transition-all delay-100' : ''} absolute top-10 left-10 `}>
-          <Avatar userAvatar={current_user.userAvatar} userName={current_user.userName} />
+        <div
+          className={`${
+            isHover ? 'group-hover:opacity-100 opacity-0 transition-all delay-100' : ''
+          } absolute top-10 left-10 px-5 py-5 rounded-20 bg-light`}
+        >
+          <Avatar avatar={current_user.userAvatar} name={current_user.userName} size={22} fontSize={12} />
         </div>
         <Rate score={listingRatingScore} />
       </a>
@@ -75,13 +81,17 @@ export const ListingCard: FC<ListingCardProps> = ({
         <div className="font-normal text-14 text-gray6 mt-2 lines">{listingAddress}</div>
       </div>
       <div className="flex justify-between w-100% mt-8">
-        <MiniCategory
-          categoryColor={categoryColor}
-          categoryIcon={categoryIcon}
-          categoryLink={categoryLink}
-          categoryName={categoryName}
-          textColor={'#27262b'}
-        />
+        <div className="w-fit">
+          <Category
+            categoryColor={categoryColor}
+            categoryIcon={categoryIcon}
+            categoryLink={categoryLink}
+            categoryName={categoryName}
+            categoryCount={1}
+            categoryId={1}
+            variant="variant2"
+          />
+        </div>
         <div className="flex items-center">
           <OpenStatusButton isOpen={getDateStatus(listingOpenStatus)} />
           <div onClick={() => setWishlist(!wishlist)}>

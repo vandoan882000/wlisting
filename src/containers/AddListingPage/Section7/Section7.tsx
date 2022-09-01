@@ -51,13 +51,14 @@ export const Section7: FC = () => {
             <CheckBox borderStyle="box" onChange={toggleAgree} />
             <div className="font-normal text-14 text-gray6 ml-5">I agree with the above terms</div>
           </div>
-          <div
-            className={`font-medium text-16 text-light rounded-6 bg-primary w-100% py-15 flex justify-center items-center cursor-pointer mt-25 ${
-              !isAgree ? 'opacity-30 cursor-not-allowed' : ''
+          <a
+            href="/pricing"
+            className={`font-medium text-16 text-light rounded-6 bg-primary w-100% py-15 flex justify-center items-center cursor-pointer mt-25 select-none ${
+              !isAgree ? 'opacity-30 cursor-not-allowed pointer-events-none' : ''
             }`}
           >
             Continute
-          </div>
+          </a>
         </div>
       </div>
     </div>

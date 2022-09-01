@@ -1,27 +1,27 @@
-import { DropDown1 } from 'components/DropDown1/DropDown1';
-import React from 'react';
+import { Collapse } from 'components/Collapse/Collapse';
+import { FC } from 'react';
 
-export const Section5 = () => {
+export const Section5: FC = () => {
   return (
     <div className="container mb-30">
       <div className="row justify-center">
         <div className="col-lg-8">
-          <DropDown1 title="In quo pertineant non ero?">
+          <Collapse title="In quo pertineant non ero?">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.
-          </DropDown1>
-          <DropDown1 title="Primum igitur inquit modo ista?">
+          </Collapse>
+          <Collapse title="Primum igitur inquit modo ista?">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.
-          </DropDown1>
-          <DropDown1 title="At vero eos censes aut?">
+          </Collapse>
+          <Collapse title="At vero eos censes aut?">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.
-          </DropDown1>
-          <DropDown1 title="Torquatos nostros quos tu tam?">
+          </Collapse>
+          <Collapse title="Torquatos nostros quos tu tam?">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.
-          </DropDown1>
+          </Collapse>
         </div>
       </div>
     </div>

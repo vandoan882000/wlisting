@@ -1,9 +1,10 @@
-import { AuthorInfoMini } from 'components/AuthorInfoMini/AuthorInfoMini';
+import { Avatar } from 'components/Avatar/Avatar';
 import { Rate1 } from 'components/Rate1/Rate1';
 import { WishListButton } from 'components/WishListButton/WishListButton';
-import React from 'react';
+import React, { FC, useState } from 'react';
 
-export const SearchItem = () => {
+export const SearchItem: FC = () => {
+  const [wishlist, setWishlist] = useState(true);
   return (
     <div className="flex">
       <div className="w-40% relative bg-center bg-cover aspect-4/3 rounded-14">
@@ -26,7 +27,7 @@ export const SearchItem = () => {
           <i className="fal fa-phone-alt mr-5 text-primary"></i>0348457142
         </div>
         <div className="flex">
-          <AuthorInfoMini
+          <Avatar
             avatar="https://images.pexels.com/photos/11293719/pexels-photo-11293719.jpeg?cs=srgb&dl=pexels-vietnam-photographer-11293719.jpg&w=500&fm=jpg"
             name="Adolfo Hess "
             size={22}
@@ -51,7 +52,9 @@ export const SearchItem = () => {
               <i className="fas fa-circle text-3 mx-5 text-gray6"></i> <span className="text-secondary font-semibold">Open Now</span>
             </div>
           </div>
-          <WishListButton border={false} color={'#929099'} isInWishList={true} />
+          <div className="cursor-pointer" onClick={() => setWishlist(!wishlist)}>
+            <WishListButton border={false} color={'#929099'} isInWishList={wishlist} />
+          </div>
         </div>
       </div>
     </div>

@@ -1,13 +1,10 @@
 import { FC, useEffect } from 'react';
-import { Route, RouteProps, useNavigate } from 'react-router-dom';
-
-import { Role } from './types';
+import { RouteProps, useNavigate } from 'react-router-dom';
+import { Role } from 'types/Page';
 
 export interface GuardedRouteProps extends RouteProps {
   roles: Role[];
-  title?: string;
 }
-// Lấy từ redux
 const dataFake = {
   data: {
     id: 1,
@@ -16,7 +13,7 @@ const dataFake = {
   status: 'sucess',
 };
 
-const GuardedRoute: FC<GuardedRouteProps> = ({ roles, ...rest }) => {
+const GuardedRoute: FC<GuardedRouteProps> = ({ children, roles }) => {
   const { status, data } = dataFake;
   const navigate = useNavigate();
 
@@ -30,8 +27,8 @@ const GuardedRoute: FC<GuardedRouteProps> = ({ roles, ...rest }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
-  console.log(roles, rest);
-  return <Route {...rest} />;
+
+  return <>{children}</>;
 };
 
 export default GuardedRoute;

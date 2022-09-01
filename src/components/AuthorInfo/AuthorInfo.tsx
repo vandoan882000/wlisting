@@ -1,6 +1,6 @@
-import { AuthorInfoMini } from 'components/AuthorInfoMini/AuthorInfoMini';
-import { Role } from 'data/users_data';
+import { Avatar } from 'components/Avatar/Avatar';
 import { FC } from 'react';
+import { Role } from 'types/User';
 
 interface AuthorInfoProps {
   userId: number;
@@ -15,7 +15,7 @@ export const AuthorInfo: FC<AuthorInfoProps> = ({ userAvatar, userDescription, u
   return (
     <>
       <div className="w-fit">
-        <AuthorInfoMini name={userName} avatar={userAvatar} size={50} fontSize={22} detail={true} />
+        <Avatar variant="variant2" name={userName} avatar={userAvatar} size={50} fontSize={22} detail={true} />
       </div>
       <div className="text-14 font-normal text-gray6 mt-5">{userDescription}</div>
       <div className="relative w-40% bg-cover bg-center aspect-162/44 mt-16">

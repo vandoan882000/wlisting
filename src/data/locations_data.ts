@@ -1,10 +1,5 @@
-export interface Location {
-  id: number;
-  name: string;
-  count: number;
-  image: string;
-  link: string;
-}
+import { Location } from 'types/Location';
+
 export const locations_data: Location[] = [
   {
     id: 1,

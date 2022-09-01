@@ -1,11 +1,5 @@
-export interface CategoryData {
-  categoryId: number;
-  categoryName: string;
-  categoryIcon: string;
-  categoryCount: number;
-  categoryColor: string;
-  categoryLink: string;
-}
+import { CategoryData } from 'types/Category';
+
 export const categories_data: CategoryData[] = [
   {
     categoryId: 1,
