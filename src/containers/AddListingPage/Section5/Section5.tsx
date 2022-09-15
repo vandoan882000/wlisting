@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 export const Section5: FC = () => {
   return (
-    <div className="container mb-30">
+    <div className="container mt-30 mb-84">
       <div className="row justify-center">
         <div className="col-lg-8">
           <Collapse title="In quo pertineant non ero?">

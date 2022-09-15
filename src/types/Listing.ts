@@ -59,8 +59,14 @@ export interface ListingCardData {
    * array review id
    */
   listingReviewsIds: number[];
+  lat: number;
+  lng: number;
 }
 export interface ListingImage {
+  /**
+   * listing image id
+   */
+  listingImageId: number;
   /**
    * listing image name
    */

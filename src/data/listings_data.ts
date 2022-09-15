@@ -15,27 +15,43 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/8729211/pexels-photo-8729211.jpeg?cs=srgb&dl=pexels-katya-wolf-8729211.jpg&w=500&fm=jpg',
       },
       {
+        listingImageId: 2,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
-        listingImageName: 'Living Room',
+        listingImageId: 3,
+        listingImageName: 'Full Kitchen',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
-        listingImageName: 'Living Room',
+        listingImageId: 4,
+        listingImageName: 'Full Kitchen',
         listingImageUrl: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
+        listingImageId: 5,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
       {
-        listingImageName: 'Living Room',
+        listingImageId: 6,
+        listingImageName: 'Bedroom',
+        listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        listingImageId: 7,
+        listingImageName: 'Bedroom',
+        listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        listingImageId: 8,
+        listingImageName: 'Bedroom',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
     ],
@@ -93,6 +109,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$90',
     listingMinPrice: '$30',
     listingReviewsIds: [1, 2, 3],
+    lat: 59.955413,
+    lng: 30.337844,
   },
   {
     listingId: 2,
@@ -108,26 +126,32 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/8729211/pexels-photo-8729211.jpeg?cs=srgb&dl=pexels-katya-wolf-8729211.jpg&w=500&fm=jpg',
       },
       {
+        listingImageId: 2,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 3,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 4,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
+        listingImageId: 5,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 6,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
@@ -186,6 +210,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.995413,
+    lng: 30.317844,
   },
   {
     listingId: 3,
@@ -201,27 +227,33 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl:
           'https://images.pexels.com/photos/1001780/pexels-photo-1001780.jpeg?cs=srgb&dl=pexels-oliver-sj%C3%B6str%C3%B6m-1001780.jpg&w=500&fm=jpg',
       },
       {
+        listingImageId: 2,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 3,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 4,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
+        listingImageId: 5,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 6,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
@@ -280,6 +312,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.995413,
+    lng: 30.397844,
   },
   {
     listingId: 4,
@@ -295,27 +329,33 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl:
           'https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?cs=srgb&dl=pexels-oliver-sj%C3%B6str%C3%B6m-1098365.jpg&w=500&fm=jpg',
       },
       {
+        listingImageId: 2,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 3,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 4,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
+        listingImageId: 5,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 6,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
@@ -374,6 +414,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 61.955413,
+    lng: 32.337844,
   },
   {
     listingId: 5,
@@ -389,27 +431,33 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl:
           'https://images.pexels.com/photos/1047051/pexels-photo-1047051.jpeg?cs=srgb&dl=pexels-oliver-sj%C3%B6str%C3%B6m-1047051.jpg&w=500&fm=jpg',
       },
       {
+        listingImageId: 2,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 3,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 4,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
+        listingImageId: 5,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 6,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
@@ -468,6 +516,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 40.955413,
+    lng: 35.337844,
   },
   {
     listingId: 6,
@@ -483,26 +533,32 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?cs=srgb&dl=pexels-fox-1595385.jpg&w=500&fm=jpg',
       },
       {
+        listingImageId: 2,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 3,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 4,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       },
       {
+        listingImageId: 5,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
       {
+        listingImageId: 6,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
       },
@@ -561,6 +617,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.955413,
+    lng: 30.337844,
   },
   {
     listingId: 7,
@@ -576,6 +634,7 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl:
           'https://images.pexels.com/photos/573238/pexels-photo-573238.jpeg?cs=srgb&dl=pexels-matheus-bertelli-573238.jpg&w=500&fm=jpg',
@@ -635,6 +694,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.955413,
+    lng: 30.337844,
   },
   {
     listingId: 8,
@@ -650,6 +711,7 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/8728516/pexels-photo-8728516.jpeg?cs=srgb&dl=pexels-katya-wolf-8728516.jpg&w=500&fm=jpg',
       },
@@ -708,6 +770,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.955413,
+    lng: 30.337844,
   },
   {
     listingId: 9,
@@ -723,6 +787,7 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl:
           'https://images.pexels.com/photos/7936367/pexels-photo-7936367.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-7936367.jpg&w=500&fm=jpg',
@@ -782,6 +847,8 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.955413,
+    lng: 30.337844,
   },
   {
     listingId: 10,
@@ -797,6 +864,7 @@ export const listings_data: ListingCardData[] = [
     listingAmenitiesIds: [1, 2],
     listingGallery: [
       {
+        listingImageId: 1,
         listingImageName: 'Living Room',
         listingImageUrl: 'https://images.pexels.com/photos/109919/pexels-photo-109919.jpeg?cs=srgb&dl=pexels-kaique-rocha-109919.jpg&w=500&fm=jpg',
       },
@@ -855,5 +923,7 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
+    lat: 59.955413,
+    lng: 30.337844,
   },
 ];

@@ -26,9 +26,9 @@ export const PopUp: FC<PopupProps> & {
           <div className="w-100% h-100% fixed top-0 left-0 p-20% flex justify-center items-center z-100">
             <div className="absolute top-0 left-0 w-100% h-100% z-_1 bg-dark opacity-20" onClick={handleClick}></div>
             <div className=" rounded-10 border-gray3 border-1 w-40% bg-light p15">
-              <div className="flex justify-between mb-12 border-b-1 border-b-gray3">
+              <div className="flex justify-between items-center mb-12 border-b-1 border-b-gray3">
                 <div className="p-15">{title}</div>
-                <div className="text-gray6 flex justify-center items-center pr-20 cursor-pointer" onClick={handleClick}>
+                <div className="h-100% text-gray6 flex justify-center items-center pr-20 cursor-pointer" onClick={handleClick}>
                   <i className="fal fa-times"></i>
                 </div>
               </div>

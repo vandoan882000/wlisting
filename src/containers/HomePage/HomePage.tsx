@@ -25,7 +25,7 @@ export const HomePage = () => {
       <ListingCards />
       <JoinUs />
       <ListingCards2 />
-      <CustomSwiper title="Recent Collections">
+      <CustomSwiper title="Recent Collections" link="#" titleFontWeight={500}>
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
@@ -34,8 +34,10 @@ export const HomePage = () => {
         ))}
       </CustomSwiper>
       <CustomSwiper
+        link={'#'}
         title="Top Viewed"
         slidesPerView={5}
+        titleFontWeight={500}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -62,11 +64,24 @@ export const HomePage = () => {
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
-            <ListingCard {...listing} isHover={true} />
+            <ListingCard variant="variant2">
+              <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+              <ListingCard.Body
+                listingAddress={listing.listingAddress}
+                listingGallery={listing.listingGallery}
+                listingLink={listing.listingLink}
+                listingTitle={listing.listingTitle}
+              />
+              <ListingCard.Footer
+                isInWishlist={listing.isInWishlist}
+                listingCategoryId={listing.listingCategoryId}
+                listingOpenStatus={listing.listingOpenStatus}
+              />
+            </ListingCard>
           </SwiperSlide>
         ))}
       </CustomSwiper>
-      <div className="container">
+      <div className="container mt-50 pb-10">
         <div className="row flex justify-center">
           <div className="col-lg-8 relative flex justify-center bg-center bg-cover">
             <img className="object-cover" src="/assets/adsplaceholder.png" alt="" />
@@ -75,6 +90,8 @@ export const HomePage = () => {
       </div>
       <CustomSwiper
         title="You Might Also Like"
+        link="#"
+        titleFontWeight={500}
         slidesPerView={5}
         breakpoints={{
           0: {
@@ -102,7 +119,20 @@ export const HomePage = () => {
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
-            <ListingCard {...listing} isHover={true} />
+            <ListingCard variant="variant2">
+              <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+              <ListingCard.Body
+                listingAddress={listing.listingAddress}
+                listingGallery={listing.listingGallery}
+                listingLink={listing.listingLink}
+                listingTitle={listing.listingTitle}
+              />
+              <ListingCard.Footer
+                isInWishlist={listing.isInWishlist}
+                listingCategoryId={listing.listingCategoryId}
+                listingOpenStatus={listing.listingOpenStatus}
+              />
+            </ListingCard>
           </SwiperSlide>
         ))}
       </CustomSwiper>
@@ -115,18 +145,18 @@ export const HomePage = () => {
           <div className="col-lg-12 flex justify-between items-center h-85">
             <div className="text-14 font-normal text-gray7">Copyright © 2018 Wiloke.com. Address: 1002312 State Street, 20th Floor Boston A</div>
             <div className="flex">
-              <span className="text-gray8 ml-15 hover:text-primary">
+              <a href="#" className="text-gray8 ml-15 hover:text-primary">
                 <i className="fab fa-facebook"></i>
-              </span>
-              <span className="text-gray8 ml-15 hover:text-primary">
+              </a>
+              <a href="#" className="text-gray8 ml-15 hover:text-primary">
                 <i className="fab fa-twitter"></i>
-              </span>
-              <span className="text-gray8 ml-15 hover:text-primary">
+              </a>
+              <a href="#" className="text-gray8 ml-15 hover:text-primary">
                 <i className="fab fa-instagram"></i>
-              </span>
-              <span className="text-gray8 ml-15 hover:text-primary">
-                <i className="fab fa-facebook"></i>
-              </span>
+              </a>
+              <a href="#" className="text-gray8 ml-15 hover:text-primary">
+                <i className="fab fa-flickr"></i>
+              </a>
             </div>
           </div>
         </div>

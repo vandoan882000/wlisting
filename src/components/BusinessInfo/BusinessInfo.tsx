@@ -1,26 +1,30 @@
+import { Devider } from 'components/Divider/Devider';
 import { FC } from 'react';
 
 export const BusinessInfo: FC = () => {
   return (
     <>
-      <div className="flex justify-start items-center mb-10">
-        <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
-          <i className="far fa-link text-gray7"></i>
+      <div className="mt-15">
+        <div className="flex justify-start items-center mb-15">
+          <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
+            <i className="far fa-link text-gray7"></i>
+          </div>
+          <a className="text-14 font-normal text-gray7">https://wiloke.com</a>
         </div>
-        <a className="text-14 font-normal text-gray7">https://wiloke.com</a>
-      </div>
-      <div className="flex justify-start items-center mb-10">
-        <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
-          <i className="far fa-phone-alt text-gray7"></i>
+        <div className="flex justify-start items-center mb-15">
+          <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
+            <i className="far fa-phone-alt text-gray7"></i>
+          </div>
+          <a className="text-14 font-normal text-gray7">0123456789</a>
         </div>
-        <a className="text-14 font-normal text-gray7">0123456789</a>
-      </div>
-      <div className="flex justify-start items-center mb-10">
-        <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
-          <i className="far fa-comment-alt text-gray7"></i>
+        <div className="flex justify-start items-center mb-15">
+          <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
+            <i className="far fa-comment-alt text-gray7"></i>
+          </div>
+          <a className="text-14 font-normal text-gray7">Message the business</a>
         </div>
-        <a className="text-14 font-normal text-gray7">Message the business</a>
       </div>
+      <Devider />
       <div className="flex items-center w-100% pt-13">
         <div className="flex justify-center items-center w-34 h-34 bg-[#325d94] rounded-1/2 mr-10">
           <i className="fab fa-facebook-square text-light"></i>

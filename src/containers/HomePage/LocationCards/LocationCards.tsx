@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 export const LocationCards: FC = () => {
   return (
-    <div className="container">
+    <div className="container mt-45">
       <div className="text-22 text-gray8 font-medium mb-10">Happening Cities</div>
       <div className="row relative">
         <a

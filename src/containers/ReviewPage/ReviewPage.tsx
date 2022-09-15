@@ -5,24 +5,37 @@ import { Rate1 } from 'components/Rate1/Rate1';
 import { Rate2 } from 'components/Rate2/Rate2';
 import { Rating } from 'components/Rating/Rating';
 import { ReviewCard } from 'components/ReviewCard/ReviewCard';
+import { listings_data } from 'data/listings_data';
+import { review_data } from 'data/review_data';
+import { FC } from 'react';
+import { useParams } from 'react-router';
+import { ListingCardData } from 'types/Listing';
 
-export const ReviewPage = () => {
-  const handleApply = () => {
-    console.log('apply');
+export const ReviewPage: FC = () => {
+  const { id } = useParams();
+  console.log(id);
+  const getListing = (listingId: number) => {
+    const listing = listings_data.find((listing: ListingCardData) => listing.listingId === listingId);
+    return listing ? listing : listings_data[0];
   };
+  const listing = getListing(Number(id));
+  const reviewList = review_data.filter(review => listing.listingReviewsIds.includes(review.reviewId));
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-9">
-          <ReviewCard reviewId={1} />
-          <ReviewCard reviewId={1} />
-          <ReviewCard reviewId={1} />
+          {reviewList.map(review => {
+            return <ReviewCard key={review.reviewId} reviewId={review.reviewId} />;
+          })}
         </div>
         <div className="col-lg-3">
           <Content2>
             <div className="flex items-center">
-              <Rate1>7.5</Rate1>
-              <div className="ml-5 text-gray6 font-normal text-18">120 Reviews</div>
+              <span>
+                <Rate1>7.5</Rate1>
+              </span>
+              <div className="w-1 h-14 bg-gray4 ml-10 mr-10"></div>
+              <span className="text-gray6 font-normal text-18">{reviewList.length} Reviews</span>
             </div>
             <Rate2 title={'Check-in'} score={6.1} />
             <Rate2 title={'Accuracy'} score={8.2} />
@@ -30,7 +43,7 @@ export const ReviewPage = () => {
             <Rate2 title={'Location'} score={5.5} />
           </Content2>
           <PopUp
-            onApply={handleApply}
+            onApply={() => {}}
             toggleEl={
               <div className="w-100% py-11 flex justify-center items-center rounded-6 bg-primary text-light text-16 font-medium mt-20 cursor-pointer">
                 Write a review

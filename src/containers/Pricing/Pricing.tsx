@@ -3,7 +3,7 @@ import { Devider } from 'components/Divider/Devider';
 import { NavBar } from 'components/NavBar/NavBar';
 import { PricingItem, PricingType } from 'components/PricingItem/PricingItem';
 import Footer from 'containers/Footer/Footer';
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 interface PricingDatas {
   type: PricingType;
@@ -58,7 +58,7 @@ export const Pricing: FC = () => {
       <NavBar />
       <Content4 text="Pricing">
         <div className="container">
-          <div className="text-15 font-normal text-gray6 text-center mb-30">
+          <div className="text-15 font-normal text-gray6 text-center mt-5 mb-35">
             Ut placet, inquam tum dicere exorsus est primum igitur, quid percipit aut <br />
             voluptates. Laudem et aperta iudicari etenim quoniam.
           </div>
@@ -72,6 +72,7 @@ export const Pricing: FC = () => {
                     description={item.description}
                     active={pricingActive.type == item.type}
                     onClick={() => setPricingActive(item)}
+                    key={item.type}
                   />
                 );
               })}

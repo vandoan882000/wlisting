@@ -1,5 +1,6 @@
 import { Category } from 'components/Category/Category';
-import { DropDownItem } from 'components/DropDownItem/DropDownItem';
+import { CheckBox1 } from 'components/CheckBox1/CheckBox1';
+import { Popover } from 'components/Popover/Popover';
 import { Rate1 } from 'components/Rate1/Rate1';
 import { WishListButton } from 'components/WishListButton/WishListButton';
 import { review_data, ReviewData } from 'data/review_data';
@@ -34,7 +35,7 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
   const quantityReview = getQuantityReview(listingReviewsIds);
   return (
     <>
-      <div className="flex items-center justify-between mt-21">
+      <div className="flex items-center justify-between flex-wrap mt-21">
         <div className="w-fit">
           <Category
             categoryId={1}
@@ -48,30 +49,97 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
           />
         </div>
         <div className="flex justify-center items-center">
-          <div className="px-10 py-5 border-1 border-gray4 rounded-4 ml-5 mr-5">
-            <i className="fas fa-share mr-5"></i>Share
-          </div>
+          <Popover
+            toggle={
+              <div className="flex items-center px-10 py-5 min-h-36 border-1 text-14 font-medium text-gray8 border-gray4 rounded-4 ml-5 mr-5 cursor-pointer whitespace-nowrap select-none ">
+                <i className="fal fa-share mr-5"></i>Share
+              </div>
+            }
+            title=""
+            variant="variant2"
+          >
+            <div className="flex flex-col rounded-10  py-9 bg-light z-100">
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?app_id=1217981644879628&u=${window.location.href}?utm_source=ig_web_button_share_sheet`}
+                className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer"
+              >
+                <i className="far fa-pen text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Facebook</span>
+              </a>
+              <a
+                href={`https://www.facebook.com/dialog/send?app_id=1217981644879628&link=${window.location.href}?utm_source=ig_web_button_share_sheet&redirect_uri=${window.location.href}?utm_source=ig_web_button_share_sheet`}
+                className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer"
+              >
+                <i className="far fa-star text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Messenger</span>
+              </a>
+              <a
+                href={`https://twitter.com/share?url=${window.location.href}?utm_source=ig_web_button_share_sheet`}
+                className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer"
+              >
+                <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Twitter</span>
+              </a>
+              <a
+                href={`mailto:?subject=${window.location.href}&body=${window.location.href}`}
+                className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer"
+              >
+                <i className="far fa-flag text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Email</span>
+              </a>
+            </div>
+          </Popover>
+
           <div
-            className="flex items-center px-10 py-5 border-1 border-gray4 rounded-4 ml-5 mr-5 cursor-pointer select-none"
+            className="flex items-center px-10 py-3 mr-5 min-h-36 border-1 border-gray4 rounded-4 ml-5 font-medium text-14 cursor-pointer select-none"
             onClick={() => setWishlist(!wishlist)}
           >
-            <WishListButton border={false} color={'#0f0f36'} isInWishList={wishlist} size={18} /> Save
+            <WishListButton color={'#0f0f36'} isInWishList={wishlist} fontSize={14} /> <span className="ml-5">Save</span>
           </div>
-          <DropDownItem>
-            <div className="px-10 py-5 border-1 border-gray4 rounded-4">
-              <i className="far fa-ellipsis-v"></i>
+          <Popover
+            toggle={
+              <div className="px-10 py-5 border-1 text-gray8 border-gray4 rounded-4">
+                <i className="far fa-ellipsis-v"></i>
+              </div>
+            }
+            title=""
+            variant="variant2"
+          >
+            <div className="flex flex-col rounded-10  py-9 bg-light z-100">
+              <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                <i className="far fa-pen text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Edit</span>
+              </div>
+              <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                <i className="far fa-star text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Write a review</span>
+              </div>
+              <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Delete</span>
+              </div>
+              <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                <i className="far fa-flag text-12 mr-8 text-gray5"></i>
+                <span className="text-13 font-normal text-gray7 whitespace-nowrap">Report</span>
+              </div>
             </div>
-          </DropDownItem>
+          </Popover>
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <div className="flex justify-start items-center">
-          <div className="text-gray8 text-28 font-medium">{listingTitle}</div>
-          <div className="text-13 font-normal text-gray7 ml-5">Claimed</div>
+        <div className="flex justify-start items-center flex-wrap">
+          <div className="text-gray8 text-28 font-medium mr-15">{listingTitle}</div>
+          <div className="flex justify-center items-center text-13 font-normal text-gray7">
+            <CheckBox1 fontSize={12} size={16} color={'#ffffff'} background={'#4ea7f3'} />
+            <span className="ml-4">Claimed</span>
+          </div>
         </div>
         <div className="flex justify-center items-center">
-          <Rate1>{listingRatingScore}</Rate1>
-          <div className="text-18 font-normal text-gray6 pl-10">{quantityReview.length} Reviews</div>
+          <Rate1>{listingRatingScore.toFixed(1)}</Rate1>
+          <div className="w-1 h-14 bg-gray4 ml-10 mr-10"></div>
+          <div className="flex justify-center items-center flex-nowrap whitespace-nowrap text-18 font-normal text-gray6">
+            <span className="mr-5">{quantityReview.length}</span> <span>Reviews</span>
+          </div>
         </div>
       </div>
       <div className="flex items-start border-b-gray3 border-b-1 pb-30">

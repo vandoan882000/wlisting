@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const Section1 = () => {
+export const Section1: FC = () => {
   return (
     <div className="container">
-      <div className="row">
+      <div className="row mt-28">
         <div className="col-lg-6">
           <div className="text-26 font-medium text-gray8">Why post on Listing?</div>
           <div className="text-15 font-normal text-gray6 mt-5">

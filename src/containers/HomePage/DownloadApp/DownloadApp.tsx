@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 
 export const DownloadApp: FC = () => {
   return (
-    <div className="container mt-20 mb-30">
-      <div className="row relative rounded-15 pt-125 pb-94 pl-61">
-        <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38 inset-0">
+    <div className="container mt-50 mb-65">
+      <div className="row relative rounded-15 pt-125 pb-94 px-20 md:px-61">
+        <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38 inset-0 p-0">
           <img className="w-100% h-100% ab bg-cover bg-center object-cover rounded-15" src="assets/download.png" alt="" />
         </div>
         <div className="col-lg-5">
@@ -15,12 +15,12 @@ export const DownloadApp: FC = () => {
           </div>
 
           <div className="flex mt-40">
-            <div className="mr-12">
+            <a href="#" className="mr-12">
               <img src="assets/btnios.png" alt="" />
-            </div>
-            <div>
+            </a>
+            <a href="#">
               <img src="assets/btn-android.png" alt="" />
-            </div>
+            </a>
           </div>
         </div>
       </div>

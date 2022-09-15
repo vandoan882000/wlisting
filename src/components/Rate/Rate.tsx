@@ -10,7 +10,7 @@ export const Rate: FC<RateProps> = ({ score }) => {
         <i className="fas fa-star"></i>
       </span>
       <div className="flex justify-center items-center font-medium text-14 text-light bg-tertiary w-34 h-28 p-5 rounded-tr-6 rounded-br-6">
-        {score}
+        {score.toFixed(1)}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 
 type BorderStyle = 'radius' | 'box' | 'none';
 interface CheckBoxProps {
@@ -9,7 +9,7 @@ interface CheckBoxProps {
   borderStyle?: BorderStyle;
   disabled?: boolean;
   checked?: boolean;
-  onChange?: () => void;
+  onChange?: (event: ChangeEvent) => void;
 }
 export const CheckBox: FC<CheckBoxProps> = ({ disabled = false, name, borderStyle, checked, onChange }) => {
   return (

@@ -1,12 +1,14 @@
-export const Section3 = () => {
+import { FC } from 'react';
+
+export const Section3: FC = () => {
   return (
-    <div className="container">
+    <div className="container mt-30">
       <div className="row">
         <div className="col-lg-6">
           <img src="/assets/img-about.png" alt="" />
         </div>
         <div className="col-lg-6">
-          <div className="font-normal text-15 text-gray6 mt-30 leading-1">
+          <div className="font-normal text-15 text-gray6 leading-1">
             Laudem et voluptates repudiandae sint et voluptates omittantur maiorum dolorum effugiendorum gratia . At magnum periculum adiit in quo
             enim ad eam non possim accommodare torquatos. In oculis quidem exercitus quid ex eo ortum, tam inportuno tamque crudeli; sin. Omne animal,
             simul atque natum sit, voluptatem accusantium doloremque laudantium, totam rem aperiam.

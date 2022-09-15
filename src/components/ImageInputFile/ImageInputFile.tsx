@@ -1,6 +1,11 @@
-import React, { FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 
-export const ImageInputFile: FC = () => {
+interface ImageInputFileProps {
+  name?: string;
+  onChange?: (event: ChangeEvent) => void;
+}
+
+export const ImageInputFile: FC<ImageInputFileProps> = ({ name = 'imageInput', onChange }) => {
   const [listImg, setListImg] = useState([]);
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const files = (event.target as HTMLInputElement).files;
@@ -12,7 +17,6 @@ export const ImageInputFile: FC = () => {
     fileReader.addEventListener('load', e => {
       const data1 = (e.target as FileReader).result;
       setListImg(prevState => [...prevState, data1 as never]);
-      console.log(data1);
     });
   };
   const removeImage = (image: string) => {
@@ -37,7 +41,7 @@ export const ImageInputFile: FC = () => {
       </div>
       <label className="flex justify-center items-center w-55 h-55 rounded-8 border-2 border-gray4 border-dashed cursor-pointer bg-gray1">
         <i className="fal fa-image text-gray6"></i>
-        <input type="file" className="hidden" onInput={handleChange} accept="image/png, image/jpeg" multiple />
+        <input type="file" className="hidden" onInput={handleChange} accept="image/png, image/jpeg" multiple name={name} onChange={onChange} />
       </label>
     </div>
   );

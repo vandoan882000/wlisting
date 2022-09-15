@@ -1,15 +1,18 @@
 import { Devider } from 'components/Divider/Devider';
 import { FC } from 'react';
 import { createPortal } from 'react-dom';
+import { Link } from 'react-router-dom';
 
+type ModalVariants = 'variant1' | 'variant2' | 'variant3';
 interface ModalProps {
   onBack: () => void;
   title: string;
   visible: boolean;
   navigation?: React.ReactNode;
+  variant?: ModalVariants;
 }
 
-export const Modal: FC<ModalProps> = ({ children, onBack, title, visible, navigation }) => {
+export const Modal: FC<ModalProps> = ({ children, onBack, title, visible, navigation, variant = 'variant1' }) => {
   return (
     <>
       {visible &&
@@ -20,10 +23,18 @@ export const Modal: FC<ModalProps> = ({ children, onBack, title, visible, naviga
                 <span className="text-30 text-gray8 mr-20 cursor-pointer">
                   <i className="fal fa-angle-left"></i>
                 </span>
-                <div>
-                  <div className="text-gray6 text-14 font-normal">Back to</div>
-                  <div className="text-gray8 text-16 font-medium">{title}</div>
-                </div>
+                {variant == 'variant1' ? (
+                  <div>
+                    <div className="text-gray6 text-14 font-normal">Back to</div>
+                    <div className="text-gray8 text-16 font-medium">{title}</div>
+                  </div>
+                ) : variant == 'variant2' ? (
+                  <Link to="/" className="w-fit">
+                    <img className="w-120 h-40 m-0" src="/assets/logo.png" />
+                  </Link>
+                ) : (
+                  ''
+                )}
               </div>
               {navigation ? navigation : ''}
             </div>

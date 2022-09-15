@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { ListingCardData } from 'types/Listing';
 
 export const AddListingDonePage = () => {
+  const listingAdd = JSON.parse(localStorage.getItem('listingAdd') as string);
   const steps = [
     'Please select the template before starting',
     'Please select your category and location',
@@ -15,12 +16,14 @@ export const AddListingDonePage = () => {
     'Sed ut ratione neque disputatione, quam interrogare.',
     'Add prices to your listing',
     'Please select your amenities',
+    'Please select your photos and videos',
+    'Add your opening time',
   ];
   const [visibleEdit, setVisibleEdit] = useState(false);
   const getListing = (listingId: number) => {
     return listings_data.find(listing => listing.listingId == listingId);
   };
-  const listing = getListing(1);
+  const listing = getListing(1) as ListingCardData;
   return (
     <>
       <NavBar />
@@ -34,13 +37,17 @@ export const AddListingDonePage = () => {
               fringilla, felis id sollicitudin finibus, nisi mauris accumsan orci, eu blandit eros velit quis diam.
             </div>
             <div className="flex items-center mt-15">
-              <div className="flex justify-center items-center mr-10 px-13 py-5 rounded-4 bg-gray2 cursor-pointer">
+              <div
+                className="flex justify-center items-center mr-10 px-13 py-5 rounded-4 bg-gray2 cursor-pointer"
+                onClick={() => {
+                  setVisibleEdit(true);
+                  document.body.classList.add('scroll-hidden');
+                }}
+              >
                 <span className="mr-7">
                   <i className="fal fa-edit"></i>
                 </span>
-                <span className="text-14 text-gray8 font-medium" onClick={() => setVisibleEdit(visible => !visible)}>
-                  Edit
-                </span>
+                <span className="text-14 text-gray8 font-medium">Edit</span>
               </div>
               <div className="flex justify-center items-center px-13 py-5 rounded-4 bg-primary text-light cursor-pointer">
                 <span className="mr-7">
@@ -52,7 +59,26 @@ export const AddListingDonePage = () => {
           </div>
           <div className="col-lg-5 pl-100">
             <div className="max-w-240 w-100%">
-              <ListingCard {...(listing as ListingCardData)} />
+              <ListingCard variant="variant1">
+                <ListingCard.Header variant="variant1" listingRatingScore={10} listingUserId={listing.listingUserId} />
+                <ListingCard.Body
+                  listingAddress={listing.listingAddress}
+                  listingGallery={[
+                    {
+                      listingImageId: 1,
+                      listingImageName: 'Living Room',
+                      listingImageUrl: `${listingAdd.gallery[0]}`,
+                    },
+                  ]}
+                  listingLink={listing.listingLink}
+                  listingTitle={listingAdd.title}
+                />
+                <ListingCard.Footer
+                  isInWishlist={listing.isInWishlist}
+                  listingCategoryId={listing.listingCategoryId}
+                  listingOpenStatus={listingAdd.open}
+                />
+              </ListingCard>
             </div>
           </div>
         </div>
@@ -73,7 +99,15 @@ export const AddListingDonePage = () => {
       </div>
       <Devider />
       <Footer />
-      <Modal onBack={() => setVisibleEdit(visible => !visible)} title="" visible={visibleEdit}>
+      <Modal
+        onBack={() => {
+          setVisibleEdit(visible => !visible);
+          document.body.classList.remove('scroll-hidden');
+        }}
+        title=""
+        visible={visibleEdit}
+        variant="variant3"
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12 pt-58">
@@ -81,7 +115,7 @@ export const AddListingDonePage = () => {
               <div>
                 {steps.map((step, index) => {
                   return (
-                    <a href="#" className="group flex items-center py-20 border-b-1 border-b-gray3 cursor-pointer">
+                    <a href="/step" key={index} className="group flex items-center py-20 border-b-1 border-b-gray3 cursor-pointer">
                       <div className="flex justify-center items-center w-45 h-45 rounded-1/2 border-gray4 border-1 text-22 text-gray8 font-medium mr-30 group-hover:text-primary group-hover:border-primary">
                         {index + 1}
                       </div>

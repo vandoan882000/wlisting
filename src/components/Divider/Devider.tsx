@@ -1,5 +1,9 @@
-import { FC } from 'react';
+import { CSSProperties, FC } from 'react';
 
-export const Devider: FC = () => {
-  return <div className="w-100% border-t-gray2 border-t-1"></div>;
+interface DeviderProps {
+  style?: CSSProperties;
+}
+
+export const Devider: FC<DeviderProps> = ({ style = {} }) => {
+  return <div className="w-100% border-t-gray2 border-t-1" style={style}></div>;
 };

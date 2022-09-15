@@ -38,7 +38,7 @@ export const ListingCard2: FC<ListingCard2Props> = ({
   const { categoryName, categoryIcon, categoryColor, categoryLink } = currentCategory;
 
   return (
-    <div className="group flex flex-col justify-end relative bg-cover bg-center aspect-16/9 rounded-15 p-20 cursor-pointer">
+    <div className="group flex flex-col justify-end relative bg-cover bg-center aspect-16/9 rounded-15 p-20 cursor-pointer bg-tr">
       <img className="absolute top-0 left-0 w-100% h-100% inline-block object-cover rounded-15" src={listingGallery[0].listingImageUrl} alt="" />
       <div className="absolute top-10 left-10 px-5 py-5 rounded-20 bg-light">
         <Avatar avatar={current_user.userAvatar} name={current_user.userName} size={22} fontSize={12} />
@@ -68,7 +68,7 @@ export const ListingCard2: FC<ListingCard2Props> = ({
           setWishlist(!wishlist);
         }}
       >
-        <WishListButton isInWishList={wishlist} color={'#ffffff'} border={false} />
+        <WishListButton isInWishList={wishlist} fontSize={25} color={'#ffffff'} />
       </div>
     </div>
   );

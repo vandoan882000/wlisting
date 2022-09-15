@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 
 export const JoinUs: FC = () => {
   return (
-    <div className="container mt-20 mb-30">
-      <div className="row relative rounded-15 pt-125 pb-94 pl-61 min-h-526">
+    <div className="container mt-50 mb-30">
+      <div className="row relative rounded-15 pt-125 pb-94 px-20 md:px-61 min-h-526">
         <div className="w-100% h-100% absolute z-_1 bg-cover bg-center aspect-2.38 inset-0 rounded-15">
           <img className="w-100% h-100% inset-0 bg-cover bg-center rounded-15 object-cover" src="assets/joinusimg.png" alt="" />
         </div>

@@ -1,6 +1,6 @@
 import { CheckBox } from 'components/CheckBox/CheckBox';
 import { Content5 } from 'components/Content5/Content5';
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 export const Section7: FC = () => {
   const [isAgree, setAgree] = useState(false);
@@ -9,7 +9,7 @@ export const Section7: FC = () => {
   };
   return (
     <div className="container">
-      <div className="row">
+      <div className="row pt-50 pb-80">
         <div className="col-lg-9">
           <Content5 fontSize={26} title="Sed ut perspiciatis unde omnis">
             At vero eos censes tantas res gessisse sine causa? quae fuerit causa, nollem me ab eo ortum, tam egregios viros censes aut perferendis
@@ -48,12 +48,12 @@ export const Section7: FC = () => {
             Quae fuerit causa, nollem me tamen laudandis maioribus meis corrupisti nec voluptas sit.
           </div>
           <div className="flex mt-20">
-            <CheckBox borderStyle="box" onChange={toggleAgree} />
-            <div className="font-normal text-14 text-gray6 ml-5">I agree with the above terms</div>
+            <CheckBox borderStyle="box" onChange={toggleAgree} size={22} />
+            <div className="font-normal text-14 text-gray6 ml-10">I agree with the above terms</div>
           </div>
           <a
             href="/pricing"
-            className={`font-medium text-16 text-light rounded-6 bg-primary w-100% py-15 flex justify-center items-center cursor-pointer mt-25 select-none ${
+            className={`font-medium text-16 text-light rounded-6 bg-primary w-100% py-13 flex justify-center items-center cursor-pointer mt-25 select-none ${
               !isAgree ? 'opacity-30 cursor-not-allowed pointer-events-none' : ''
             }`}
           >

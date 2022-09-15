@@ -24,7 +24,7 @@ export const HomePage2: FC = () => {
       <ListingCards />
       <JoinUs />
       <ListingCards2 />
-      <CustomSwiper title="Recent Collections">
+      <CustomSwiper title="Recent Collections" link="#">
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>

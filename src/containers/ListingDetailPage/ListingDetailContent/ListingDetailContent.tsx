@@ -10,6 +10,7 @@ import { PriceRange } from 'components/PriceRange/PriceRange';
 import { Rate1 } from 'components/Rate1/Rate1';
 import { Rate2 } from 'components/Rate2/Rate2';
 import { ReviewCard } from 'components/ReviewCard/ReviewCard';
+import { Select } from 'components/Select/Select';
 import { ReviewPage } from 'containers/ReviewPage/ReviewPage';
 import { categories_data } from 'data/categories_data';
 import { listings_data } from 'data/listings_data';
@@ -27,6 +28,7 @@ import { ListingDetailContentHead } from './ListingDetailContentHead';
 interface ListingDetailContentProps {
   listingId: number;
 }
+const selectSortReview = ['Date time', 'Az', 'Za'];
 export const ListingDetailContent: FC<ListingDetailContentProps> & {
   Header: typeof ListingDetailContentHead;
 } = ({ listingId }) => {
@@ -49,45 +51,53 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
   const listing = getListing(listingId);
   const category = getCategory(listing.listingCategoryId);
   const author = getAuthor(listing.listingUserId);
+  const reviewList = review_data.filter(review => listing.listingReviewsIds.includes(review.reviewId));
+  const searchReview = (search: string) => {
+    return reviewList.filter(review => {
+      return review.reviewContent.includes(search);
+    });
+  };
+  const [reviewData, setReviewData] = useState(searchReview(''));
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-9 pb-30">
+        <div className="col-lg-9 pb-30 pt-10 pr-57">
           <ListingDetailContent.Header {...listing} {...category} />
           <Content3 title="Description">
             <div className="text-14 font-normal text-gray6 mt-5 leading-1">{listing.listingDescription}</div>
           </Content3>
           <Content3 title="Amenities">
-            <UtilitiesCards />
+            <UtilitiesCards listingAmenitiesId={listing.listingAmenitiesIds} listingName={listing.listingTitle} />
           </Content3>
           <Content3 title="Location">
-            <LocationTab />
+            <LocationTab lat={listing.lat} lng={listing.lng} name={listing.listingAddress} />
           </Content3>
-          <Content3 title="Tour this hotel">
-            <Tours />
-          </Content3>
+          <Tours listingTitle={listing.listingTitle} listingGallery={listing.listingGallery} />
           <Content3 title="Reviews">
-            <div className="flex justify-between pb-10">
-              <div className="flex justify-center items-center">
+            <div className="flex justify-between flex-wrap">
+              <div className="flex justify-center items-center mb-10">
                 <Rate1>{7.8}</Rate1>
-                <div className="text-18 font-normal text-gray6 pl-10">{120} Reviews</div>
+                <div className="w-1 h-14 bg-gray4 mx-10"></div>
+                <div className="text-18 font-normal text-gray6">{reviewList.length} Reviews</div>
               </div>
-              <div className="flex">
-                <div className="h-36 border-1 border-gray4 pr-10 rounded-4 mr-10">
+              <div className="flex flex-wrap">
+                <div className="h-36 border-1 border-gray4 pr-10 rounded-4 mr-10 mb-10">
                   <input
                     className="w-120 h-100% border-0 outline-none focus:outline-none focus:border-0 focus:shadow-none text-14 rounded-4"
                     type="text"
                     placeholder="Search reviews"
                     style={{ boxShadow: 'none' }}
                   />
-                  <i className="far fa-search cursor-pointer"></i>
+                  <i
+                    className="far fa-search cursor-pointer"
+                    onClick={() => {
+                      setReviewData(searchReview('fringilla'));
+                    }}
+                  ></i>
                 </div>
-                <select
-                  className="flex justify-center items-center w-154 h-36 outline-none focus:outline-hidden text-14 border-1 border-gray4 pr-10 rounded-4 mr-10"
-                  placeholder="Sort by"
-                ></select>
+                <Select items={selectSortReview}></Select>
                 <div
-                  className="flex justify-center items-center bg-primary rounded-4 mr-10 px-15 cursor-pointer"
+                  className="flex justify-center items-center bg-primary rounded-4 mr-10 px-15 py-5 cursor-pointer mb-10 whitespace-nowrap"
                   onClick={() => {
                     setVisibleModalReview(visible => !visible);
                     document.body.classList.add('scroll-hidden');
@@ -123,12 +133,12 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
                 <Rate2 title="Location" score={5.5} />
               </div>
             </div>
-            {review_data.map(review => {
-              return listing.listingReviewsIds.includes(review.reviewId) && <ReviewCard key={review.reviewId} reviewId={review.reviewId} />;
+            {reviewData.map(review => {
+              return <ReviewCard key={review.reviewId} reviewId={review.reviewId} />;
             })}
           </Content3>
         </div>
-        <div className="col-lg-3 pb-30">
+        <div className="col-lg-3 pb-30 pt-10">
           <Content2 title="Price Range">
             <PriceRange min={listing.listingMinPrice} max={listing.listingMaxPrice} />
           </Content2>

@@ -3,28 +3,22 @@ import { FC } from 'react';
 interface WishListButtonProps {
   isInWishList: boolean;
   color: string;
-  border: boolean;
-  size?: number;
+  fontSize?: number;
 }
-export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, border, size = 13 }) => {
+export const WishListButton: FC<WishListButtonProps> = ({ isInWishList, color, fontSize = 13 }) => {
   return (
     <>
       {isInWishList ? (
-        <span
-          className={`text-tertiary text-13 z-2 ease-linear w-28 h-28 flex justify-center items-center ${
-            border ? 'border-1 border-gray3 rounded-6 bg-light cursor-pointer' : ''
-          }`}
-        >
-          <i className="fas fa-heart" style={{ fontSize: `${size}px` }}></i>
+        <span className={`text-tertiary text-13 z-2 ease-linear flex justify-center items-center cursor-pointer`}>
+          <i className="fas fa-heart" style={{ fontSize: `${fontSize}px` }}></i>
         </span>
       ) : (
         <span
-          className={`text-light text-13 z-2 ease-linear w-28 h-28 flex items-center justify-center  ${
-            border ? 'border-1 border-gray3 rounded-6 bg-light cursor-pointer' : ''
+          className={`text-light text-13 z-2 ease-linear flex items-center justify-center cursor-pointe
           }`}
           style={{ color: `${color}` }}
         >
-          <i className="fal fa-heart" style={{ fontSize: `${size}px` }}></i>
+          <i className="fal fa-heart" style={{ fontSize: `${fontSize}px` }}></i>
         </span>
       )}
     </>

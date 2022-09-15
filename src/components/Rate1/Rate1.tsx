@@ -1,10 +1,18 @@
-import React, { FC } from 'react';
+import { CSSProperties, FC } from 'react';
 
-export const Rate1: FC = ({ children }) => {
+interface Rate1Props {
+  style?: CSSProperties;
+}
+
+export const Rate1: FC<Rate1Props> = ({ children, style }) => {
   return (
     <div className="flex justify-end items-center">
-      <i className="fas fa-star mr-5 text-tertiary text-12"></i>
-      <div className="text-18 font-medium text-tertiary">{children}</div>
+      <span className="flex justify-center items-center">
+        <i className="fas fa-star mr-5 text-tertiary text-12" style={style}></i>
+      </span>
+      <span className="text-18 font-medium text-tertiary" style={style}>
+        {children}
+      </span>
     </div>
   );
 };

@@ -30,11 +30,11 @@ export const SwiperButton: FC<SwiperButtonProps> = ({ iconPrev, iconNext }) => {
     }
   };
   return (
-    <div className="absolute right-0 top-0 flex justify-between w-40 z-100">
-      <span className={`text-25 text-gray8 cursor-pointer ${begin ? 'text-gray4' : ''}`} onClick={handleClickPrev}>
+    <div className="absolute right-0 top-_9 flex justify-between w-40 z-100">
+      <span className={`text-27 text-gray8 cursor-pointer ${begin ? 'text-gray4' : ''}`} onClick={handleClickPrev}>
         {iconPrev}
       </span>
-      <span className={`text-25 cursor-pointer ${end ? 'text-gray4' : ''}`} onClick={handleClickNext}>
+      <span className={`text-27 cursor-pointer ${end ? 'text-gray4' : ''}`} onClick={handleClickNext}>
         {iconNext}
       </span>
     </div>

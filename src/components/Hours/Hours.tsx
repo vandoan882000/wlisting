@@ -30,27 +30,29 @@ export const Hours: FC<HoursProps> = ({ listingOpenStatus }) => {
   };
   return (
     <>
-      {listingOpenStatus.map((hour: ListingDateStatus) => {
-        return (
-          <div className="flex justify-between mt-5" key={hour.listingDayId}>
-            <div className="flex items-center">
-              <div className="text-13 font-medium text-gray7 mr-10">{hour.listingDate}</div>
-              {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? (
-                <i className="fas fa-circle text-3 text-gray7 mr-10"></i>
-              ) : (
-                ''
-              )}
+      <div className="mt-5">
+        {listingOpenStatus.map((hour: ListingDateStatus) => {
+          return (
+            <div className="flex justify-between mt-5" key={hour.listingDayId}>
+              <div className="flex items-center">
+                <div className="text-13 font-medium text-gray7 mr-10">{hour.listingDate}</div>
+                {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? (
+                  <i className="fas fa-circle text-3 text-gray7 mr-10"></i>
+                ) : (
+                  ''
+                )}
 
-              <div className="text-12 font-medium text-secondary">
-                {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? 'Open Now' : ''}
+                <div className="text-12 font-medium text-secondary">
+                  {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? 'Open Now' : ''}
+                </div>
+              </div>
+              <div className="text-13 font-normal text-gray6">
+                {hour.listingOpenStatus ? `${formatTime(hour.listingOpenTime)} - ${formatTime(hour.listingCloseTime)}` : 'Closed'}
               </div>
             </div>
-            <div className="text-13 font-normal text-gray6">
-              {hour.listingOpenStatus ? `${formatTime(hour.listingOpenTime)} - ${formatTime(hour.listingCloseTime)}` : 'Closed'}
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </>
   );
 };

@@ -4,51 +4,51 @@ export const amenity_data: AmenityData[] = [
   {
     amenityId: 1,
     amenityName: 'Wifi',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/wifi.png',
   },
   {
     amenityId: 2,
     amenityName: 'Washer',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/washer.png',
   },
   {
     amenityId: 3,
     amenityName: 'Hair dryer',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/dryer.png',
   },
   {
     amenityId: 4,
     amenityName: 'Iron',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/iron.png',
   },
   {
     amenityId: 5,
     amenityName: 'TV',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/tv.png',
   },
   {
     amenityId: 6,
     amenityName: 'Air conditioning',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/air.png',
   },
   {
     amenityId: 7,
     amenityName: 'Full kitchen',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/fullkitchen.png',
   },
   {
     amenityId: 8,
     amenityName: 'Bathroom',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/bathroom.png',
   },
   {
     amenityId: 9,
     amenityName: 'Fire extinguisher',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/fire.png',
   },
   {
     amenityId: 10,
     amenityName: 'Smoke alarm',
-    amenityImage: 'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600',
+    amenityImage: '/assets/smoke.png',
   },
 ];

@@ -69,3 +69,11 @@ details summary::-webkit-details-marker {
   scrollbar-width: none;  /* Firefox */
 }
 
+.leaflet-control-zoom {
+  display: none;
+}
+
+.price-select-search:checked ~ div {
+  background-color: #5353c5;
+  color: #ffffff
+}

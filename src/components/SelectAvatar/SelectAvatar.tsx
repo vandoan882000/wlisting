@@ -1,6 +1,11 @@
-import React, { FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 
-export const SelectAvatar: FC = () => {
+interface SelectAvatarProps {
+  name?: string;
+  onChange?: (event: ChangeEvent) => void;
+}
+
+export const SelectAvatar: FC<SelectAvatarProps> = ({ name = 'inputAvatar', onChange = () => {} }) => {
   const [listImg, setListImg] = useState('');
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const files = (event.target as HTMLInputElement).files;
@@ -29,7 +34,7 @@ export const SelectAvatar: FC = () => {
       </div>
       <label className="flex justify-center items-center px-10 py-5 w-fit h-fit rounded-4 cursor-pointer bg-primary">
         <span className="text-14 font-medium text-light">Add Image</span>
-        <input type="file" className="hidden" onInput={handleChange} accept="image/png, image/jpeg" name="avatar" />
+        <input type="file" className="hidden" onInput={handleChange} accept="image/png, image/jpeg" name={name} onChange={onChange} />
       </label>
     </div>
   );

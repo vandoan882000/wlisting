@@ -1,10 +1,10 @@
 import { Avatar } from 'components/Avatar/Avatar';
-import { DropDownItem } from 'components/DropDownItem/DropDownItem';
+import { Popover } from 'components/Popover/Popover';
 import { Rate1 } from 'components/Rate1/Rate1';
 import { StatusButton } from 'components/StatusButton/StatusButton';
 import { review_data, ReviewData } from 'data/review_data';
 import { users_data } from 'data/users_data';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { User } from 'types/User';
 
 interface ReviewCardProps {
@@ -27,28 +27,54 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
         <Avatar name={authorInfo.userName} avatar={authorInfo.userAvatar} size={50} fontSize={13} detail={true} />
         <div className="flex">
           <div className="flex flex-col">
-            <Rate1>{review.reviewRating}</Rate1>
-            <div className="text-gray6 text-13 font-normal">{review.reviewDate}</div>
+            <span>
+              <Rate1>{review.reviewRating.toFixed(1)}</Rate1>
+            </span>
+            <span className="text-gray6 text-13 font-normal">{review.reviewDate}</span>
           </div>
           <div className="flex">
-            <DropDownItem>
-              <div className="px-10 pt-2">
-                <i className="far fa-ellipsis-v"></i>
+            <Popover
+              toggle={
+                <div className="px-10 pb-5">
+                  <i className="far fa-ellipsis-v"></i>
+                </div>
+              }
+              title=""
+              variant="variant2"
+              placement="bottom-end"
+            >
+              <div className="flex flex-col rounded-10  py-9 bg-light z-100">
+                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                  <i className="far fa-pen text-12 mr-8 text-gray5"></i>
+                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Edit</span>
+                </div>
+                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                  <i className="far fa-star text-12 mr-8 text-gray5"></i>
+                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Write a review</span>
+                </div>
+                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                  <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
+                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Delete</span>
+                </div>
+                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                  <i className="far fa-flag text-12 mr-8 text-gray5"></i>
+                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Report</span>
+                </div>
               </div>
-            </DropDownItem>
+            </Popover>
           </div>
         </div>
       </div>
-      <div className="text-14 font-normal text-gray6 mt-10">{review.reviewContent}</div>
+      <div className="text-14 font-normal text-gray6 mt-10 line-clamp-3">{review.reviewContent}</div>
       <div className="flex justify-start">
-        <StatusButton text="Useful">
+        <StatusButton text="Useful" quantity={review.reviewReact.useful}>
+          <img src="/assets/useful.png" alt="" />
+        </StatusButton>
+        <StatusButton text="Funny" quantity={review.reviewReact.funny}>
           <img src="/assets/funny.png" alt="" />
         </StatusButton>
-        <StatusButton text="Funny">
-          <img src="/assets/funny.png" alt="" />
-        </StatusButton>
-        <StatusButton text="Cool">
-          <img src="/assets/funny.png" alt="" />
+        <StatusButton text="Cool" quantity={review.reviewReact.cool}>
+          <img src="/assets/cool.png" alt="" />
         </StatusButton>
       </div>
     </div>

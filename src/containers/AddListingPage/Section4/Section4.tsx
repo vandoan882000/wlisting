@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 
-export const Section4 = () => {
+export const Section4: FC = () => {
   return (
-    <div className="container">
+    <div className="container mt-30">
       <div className="row">
         <div className="col-lg-6">
           <div className="w-100% relative rounded-15 aspect-16/9 bg-cover bg-center">
@@ -12,11 +12,17 @@ export const Section4 = () => {
               alt=""
             />
           </div>
-          <div className="text-26 font-medium text-gray8">Who are we?</div>
-          <div className="text-15 font-normal text-gray6">
+          <div className="text-26 font-medium text-gray8 mt-15">Who are we?</div>
+          <div className="text-15 font-normal text-gray6 mt-5">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.
           </div>
+          <a href="#" className="flex items-center w-fit text-15 font-normal text-primary mt-5">
+            <span className="mr-5">Read more</span>
+            <span>
+              <i className="far fa-chevron-right text-12"></i>
+            </span>
+          </a>
         </div>
         <div className="col-lg-6">
           <div className="w-100% relative rounded-15 aspect-16/9 bg-cover bg-center">
@@ -26,11 +32,17 @@ export const Section4 = () => {
               alt=""
             />
           </div>
-          <div className="text-26 font-medium text-gray8">How can we help you?</div>
-          <div className="text-15 font-normal text-gray6">
+          <div className="text-26 font-medium text-gray8 mt-15">How can we help you?</div>
+          <div className="text-15 font-normal text-gray6 mt-5">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.
           </div>
+          <a href="#" className="flex items-center w-fit text-15 font-normal text-primary mt-5">
+            <span className="mr-5">Read more</span>
+            <span>
+              <i className="far fa-chevron-right text-12"></i>
+            </span>
+          </a>
         </div>
       </div>
     </div>

@@ -9,11 +9,14 @@ interface CustomSwiperProps {
   spaceBetween?: number;
   slidesPerView?: number;
   breakpoints?: Record<number, any>;
+  link: string;
+  titleFontWeight?: number;
 }
 export const CustomSwiper: FC<CustomSwiperProps> & {
   Button: typeof SwiperButton;
 } = ({
   title,
+  titleFontWeight = 700,
   spaceBetween = 50,
   slidesPerView = 3,
   breakpoints = {
@@ -38,12 +41,22 @@ export const CustomSwiper: FC<CustomSwiperProps> & {
       spaceBetween: 20,
     },
   },
+  link,
   children,
 }) => {
   return (
-    <div className="container relative pt-20 mt-15 mb-15">
+    <div className="container relative pt-20 mt-15">
       <div className="row">
-        <div className="text-gray8 text-22 font-bold hover:text-primary mb-_41 !p-0">{title}</div>
+        <a
+          href={link}
+          className="text-gray8 text-22 font-bold hover:text-primary mb-_41 !p-0 cursor-pointer z-2 w-fit"
+          style={{ fontWeight: titleFontWeight }}
+        >
+          <span className="mr-10">{title}</span>
+          <span>
+            <i className="far fa-chevron-right"></i>
+          </span>
+        </a>
         <Swiper
           className="collections-swiper pb-20"
           modules={[Navigation, A11y]}
