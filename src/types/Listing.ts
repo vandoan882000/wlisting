@@ -8,10 +8,6 @@ export interface ListingCardData {
    */
   listingTitle: string;
   /**
-   * Listing card address
-   */
-  listingAddress: string;
-  /**
    * listing card category id
    */
   listingCategoryId: number;
@@ -59,8 +55,23 @@ export interface ListingCardData {
    * array review id
    */
   listingReviewsIds: number[];
+  listingSocials: ListingSocial[];
+  listingEmail: string;
+  listingPhone: string;
+  listingLocations: ListingLocation[];
+}
+
+export interface ListingLocation {
   lat: number;
   lng: number;
+  address: string;
+  longName: string;
+}
+
+type Social = 'facebook' | 'switter' | 'tumblr' | 'flickr';
+export interface ListingSocial {
+  name: Social;
+  value: string;
 }
 export interface ListingImage {
   /**

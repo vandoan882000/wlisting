@@ -54,7 +54,7 @@ export const Step6: FC = () => {
             <div className="row">
               {amenities.map((amenity, index) => {
                 return (
-                  <div className="col-lg-4" key={index}>
+                  <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4" key={index}>
                     <div className="flex items-center">
                       <CheckBox borderStyle="box" backgroundColor="#5353c5" name={amenity.name} onChange={debounce(handleChange)} />
                       <span className="text-14 font-normal text-gray6 ml-9">{amenity.value}</span>

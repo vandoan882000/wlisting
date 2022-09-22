@@ -2,7 +2,8 @@ import { Devider } from 'components/Divider/Devider';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { Modal } from 'components/Modal/Modal';
 import { NavBar } from 'components/NavBar/NavBar';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
+import { CopyRight } from 'containers/HomePage/CopyRight/CopyRight';
 import { listings_data } from 'data/listings_data';
 import { useState } from 'react';
 import { ListingCardData } from 'types/Listing';
@@ -29,7 +30,7 @@ export const AddListingDonePage = () => {
       <NavBar />
       <div className="container mb-50">
         <div className="row">
-          <div className="col-lg-7 border-r-1 border-r-gray4 pb-7 pr-100">
+          <div className="col-lg-7 lg:border-r-1 lg:border-r-gray4 pb-7 pr-100">
             <div className="text-30 text-gray8 font-medium">Excellent, congratulations on completing the listing</div>
             <div className="text-20 text-gray8 font-medium mt-25">This is your new listing</div>
             <div className="text-14 text-gray6 font-normal mt-10">
@@ -57,12 +58,12 @@ export const AddListingDonePage = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-5 pl-100">
+          <div className="col-lg-5 lg:pl-100">
             <div className="max-w-240 w-100%">
               <ListingCard variant="variant1">
                 <ListingCard.Header variant="variant1" listingRatingScore={10} listingUserId={listing.listingUserId} />
                 <ListingCard.Body
-                  listingAddress={listing.listingAddress}
+                  listingLocations={listing.listingLocations}
                   listingGallery={[
                     {
                       listingImageId: 1,
@@ -99,6 +100,7 @@ export const AddListingDonePage = () => {
       </div>
       <Devider />
       <Footer />
+      <CopyRight />
       <Modal
         onBack={() => {
           setVisibleEdit(visible => !visible);

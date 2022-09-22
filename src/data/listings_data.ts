@@ -4,7 +4,6 @@ export const listings_data: ListingCardData[] = [
   {
     listingId: 1,
     listingTitle: 'Westfield Sydney',
-    listingAddress: '188 Pitt St, Sydney NSW 2000, Australia',
     listingCategoryId: 1,
     listingUserId: 1,
     listingRatingScore: 9.5,
@@ -17,7 +16,7 @@ export const listings_data: ListingCardData[] = [
       {
         listingImageId: 1,
         listingImageName: 'Living Room',
-        listingImageUrl: 'https://images.pexels.com/photos/8729211/pexels-photo-8729211.jpeg?cs=srgb&dl=pexels-katya-wolf-8729211.jpg&w=500&fm=jpg',
+        listingImageUrl: 'https://images.pexels.com/photos/13398530/pexels-photo-13398530.jpeg?auto=compress&cs=tinysrgb&w=500&h=750&dpr=1',
       },
       {
         listingImageId: 2,
@@ -109,13 +108,50 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$90',
     listingMinPrice: '$30',
     listingReviewsIds: [1, 2, 3],
-    lat: 59.955413,
-    lng: 30.337844,
+    listingLocations: [
+      {
+        lat: 59.955413,
+        lng: 30.337844,
+        address: '188 Pitt St, Sydney NSW 2000, Australia',
+        longName: 'Sydney',
+      },
+      {
+        lat: 59.855413,
+        lng: 31.337844,
+        address: '189 Pitt St, Sydney NSW 2000, Australia',
+        longName: 'Sydney',
+      },
+      {
+        lat: 59.905413,
+        lng: 32.337844,
+        address: '190 Pitt St, Sydney NSW 2000, Australia',
+        longName: 'Sydney',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 2,
     listingTitle: 'The Lounge & Bar',
-    listingAddress: 'The Ritz-Carlton, Hong Kong, West Kowloon,…',
     listingCategoryId: 2,
     listingUserId: 4,
     listingRatingScore: 6.5,
@@ -210,13 +246,38 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.995413,
-    lng: 30.317844,
+    listingLocations: [
+      {
+        lat: 59.995413,
+        lng: 30.317844,
+        address: 'The Ritz-Carlton, Hong Kong, West Kowloon,…',
+        longName: 'Hong Kong',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 3,
     listingTitle: 'Bakery Babies',
-    listingAddress: 'Manchester City Hall, 1 City Hall Plz, Manches…',
     listingCategoryId: 3,
     listingUserId: 2,
     listingRatingScore: 4.1,
@@ -312,14 +373,39 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.995413,
-    lng: 30.397844,
+    listingLocations: [
+      {
+        lat: 59.995413,
+        lng: 30.397844,
+        address: 'Manchester City Hall, 1 City Hall Plz, Manches…',
+        longName: 'Brooklyn',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 4,
     listingTitle: 'Protea Hotel Port Elizabeth Marine',
-    listingAddress: 'The Savoy, Strand, London, UK',
-    listingCategoryId: 4,
+    listingCategoryId: 3,
     listingUserId: 3,
     listingRatingScore: 9.5,
     listingLink: '/listing/4',
@@ -414,13 +500,39 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 61.955413,
-    lng: 32.337844,
+    listingLocations: [
+      {
+        lat: 61.955413,
+        lng: 32.337844,
+        address: 'The Savoy, Strand, London, UK',
+        longName: 'London',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 5,
     listingTitle: 'Protea Hotel Port Elizabeth Marine',
-    listingAddress: 'The Savoy, Strand, London, UK',
+
     listingCategoryId: 4,
     listingUserId: 3,
     listingRatingScore: 9.5,
@@ -516,13 +628,39 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 40.955413,
-    lng: 35.337844,
+    listingLocations: [
+      {
+        lat: 40.955413,
+        lng: 35.337844,
+        address: 'The Savoy, Strand, London, UK',
+        longName: 'London',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 6,
     listingTitle: 'Westfield Sydney',
-    listingAddress: '188 Pitt St, Sydney NSW 2000, Australia',
+
     listingCategoryId: 1,
     listingUserId: 1,
     listingRatingScore: 9.5,
@@ -617,13 +755,38 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.955413,
-    lng: 30.337844,
+    listingLocations: [
+      {
+        lat: 59.955413,
+        lng: 30.337844,
+        address: '188 Pitt St, Sydney NSW 2000, Australia',
+        longName: 'Sydney',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 7,
     listingTitle: 'The Lounge & Bar',
-    listingAddress: 'The Ritz-Carlton, Hong Kong, West Kowloon,…',
     listingCategoryId: 2,
     listingUserId: 4,
     listingRatingScore: 6.5,
@@ -694,13 +857,39 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.955413,
-    lng: 30.337844,
+    listingLocations: [
+      {
+        lat: 59.955413,
+        lng: 30.337844,
+        address: 'The Ritz-Carlton, Hong Kong, West Kowloon,…',
+        longName: 'Hong Kong',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 8,
     listingTitle: 'Bakery Babies',
-    listingAddress: 'Manchester City Hall, 1 City Hall Plz, Manches…',
+
     listingCategoryId: 3,
     listingUserId: 2,
     listingRatingScore: 4.1,
@@ -770,13 +959,39 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.955413,
-    lng: 30.337844,
+    listingLocations: [
+      {
+        lat: 59.955413,
+        lng: 30.337844,
+        address: 'Manchester City Hall, 1 City Hall Plz, Manches…',
+        longName: 'Kings',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 9,
     listingTitle: 'Protea Hotel Port Elizabeth Marine',
-    listingAddress: 'The Savoy, Strand, London, UK',
+
     listingCategoryId: 4,
     listingUserId: 3,
     listingRatingScore: 9.5,
@@ -847,13 +1062,38 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.955413,
-    lng: 30.337844,
+    listingLocations: [
+      {
+        lat: 59.955413,
+        lng: 30.337844,
+        address: 'The Savoy, Strand, London, UK',
+        longName: 'London',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
   {
     listingId: 10,
     listingTitle: 'Protea Hotel Port Elizabeth Marine',
-    listingAddress: 'The Savoy, Strand, London, UK',
     listingCategoryId: 4,
     listingUserId: 3,
     listingRatingScore: 9.5,
@@ -923,7 +1163,33 @@ export const listings_data: ListingCardData[] = [
     listingMaxPrice: '$30',
     listingReviewsIds: [1, 2, 3],
     listingMinPrice: '$90',
-    lat: 59.955413,
-    lng: 30.337844,
+    listingLocations: [
+      {
+        lat: 59.955413,
+        lng: 30.337844,
+        address: 'The Savoy, Strand, London, UK',
+        longName: 'London',
+      },
+    ],
+    listingEmail: 'wiloke@gmail.com',
+    listingPhone: '0123456789',
+    listingSocials: [
+      {
+        name: 'facebook',
+        value: 'https://facebook.com',
+      },
+      {
+        name: 'switter',
+        value: 'https://switter.com',
+      },
+      {
+        name: 'tumblr',
+        value: 'https://tumblr.com',
+      },
+      {
+        name: 'flickr',
+        value: 'https://flickr.com',
+      },
+    ],
   },
 ];

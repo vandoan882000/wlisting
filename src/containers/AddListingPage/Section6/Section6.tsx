@@ -1,6 +1,6 @@
 import { Devider } from 'components/Divider/Devider';
 import { Modal } from 'components/Modal/Modal';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
 import { FC, useState } from 'react';
 
 import { Section7 } from '../Section7/Section7';

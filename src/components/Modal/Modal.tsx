@@ -18,7 +18,7 @@ export const Modal: FC<ModalProps> = ({ children, onBack, title, visible, naviga
       {visible &&
         createPortal(
           <div className="w-100% h-100% fixed top-0 left-0 z-100 bg-light overflow-auto">
-            <div className="flex justify-between w-100% py-22 px-30">
+            <div className="flex justify-between w-100% py-22 px-30 flex-wrap">
               <div className="flex w-fit cursor-pointer" onClick={onBack}>
                 <span className="text-30 text-gray8 mr-20 cursor-pointer">
                   <i className="fal fa-angle-left"></i>

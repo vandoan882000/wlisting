@@ -2,7 +2,7 @@ import { Content4 } from 'components/Content4/Content4';
 import { Devider } from 'components/Divider/Devider';
 import { NavBar } from 'components/NavBar/NavBar';
 import { PricingItem, PricingType } from 'components/PricingItem/PricingItem';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
 import { FC, useState } from 'react';
 
 interface PricingDatas {
@@ -79,7 +79,7 @@ export const Pricing: FC = () => {
             </div>
             <div className="col-lg-6 flex justify-start md:pl-35 mb-50">
               <div className="max-w-413 w-100% border-1 border-gray2 shadow-3 rounded-8 py-24 px-20">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center flex-wrap">
                   <div className="text-20 font-medium text-gray8 capitalize">{pricingActive.type}</div>
                   <div className="flex items-center">
                     <span className="text-40 font-medium text-primary">{pricingActive.price}</span>

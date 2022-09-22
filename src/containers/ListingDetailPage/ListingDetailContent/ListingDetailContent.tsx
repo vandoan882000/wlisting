@@ -28,7 +28,7 @@ import { ListingDetailContentHead } from './ListingDetailContentHead';
 interface ListingDetailContentProps {
   listingId: number;
 }
-const selectSortReview = ['Date time', 'Az', 'Za'];
+const selectSortReview = ['Date time', 'az', 'za'];
 export const ListingDetailContent: FC<ListingDetailContentProps> & {
   Header: typeof ListingDetailContentHead;
 } = ({ listingId }) => {
@@ -58,10 +58,11 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
     });
   };
   const [reviewData, setReviewData] = useState(searchReview(''));
+  console.log(reviewData);
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-9 pb-30 pt-10 pr-57">
+        <div className="col-lg-9 pb-30 pt-10 md:pr-57">
           <ListingDetailContent.Header {...listing} {...category} />
           <Content3 title="Description">
             <div className="text-14 font-normal text-gray6 mt-5 leading-1">{listing.listingDescription}</div>
@@ -70,7 +71,7 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
             <UtilitiesCards listingAmenitiesId={listing.listingAmenitiesIds} listingName={listing.listingTitle} />
           </Content3>
           <Content3 title="Location">
-            <LocationTab lat={listing.lat} lng={listing.lng} name={listing.listingAddress} />
+            <LocationTab listingLocation={listing.listingLocations} listingId={listingId} />
           </Content3>
           <Tours listingTitle={listing.listingTitle} listingGallery={listing.listingGallery} />
           <Content3 title="Reviews">
@@ -95,9 +96,12 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
                     }}
                   ></i>
                 </div>
-                <Select items={selectSortReview}></Select>
+                <Select
+                  items={selectSortReview}
+                  style={{ width: 'clamp(100px, 20vw + 30px, 154px)', height: '36px', color: '#75737c', fontSize: '14px' }}
+                ></Select>
                 <div
-                  className="flex justify-center items-center bg-primary rounded-4 mr-10 px-15 py-5 cursor-pointer mb-10 whitespace-nowrap"
+                  className="flex justify-center items-center bg-primary rounded-4 mr-10 px-15 py-8 cursor-pointer mb-10 whitespace-nowrap"
                   onClick={() => {
                     setVisibleModalReview(visible => !visible);
                     document.body.classList.add('scroll-hidden');
@@ -143,7 +147,7 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
             <PriceRange min={listing.listingMinPrice} max={listing.listingMaxPrice} />
           </Content2>
           <Content2 title="Business Info">
-            <BusinessInfo />
+            <BusinessInfo email={listing.listingEmail} phone={listing.listingPhone} social={listing.listingSocials} />
           </Content2>
           <Content2 title="Hours">
             <Hours listingOpenStatus={listing.listingOpenStatus} />

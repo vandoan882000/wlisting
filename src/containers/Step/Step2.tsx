@@ -1,5 +1,6 @@
 import { CustomMarker1 } from 'components/CustomMarker1/CustomMarker1';
 import { Select } from 'components/Select/Select';
+import { categories_data } from 'data/categories_data';
 import GoogleMapReact, { ClickEventValue } from 'google-map-react';
 import { ChangeEvent, FC, useContext, useState } from 'react';
 
@@ -31,12 +32,13 @@ export const Step2: FC = () => {
       });
     step.onChange('location', location);
   };
+  const categories = categories_data.map(cate => cate.categoryName);
   return (
     <div className="mb-157">
       <div className="text-gray8 text-22 font-medium">Please select your category and location</div>
       <div className="flex flex-col w-100% flex-wrap mt-30">
         <div className="text-14 font-medium text-gray8 mb-9">Categories</div>
-        <Select items={['Yoga', 'Tea & Coffee', 'Gym', 'Health', 'Restaurant', 'Shoping']} style={{ width: '340px', height: '46px' }}></Select>
+        <Select items={categories} style={{ width: '340px', height: '46px' }}></Select>
         <div className="text-14 font-medium text-gray8 mt-20">Location</div>
         <div className="flex flex-col mt-9 mb-10">
           {location.map((item, index) => {

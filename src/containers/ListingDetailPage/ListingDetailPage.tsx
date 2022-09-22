@@ -2,7 +2,7 @@ import { CustomSwiper } from 'components/CustomSwiper/CustomSwiper';
 import { Devider } from 'components/Divider/Devider';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { NavBar } from 'components/NavBar/NavBar';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
 import { listings_data } from 'data/listings_data';
 import { useParams } from 'react-router';
 import { SwiperSlide } from 'swiper/react';
@@ -51,7 +51,7 @@ export const ListingDetailPage = () => {
             <ListingCard variant="variant1">
               <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
-                listingAddress={listing.listingAddress}
+                listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
@@ -99,7 +99,7 @@ export const ListingDetailPage = () => {
             <ListingCard variant="variant1">
               <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
-                listingAddress={listing.listingAddress}
+                listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}

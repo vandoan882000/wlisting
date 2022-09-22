@@ -38,7 +38,7 @@ export const Step5: FC = () => {
         </div>
         <div className="text-14 font-medium text-gray8 mt-20 mb-9">You do talk about pricing</div>
         <textarea
-          className="text-14 text-gray6 border-1 border-gray4 rounded-4 py-15 h-120 focus:border-gray4"
+          className="text-14 text-gray6 border-1 border-gray4 rounded-4 py-15 h-120 focus:border-gray4 w-100% max-w-628"
           name="aboutPricing"
           style={{ boxShadow: 'none' }}
           onChange={debounce(handleChange)}

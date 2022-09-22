@@ -42,15 +42,12 @@ export const ReviewPage: FC = () => {
             <Rate2 title={'Cleanliness'} score={4.4} />
             <Rate2 title={'Location'} score={5.5} />
           </Content2>
-          <PopUp
-            onApply={() => {}}
-            toggleEl={
+          <PopUp onApply={() => {}} title={'Write a review'}>
+            <PopUp.Toggle>
               <div className="w-100% py-11 flex justify-center items-center rounded-6 bg-primary text-light text-16 font-medium mt-20 cursor-pointer">
                 Write a review
               </div>
-            }
-            title={'Write a review'}
-          >
+            </PopUp.Toggle>
             <PopUp.Content>
               <div className="p-15">
                 <Rating>Check-in</Rating>
@@ -60,7 +57,7 @@ export const ReviewPage: FC = () => {
                 <div className="text-14 text-gray8 font-medium">Message</div>
                 <textarea className="w-100% rounded-4 border-1 border-gray4 h-95 mt-7" name="" id=""></textarea>
                 <div className="text-14 text-gray8 font-medium mb-7">Image</div>
-                <ImageInputFile />
+                <ImageInputFile name="imageReview" />
               </div>
             </PopUp.Content>
           </PopUp>

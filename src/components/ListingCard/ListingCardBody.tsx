@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
-import { ListingImage } from 'types/Listing';
+import { ListingImage, ListingLocation } from 'types/Listing';
 
 interface ListingCardBodyProps {
   listingLink: string;
   listingGallery: ListingImage[];
   listingTitle: string;
-  listingAddress: string;
+  listingLocations: ListingLocation[];
 }
 
-export const ListingCardBody: FC<ListingCardBodyProps> = ({ listingLink, listingGallery, listingTitle, listingAddress }) => {
+export const ListingCardBody: FC<ListingCardBodyProps> = ({ listingLink, listingGallery, listingTitle, listingLocations }) => {
   return (
     <>
       <a href={listingLink} className="block w-100% relative bg-cover bg-center cursor-pointer aspect-304/195 rounded-15">
@@ -16,7 +16,7 @@ export const ListingCardBody: FC<ListingCardBodyProps> = ({ listingLink, listing
       </a>
       <div>
         <div className="text-16 font-medium text-gray8 text-left mt-5">{listingTitle}</div>
-        <div className="font-normal text-14 text-gray6 mt-2 lines">{listingAddress}</div>
+        <div className="font-normal text-14 text-gray6 mt-2 lines">{listingLocations[0].address}</div>
       </div>
     </>
   );

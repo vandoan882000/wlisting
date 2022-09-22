@@ -15,7 +15,7 @@ export const UtilitiesCards: FC<UtilitiesCardsProps> = ({ listingAmenitiesId, li
       <div className="row mb-10">
         {amenity_data.map(amenity => {
           return listingAmenitiesId.includes(amenity.amenityId) ? (
-            <div className="col-lg-2" key={amenity.amenityId}>
+            <div className="col-xs-12 col-sm-4 col-md-3 col-lg-2" key={amenity.amenityId}>
               <UtilitiesCard image={amenity.amenityImage} name={amenity.amenityName} />
             </div>
           ) : (

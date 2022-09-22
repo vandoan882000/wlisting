@@ -39,11 +39,9 @@ export const MultiStep: FC<MultiStepProps> & {
         <div className="row justify-center">
           <div className="col-lg-8 max-w-628 !p-0 flex flex-col">
             <div>
-              <>
-                <span className="font-medium text-40 text-gray8 mr-8">{indexStep}</span>
-                <span className="font-medium text-20 text-gray6 mr-8">/</span>
-                <span className="font-medium text-20 text-gray6">{Children.count(children)}</span>
-              </>
+              <span className="font-medium text-40 text-gray8 mr-8">{indexStep}</span>
+              <span className="font-medium text-20 text-gray6 mr-8">/</span>
+              <span className="font-medium text-20 text-gray6">{Children.count(children)}</span>
               <div>
                 {Children.map(children, (child, index) => {
                   if ((child as ReactElement).type !== MultiStep.Step) {

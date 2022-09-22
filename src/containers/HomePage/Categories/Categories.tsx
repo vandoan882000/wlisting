@@ -10,13 +10,13 @@ export const Categories: FC = () => {
       <div className="row">
         {categories_data.slice(0, 4).map(category => (
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-2" key={category.categoryId}>
-            <Content1 link={category.categoryLink}>
+            <Content1 link={`/search/category=${category.categoryName.toLowerCase().replaceAll('', '')}&location=all`}>
               <Category key={category.categoryId} {...category} />
             </Content1>
           </div>
         ))}
         <div className="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-          <Content1 link="#">
+          <Content1 link="/search/category=all&location=all">
             <div className="flex justify-center items-center w-100% text-16 font-medium text-primary">
               <span>See all</span>
               <span className="text-16 font-medium text-primary ml-10">

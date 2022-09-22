@@ -68,7 +68,7 @@ export const Tours: FC<ToursProps> = ({ listingTitle, listingGallery }) => {
         title={listingTitle}
         visible={visibleModal}
         navigation={
-          <div className="flex">
+          <div className="flex justify-end flex-wrap">
             {listingTypeImage.map((typeImage, index) => {
               return (
                 <div

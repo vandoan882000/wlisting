@@ -1,7 +1,7 @@
 import { CustomSwiper } from 'components/CustomSwiper/CustomSwiper';
 import { ListingCard2 } from 'components/ListingCard2/ListingCard2';
 import { NavBar } from 'components/NavBar/NavBar';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
 import { Categories } from 'containers/HomePage/Categories/Categories';
 import { DownloadApp } from 'containers/HomePage/DownloadApp/DownloadApp';
 import { JoinUs } from 'containers/HomePage/JoinUs/JoinUs';
@@ -28,7 +28,17 @@ export const HomePage2: FC = () => {
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
-            <ListingCard2 {...listing} />
+            <ListingCard2>
+              <ListingCard2.Header listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+              <ListingCard2.Body
+                isInWishlist={listing.isInWishlist}
+                listingLocations={listing.listingLocations}
+                listingCategoryId={listing.listingCategoryId}
+                listingGallery={listing.listingGallery}
+                listingLink={listing.listingLink}
+                listingTitle={listing.listingTitle}
+              />
+            </ListingCard2>
           </SwiperSlide>
         ))}
       </CustomSwiper>

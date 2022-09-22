@@ -26,11 +26,6 @@ export const CustomMarker: FC<CustomMarkerProps> = ({ listingId }) => {
   return (
     <>
       <Popover
-        toggle={
-          <div className="flex justify-center items-center w-26 h-26 rounded-1/2 text-light relative bg-center bg-cover aspect-1/1 z-100">
-            <img className="absolute w-100% h-100% inset-0 object-cover rounded-1/2" src={user.userAvatar} alt="" />
-          </div>
-        }
         variant="variant2"
         placement="top"
         style={{
@@ -40,7 +35,24 @@ export const CustomMarker: FC<CustomMarkerProps> = ({ listingId }) => {
           marginBottom: '8px',
         }}
       >
-        <ListingCard2 {...listing} />
+        <Popover.Toggle>
+          <div className="flex justify-center items-center w-26 h-26 rounded-1/2 text-light relative bg-center bg-cover aspect-1/1 z-100">
+            <img className="absolute w-100% h-100% inset-0 object-cover rounded-1/2" src={user.userAvatar} />
+          </div>
+        </Popover.Toggle>
+        <Popover.Content>
+          <ListingCard2>
+            <ListingCard2.Header listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+            <ListingCard2.Body
+              isInWishlist={listing.isInWishlist}
+              listingLocations={listing.listingLocations}
+              listingCategoryId={listing.listingCategoryId}
+              listingGallery={listing.listingGallery}
+              listingLink={listing.listingLink}
+              listingTitle={listing.listingTitle}
+            />
+          </ListingCard2>
+        </Popover.Content>
       </Popover>
     </>
   );

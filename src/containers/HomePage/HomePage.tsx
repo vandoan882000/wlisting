@@ -3,12 +3,13 @@ import { Devider } from 'components/Divider/Devider';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { ListingCard2 } from 'components/ListingCard2/ListingCard2';
 import { NavBar } from 'components/NavBar/NavBar';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
 import { LocationCards } from 'containers/HomePage/LocationCards/LocationCards';
 import { listings_data } from 'data/listings_data';
 import { SwiperSlide } from 'swiper/react';
 
 import { Categories } from './Categories/Categories';
+import { CopyRight } from './CopyRight/CopyRight';
 import { DownloadApp } from './DownloadApp/DownloadApp';
 import { JoinUs } from './JoinUs/JoinUs';
 import { ListingCards } from './ListingCards/ListingCards';
@@ -29,7 +30,17 @@ export const HomePage = () => {
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
-            <ListingCard2 {...listing} />
+            <ListingCard2>
+              <ListingCard2.Header listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+              <ListingCard2.Body
+                isInWishlist={listing.isInWishlist}
+                listingLocations={listing.listingLocations}
+                listingCategoryId={listing.listingCategoryId}
+                listingGallery={listing.listingGallery}
+                listingLink={listing.listingLink}
+                listingTitle={listing.listingTitle}
+              />
+            </ListingCard2>
           </SwiperSlide>
         ))}
       </CustomSwiper>
@@ -67,7 +78,7 @@ export const HomePage = () => {
             <ListingCard variant="variant2">
               <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
-                listingAddress={listing.listingAddress}
+                listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
@@ -122,7 +133,7 @@ export const HomePage = () => {
             <ListingCard variant="variant2">
               <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
-                listingAddress={listing.listingAddress}
+                listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
@@ -140,27 +151,7 @@ export const HomePage = () => {
       <Devider />
       <Footer />
       <Devider />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 flex justify-between items-center h-85">
-            <div className="text-14 font-normal text-gray7">Copyright © 2018 Wiloke.com. Address: 1002312 State Street, 20th Floor Boston A</div>
-            <div className="flex">
-              <a href="#" className="text-gray8 ml-15 hover:text-primary">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a href="#" className="text-gray8 ml-15 hover:text-primary">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="text-gray8 ml-15 hover:text-primary">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="text-gray8 ml-15 hover:text-primary">
-                <i className="fab fa-flickr"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CopyRight />
     </>
   );
 };

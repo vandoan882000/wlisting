@@ -27,7 +27,7 @@ export const ImageInputFile: FC<ImageInputFileProps> = ({ name = 'imageInput', o
       <div className="flex">
         {listImg.map((image, index) => {
           return (
-            <div className="w-55 bg-cover bg-center relative aspect-1/1 mr-8 rounded-8">
+            <div key={index} className="w-55 bg-cover bg-center relative aspect-1/1 mr-8 rounded-8">
               <div
                 className="absolute top-0 right-0 translate-y-_50% translate-x-5 flex justify-center items-center bg-dark text-light w-20 h-20 rounded-1/2 z-2 cursor-pointer"
                 onClick={() => removeImage(image)}

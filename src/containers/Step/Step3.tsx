@@ -42,7 +42,7 @@ export const Step3: FC = () => {
         <SelectAvatar name="avatar" onChange={debounce(handleChange)} />
         <div className="text-14 text-gray8 font-medium mt-20 mb-9">Introduce the listing owner</div>
         <textarea
-          className="border-1 border-gray4 rounded-4 py-15 h-120 text-14 focus:border-gray4"
+          className="border-1 border-gray4 rounded-4 py-15 w-100% h-120 text-14 focus:border-gray4"
           style={{ boxShadow: 'none' }}
           placeholder="Enter Introduce"
           name="introduce"
@@ -50,7 +50,7 @@ export const Step3: FC = () => {
         ></textarea>
         <div className="text-14 text-gray8 font-medium mt-20 mb-9">Phone number</div>
         <input
-          className="text-14 text-gray5 font-medium border-gray4 border-1 rounded-4 py-15 focus:border-gray4"
+          className="w-100% text-14 text-gray5 font-medium border-gray4 border-1 rounded-4 py-15 focus:border-gray4"
           type="tel"
           name="tel"
           placeholder="Enter phone number"
@@ -59,7 +59,7 @@ export const Step3: FC = () => {
         />
         <div className="text-14 text-gray8 font-medium mt-20 mb-9">Email</div>
         <input
-          className="text-14 text-gray5 font-medium border-gray4 border-1 rounded-4 py-15 focus:border-gray4"
+          className="w-100% text-14 text-gray5 font-medium border-gray4 border-1 rounded-4 py-15 focus:border-gray4"
           type="email"
           name="email"
           placeholder="Enter email"
@@ -83,7 +83,7 @@ export const Step3: FC = () => {
               </select>
               <input
                 type="text"
-                className="mr-10 border-1 border-gray4 rounded-4 outline-none focus:border-gray4"
+                className="mr-10 w-340 md-max:w-100 border-1 border-gray4 rounded-4 outline-none focus:border-gray4"
                 style={{ boxShadow: 'none' }}
                 onChange={debounce(handleChangeSocialInput(index))}
               />

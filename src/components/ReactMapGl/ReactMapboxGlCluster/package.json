@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "name": "cluster-layer",
+  "main": "./index.js",
+  "note": "Không biết để làm gì nhưng xóa sẽ lỗi"
+}

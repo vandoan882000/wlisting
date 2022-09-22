@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 
 type BorderStyle = 'radius' | 'box' | 'none';
 interface CheckBoxProps {
@@ -12,6 +12,7 @@ interface CheckBoxProps {
   onChange?: (event: ChangeEvent) => void;
 }
 export const CheckBox: FC<CheckBoxProps> = ({ disabled = false, name, borderStyle, checked, onChange }) => {
+  const [checkState, setCheckState] = useState(checked);
   return (
     <label
       id=""
@@ -23,7 +24,8 @@ export const CheckBox: FC<CheckBoxProps> = ({ disabled = false, name, borderStyl
         id="checklisting"
         className="hidden"
         disabled={disabled}
-        checked={checked}
+        checked={checkState}
+        onClick={() => setCheckState(prev => !prev)}
         onChange={onChange}
         name={name ? `${name}` : ''}
       />

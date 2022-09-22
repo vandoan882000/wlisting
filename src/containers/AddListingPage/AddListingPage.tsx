@@ -1,6 +1,7 @@
 import { Content4 } from 'components/Content4/Content4';
 import { Devider } from 'components/Divider/Devider';
-import Footer from 'containers/Footer/Footer';
+import { Footer } from 'containers/Footer/Footer';
+import { CopyRight } from 'containers/HomePage/CopyRight/CopyRight';
 import { FC } from 'react';
 
 import { Section1 } from './Section1/Section1';
@@ -29,6 +30,8 @@ export const AddListingPage: FC = () => {
       <Section6 />
       <Devider />
       <Footer />
+      <Devider />
+      <CopyRight />
     </>
   );
 };

@@ -1,7 +1,14 @@
 import { Devider } from 'components/Divider/Devider';
 import { FC } from 'react';
+import { ListingSocial } from 'types/Listing';
 
-export const BusinessInfo: FC = () => {
+interface BusinessInfoProps {
+  email: string;
+  phone: string;
+  social: ListingSocial[];
+}
+
+export const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) => {
   return (
     <>
       <div className="mt-15">
@@ -9,13 +16,17 @@ export const BusinessInfo: FC = () => {
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
             <i className="far fa-link text-gray7"></i>
           </div>
-          <a className="text-14 font-normal text-gray7">https://wiloke.com</a>
+          <a href={`mailto:${email}`} className="text-14 font-normal text-gray7">
+            {email}
+          </a>
         </div>
         <div className="flex justify-start items-center mb-15">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
             <i className="far fa-phone-alt text-gray7"></i>
           </div>
-          <a className="text-14 font-normal text-gray7">0123456789</a>
+          <a href={`tel:${phone}`} className="text-14 font-normal text-gray7">
+            {phone}
+          </a>
         </div>
         <div className="flex justify-start items-center mb-15">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
@@ -26,18 +37,34 @@ export const BusinessInfo: FC = () => {
       </div>
       <Devider />
       <div className="flex items-center w-100% pt-13">
-        <div className="flex justify-center items-center w-34 h-34 bg-[#325d94] rounded-1/2 mr-10">
-          <i className="fab fa-facebook-square text-light"></i>
-        </div>
-        <div className="flex justify-center items-center w-34 h-34 bg-[#00aadb] rounded-1/2 mr-10">
-          <i className="fab fa-twitter text-light"></i>
-        </div>
-        <div className="flex justify-center items-center w-34 h-34 bg-[#2f4e6b] rounded-1/2 mr-10">
-          <i className="fab fab fa-tumblr text-light"></i>
-        </div>
-        <div className="flex justify-center items-center w-34 h-34 bg-[#ff0084] rounded-1/2 mr-10">
-          <i className="fab fa-flickr text-light"></i>
-        </div>
+        {social.map((item, index) => {
+          switch (item.name) {
+            case 'facebook':
+              return (
+                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#325d94] rounded-1/2 mr-10">
+                  <i className="fab fa-facebook-square text-light"></i>
+                </a>
+              );
+            case 'switter':
+              return (
+                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#00aadb] rounded-1/2 mr-10">
+                  <i className="fab fa-twitter text-light"></i>
+                </a>
+              );
+            case 'tumblr':
+              return (
+                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#2f4e6b] rounded-1/2 mr-10">
+                  <i className="fab fab fa-tumblr text-light"></i>
+                </a>
+              );
+            case 'flickr':
+              return (
+                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#ff0084] rounded-1/2 mr-10">
+                  <i className="fab fa-flickr text-light"></i>
+                </a>
+              );
+          }
+        })}
       </div>
     </>
   );

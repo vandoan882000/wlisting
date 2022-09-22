@@ -39,7 +39,7 @@ export const pages: Page[] = [
     roles: adminRoles,
   },
   {
-    path: '/search/:key',
+    path: '/search/category=:category&location=:location',
     component: SearchPage,
     roles: adminRoles,
   },

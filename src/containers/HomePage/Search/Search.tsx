@@ -29,7 +29,7 @@ export const Search: FC = () => {
                 />
               </div>
               <a
-                href="/search/1"
+                href="/search/category=all&location=all"
                 className="w-fit h-fit flex justify-center items-center py-11 px-22 bg-primary text-light text-16 rounded-6 flex-nowrap whitespace-nowrap"
               >
                 <span>

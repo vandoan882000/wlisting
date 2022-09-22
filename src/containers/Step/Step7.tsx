@@ -47,10 +47,10 @@ export const Step7: FC = () => {
               <div className="flex items-center h-46 mb-10" key={index}>
                 <input
                   type="text"
-                  className="w-340 h-100% text-gray5 font-medium text-14 border-1 border-gray4 rounded-4 mr-10 focus:border-gray4"
+                  className="h-100% text-gray5 font-medium text-14 border-1 border-gray4 rounded-4 mr-10 focus:border-gray4"
                   name="video"
                   onChange={debounce(handleChangeVideo(index))}
-                  style={{ boxShadow: 'none' }}
+                  style={{ boxShadow: 'none', width: 'clamp(100px, 20vw + 20px, 340px)' }}
                 />
                 {index == videoValue.length - 1 && (
                   <div

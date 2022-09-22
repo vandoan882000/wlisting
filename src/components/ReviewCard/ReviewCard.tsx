@@ -23,9 +23,9 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
   const authorInfo = getAuthor(review.reviewAuthorId);
   return (
     <div className="flex flex-col py-22 border-b-1 border-gray3">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center flex-wrap">
         <Avatar name={authorInfo.userName} avatar={authorInfo.userAvatar} size={50} fontSize={13} detail={true} />
-        <div className="flex">
+        <div className="flex flex-wrap">
           <div className="flex flex-col">
             <span>
               <Rate1>{review.reviewRating.toFixed(1)}</Rate1>
@@ -33,48 +33,46 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
             <span className="text-gray6 text-13 font-normal">{review.reviewDate}</span>
           </div>
           <div className="flex">
-            <Popover
-              toggle={
+            <Popover title="" variant="variant2" placement="bottom-end">
+              <Popover.Toggle>
                 <div className="px-10 pb-5">
                   <i className="far fa-ellipsis-v"></i>
                 </div>
-              }
-              title=""
-              variant="variant2"
-              placement="bottom-end"
-            >
-              <div className="flex flex-col rounded-10  py-9 bg-light z-100">
-                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-pen text-12 mr-8 text-gray5"></i>
-                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Edit</span>
+              </Popover.Toggle>
+              <Popover.Content>
+                <div className="flex flex-col rounded-10  py-9 bg-light z-100">
+                  <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                    <i className="far fa-pen text-12 mr-8 text-gray5"></i>
+                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Edit</span>
+                  </div>
+                  <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                    <i className="far fa-star text-12 mr-8 text-gray5"></i>
+                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Write a review</span>
+                  </div>
+                  <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                    <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
+                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Delete</span>
+                  </div>
+                  <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
+                    <i className="far fa-flag text-12 mr-8 text-gray5"></i>
+                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Report</span>
+                  </div>
                 </div>
-                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-star text-12 mr-8 text-gray5"></i>
-                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Write a review</span>
-                </div>
-                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
-                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Delete</span>
-                </div>
-                <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-flag text-12 mr-8 text-gray5"></i>
-                  <span className="text-13 font-normal text-gray7 whitespace-nowrap">Report</span>
-                </div>
-              </div>
+              </Popover.Content>
             </Popover>
           </div>
         </div>
       </div>
       <div className="text-14 font-normal text-gray6 mt-10 line-clamp-3">{review.reviewContent}</div>
-      <div className="flex justify-start">
+      <div className="flex flex-wrap">
         <StatusButton text="Useful" quantity={review.reviewReact.useful}>
-          <img src="/assets/useful.png" alt="" />
+          <img className="min-w-20" src="/assets/useful.png" alt="" />
         </StatusButton>
         <StatusButton text="Funny" quantity={review.reviewReact.funny}>
-          <img src="/assets/funny.png" alt="" />
+          <img className="min-w" src="/assets/funny.png" alt="" />
         </StatusButton>
         <StatusButton text="Cool" quantity={review.reviewReact.cool}>
-          <img src="/assets/cool.png" alt="" />
+          <img className="min-w-20" src="/assets/cool.png" alt="" />
         </StatusButton>
       </div>
     </div>

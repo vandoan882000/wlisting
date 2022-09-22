@@ -12,7 +12,7 @@ export const ListingCards: FC = () => {
             <ListingCard variant="variant1">
               <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
-                listingAddress={listing.listingAddress}
+                listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}

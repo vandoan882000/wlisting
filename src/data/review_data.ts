@@ -27,7 +27,7 @@ export const review_data: ReviewData[] = [
     reviewId: 2,
     reviewAuthorId: 2,
     reviewContent:
-      'Sed fringilla, felis id sollicitudin finibus, nisi mauris accumsan orci, eu blandit eros velit quis diam. Integer eget eros id ipsum aliquam vestibulum.',
+      'Sed1 fringilla, felis id sollicitudin finibus, nisi mauris accumsan orci, eu blandit eros velit quis diam. Integer eget eros id ipsum aliquam vestibulum.',
     reviewRating: 5.5,
     reviewDate: 'April 24, 2020 12:06 am',
     reviewGallery: ['https://picsum.photos/id/1/200/200', 'https://picsum.photos/id/2/200/200'],
