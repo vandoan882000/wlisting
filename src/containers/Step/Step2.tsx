@@ -35,11 +35,11 @@ export const Step2: FC = () => {
   const categories = categories_data.map(cate => cate.categoryName);
   return (
     <div className="mb-157">
-      <div className="text-gray8 text-22 font-medium">Please select your category and location</div>
+      <div className="text-gray9 text-22 font-medium">Please select your category and location</div>
       <div className="flex flex-col w-100% flex-wrap mt-30">
-        <div className="text-14 font-medium text-gray8 mb-9">Categories</div>
+        <div className="text-14 font-medium text-gray9 mb-9">Categories</div>
         <Select items={categories} style={{ width: '340px', height: '46px' }}></Select>
-        <div className="text-14 font-medium text-gray8 mt-20">Location</div>
+        <div className="text-14 font-medium text-gray9 mt-20">Location</div>
         <div className="flex flex-col mt-9 mb-10">
           {location.map((item, index) => {
             return (
@@ -58,13 +58,13 @@ export const Step2: FC = () => {
                   </span>
                 </div>
                 {index == location.length - 1 && (
-                  <div className="flex justify-center items-center border-1 border-gray4 rounded-4 text-gray8 px-10 text-25 cursor-pointer">
+                  <div className="flex justify-center items-center border-1 border-gray4 rounded-4 text-gray9 px-10 text-25 cursor-pointer">
                     <i className="fal fa-plus"></i>
                   </div>
                 )}
                 {index != location.length - 1 && (
                   <div
-                    className="flex justify-center items-center border-1 border-gray4 rounded-4 text-gray8 px-10 text-25 cursor-pointer"
+                    className="flex justify-center items-center border-1 border-gray4 rounded-4 text-gray9 px-10 text-25 cursor-pointer"
                     onClick={() => {
                       location.filter((item, indexValue) => indexValue != index);
                     }}

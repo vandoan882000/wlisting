@@ -14,7 +14,7 @@ export const LocationCard2: FC<LocationCardProps> = ({ name, image, link }) => {
           backgroundImage: `url(${image})`,
         }}
       ></div>
-      <div className="text-22 font-medium text-gray8 font-sans">{name}</div>
+      <div className="text-22 font-medium text-gray9 font-sans">{name}</div>
     </a>
   );
 };

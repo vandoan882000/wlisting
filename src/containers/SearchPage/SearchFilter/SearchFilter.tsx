@@ -1,8 +1,8 @@
 import { CheckBox } from 'components/CheckBox/CheckBox';
-import { Number } from 'components/Number/Number';
 import { Popover } from 'components/Popover/Popover';
 import { PopUp } from 'components/PopUp/PopUp';
-import { Slider } from 'components/Slider/Slider';
+import { Radio } from 'components/Radio/Radio';
+import { SliderNumber } from 'components/SliderNumber/SliderNumber';
 import { categories_data } from 'data/categories_data';
 import { listings_data } from 'data/listings_data';
 import { FC, useState } from 'react';
@@ -50,14 +50,14 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
     <div className="container">
       <div className="row">
         <div className="flex items-end">
-          <div className="text-gray8 text-15 font-normal mr-10">
+          <div className="text-gray9 text-15 font-normal mr-10">
             {lstListing.length} {category != 'All' ? category : 'Result'}
           </div>
-          <div className="text-gray8 text-14 font-medium border-gray4 border-1 rounded-6 px-8 py-2 cursor-pointer" onClick={handleClickClearAll}>
+          <div className="text-gray9 text-14 font-medium border-gray4 border-1 rounded-6 px-8 py-2 cursor-pointer" onClick={handleClickClearAll}>
             Clear All
           </div>
         </div>
-        <div className="text-28 font-bold text-gray8 capitalize">
+        <div className="text-28 font-bold text-gray7 capitalize">
           {category} {location != 'all' ? `in ${location}` : `Listing`}
         </div>
         <div className="col-lg-12 flex justify-between items-center m-0 pt-10 pb-10">
@@ -70,21 +70,21 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
                 const currentTarget = event?.target;
                 const inputEls = (currentTarget as HTMLElement).querySelectorAll('input');
                 let inputChecked = '';
-                inputEls.forEach(input => (input.checked ? (inputChecked = input.value) : ''));
+                inputEls.forEach(input => (input.checked ? (inputChecked = input.name) : ''));
                 setCategory(() => inputChecked);
               }}
               onClear={() => setCategory('')}
             >
               <Popover.Toggle>
                 <div
-                  className={`relative flex justify-center items-center px-10 rounded-20  py-5 select-none min-w-99 ${
+                  className={`relative flex justify-center items-center px-10 rounded-20 py-5 select-none min-w-99 text-14 font-medium ${
                     !!category ? 'text-light bg-primary' : ''
                   }`}
                 >
                   {!!category ? category : 'Categories'}
                   {!!category && (
                     <div
-                      className="absolute w-18 h-18 flex justify-center items-center rounded-1/2 bg-gray8 bottom-100% left-100%"
+                      className="absolute w-18 h-18 flex justify-center items-center rounded-1/2 bg-gray9 top-0 right-0 translate-x-5 translate-y-_10"
                       onClick={() => setCategory('')}
                     >
                       <i className="far fa-times text-light text-12"></i>
@@ -94,33 +94,23 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
               </Popover.Toggle>
               <Popover.Content>
                 <div className="px-15">
-                  <div className="text-14 text-gray6 font-normal mb-15">
-                    <input type="radio" className="mr-5" name="category" value="Hotel" /> Hotel
-                  </div>
-                  <div className="text-14 text-gray6 font-normal mb-15">
-                    <input type="radio" className="mr-5" name="category" value="Restaurant" />
-                    Restaurant
-                  </div>
-                  <div className="text-14 text-gray6 font-normal mb-15">
-                    <input type="radio" className="mr-5" name="category" value="Shopping" />
-                    Shopping
-                  </div>
-                  <div className="text-14 text-gray6 font-normal mb-15">
-                    <input type="radio" className="mr-5" name="category" value="Yoga" />
-                    Yoga
-                  </div>
-                  <div className="text-14 text-gray6 font-normal mb-15">
-                    <input type="radio" className="mr-5" name="category" value="Gym" />
-                    Gym
-                  </div>
-                  <div className="text-14 text-gray6 font-normal mb-15">
-                    <input type="radio" className="mr-5" name="category" value="Tea & Coffee" />
-                    Tea & Coffee
-                  </div>
+                  {categories_data.map(cate => {
+                    return (
+                      <Radio
+                        key={cate.categoryId}
+                        name={cate.categoryName}
+                        onChange={() => setCategory(cate.categoryName)}
+                        option={category}
+                        value={cate.categoryName}
+                        label={cate.categoryName}
+                        style={{ marginBottom: '15px' }}
+                      />
+                    );
+                  })}
                 </div>
               </Popover.Content>
             </Popover>
-            <div className="w-1 h-26 bg-gray4 mx-20 my-10"></div>
+            <div className="w-2 h-26 bg-gray4 mx-20 my-10"></div>
             <Popover
               title="Price"
               onClear={() => setPrice(-1)}
@@ -135,11 +125,11 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
               style={{ background: '#ffffff', marginTop: '11px' }}
             >
               <Popover.Toggle>
-                <div className={`relative px-19 rounded-20 py-5 select-none ${price != -1 ? 'text-light bg-primary' : ''}`}>
+                <div className={`relative px-19 rounded-20 py-5 select-none text-14 font-medium ${price != -1 ? 'text-light bg-primary' : ''}`}>
                   {price != -1 ? `Price: ${price_data[price]}` : 'Price'}
                   {price != -1 && (
                     <div
-                      className="absolute w-18 h-18 flex justify-center items-center rounded-1/2 bg-gray8 bottom-100% left-100%"
+                      className="absolute w-18 h-18 flex justify-center items-center rounded-1/2 bg-gray9 top-0 right-0 translate-x-5 translate-y-_10"
                       onClick={() => setPrice(-1)}
                     >
                       <i className="far fa-times text-light text-12"></i>
@@ -182,7 +172,11 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
               onClear={() => setFeatures([])}
             >
               <Popover.Toggle>
-                <div className={`px-10 rounded-20 py-5 select-none ${features.toString() != [].toString() ? 'text-light bg-primary' : ''}`}>
+                <div
+                  className={`px-10 rounded-20 py-5 select-none text-14 font-medium ${
+                    features.toString() != [].toString() ? 'text-light bg-primary' : ''
+                  }`}
+                >
                   Features
                 </div>
               </Popover.Toggle>
@@ -204,26 +198,44 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
                 </div>
               </Popover.Content>
             </Popover>
-            <Popover title="Radius (Km)" style={{ background: '#ffffff', marginTop: '11px' }} onClear={() => setRadius(0)}>
+            <Popover
+              title="Radius (Km)"
+              style={{ background: '#ffffff', marginTop: '11px' }}
+              onClear={() => setRadius(0)}
+              onSubmit={event => {
+                event?.preventDefault();
+                console.log(radius);
+              }}
+            >
               <Popover.Toggle>
-                <div className={`px-10 rounded-20 py-5 select-none ${!!radius ? 'text-light bg-primary' : ''}`}>Near me</div>
+                <div className={`relative px-10 rounded-20 py-5 select-none text-14 font-medium ${!!radius ? 'text-light bg-primary' : ''}`}>
+                  Near me
+                  {!!radius ? `: ${radius}km` : ''}
+                  {!!radius && (
+                    <div
+                      className="absolute w-18 h-18 flex justify-center items-center rounded-1/2 bg-gray9 top-0 right-0 translate-x-5 translate-y-_10"
+                      onClick={() => setRadius(0)}
+                    >
+                      <i className="far fa-times text-light text-12"></i>
+                    </div>
+                  )}
+                </div>
               </Popover.Toggle>
               <Popover.Content>
                 <div className="flex items-center px-15 pb-20 ">
-                  <div className="w-90% pr-15">
-                    <Slider max={30} min={0} onChange={value => setRadius(value)} onChanged={() => {}} step={1} value={radius} />
-                  </div>
-                  <Number value={radius} handleInCrease={() => setRadius(prev => prev + 1)} handleDecrease={() => setRadius(prev => prev - 1)} />
+                  <SliderNumber max={30} min={0} onChange={value => setRadius(value)} onChanged={() => {}} step={1} value={1} />
                 </div>
               </Popover.Content>
             </Popover>
             <PopUp onApply={() => {}} title="More Filters">
               <PopUp.Toggle>
-                <div className="px-10 rounded-20 text-gray8 border-1 border-gray4 my-10 py-5 select-none cursor-pointer">More filters</div>
+                <div className="px-10 rounded-20 text-gray9 border-1 border-gray4 my-10 py-5 text-14 font-medium select-none cursor-pointer">
+                  More filters
+                </div>
               </PopUp.Toggle>
               <PopUp.Content>
                 <div className="px-15 pb-20">
-                  <div className="font-medium text-15 text-gray7 mb-12">Other filter</div>
+                  <div className="font-medium text-15 text-gray8 mb-12">Other filter</div>
                   <div className="flex">
                     <div className="mr-125">
                       <div className="flex mb-15">
@@ -254,7 +266,7 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
                       </div>
                     </div>
                   </div>
-                  <div className="font-medium text-15 text-gray7 mb-12">Other filter</div>
+                  <div className="font-medium text-15 text-gray8 mb-12">Other filter</div>
                   <div className="flex">
                     <div className="mr-125">
                       <div className="flex mb-15">
@@ -291,7 +303,7 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
           </div>
           {!showMap && (
             <div
-              className="flex items-center py-8 px-15 text-14 font-medium text-gray8 border-1 border-gray4 rounded-18 cursor-pointer"
+              className="flex items-center py-8 px-15 text-14 font-medium text-gray9 border-1 border-gray4 rounded-18 cursor-pointer"
               onClick={onClick}
             >
               <span className="mr-8">

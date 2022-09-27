@@ -46,10 +46,10 @@ export const Step6: FC = () => {
   };
   return (
     <div className="mb-416">
-      <div className="text-gray8 text-22 font-medium">Please select your amenities</div>
+      <div className="text-gray9 text-22 font-medium">Please select your amenities</div>
       <div className="flex flex-col w-100% flex-wrap mt-20">
         <div className="flex flex-col">
-          <div className="text-14 font-medium text-gray8 mb-9">Amennities</div>
+          <div className="text-14 font-medium text-gray9 mb-9">Amennities</div>
           <div className="container">
             <div className="row">
               {amenities.map((amenity, index) => {

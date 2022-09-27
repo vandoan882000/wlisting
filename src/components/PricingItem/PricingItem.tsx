@@ -17,7 +17,7 @@ export const PricingItem: FC<PricingItemProps> = ({ type, price, description, ac
       onClick={() => onClick(type)}
     >
       <div className="flex justify-between items-center w-100%">
-        <div className={`text-26 font-medium ${active ? 'text-light' : 'text-gray8'}  capitalize`}>{type}</div>
+        <div className={`text-26 font-medium ${active ? 'text-light' : 'text-gray9'}  capitalize`}>{type}</div>
         <div className={`text-26 font-medium ${active ? 'text-light' : 'text-primary'} capitalize`}>{price}</div>
       </div>
       <div className="flex justify-between items-center">

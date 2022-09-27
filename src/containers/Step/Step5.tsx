@@ -10,11 +10,11 @@ export const Step5: FC = () => {
   };
   return (
     <div className="mb-416">
-      <div className="text-gray8 text-22 font-medium">Add prices to your listing</div>
+      <div className="text-gray9 text-22 font-medium">Add prices to your listing</div>
       <div className="flex flex-col w-100% flex-wrap mt-20">
         <div className="flex items-center">
           <div className="mr-20">
-            <div className="text-14 font-medium text-gray8 mb-9">Min Price</div>
+            <div className="text-14 font-medium text-gray9 mb-9">Min Price</div>
             <input
               className="w-68 text-14 text-gray6 font-normal border-1 border-gray4 focus:border-gray4"
               type="number"
@@ -25,7 +25,7 @@ export const Step5: FC = () => {
             />
           </div>
           <div>
-            <div className="text-14 font-medium text-gray8 mb-9">Max Price</div>
+            <div className="text-14 font-medium text-gray9 mb-9">Max Price</div>
             <input
               className="w-68 text-14 text-gray6 font-normal border-1 border-gray4 focus:border-gray4"
               type="number"
@@ -36,7 +36,7 @@ export const Step5: FC = () => {
             />
           </div>
         </div>
-        <div className="text-14 font-medium text-gray8 mt-20 mb-9">You do talk about pricing</div>
+        <div className="text-14 font-medium text-gray9 mt-20 mb-9">You do talk about pricing</div>
         <textarea
           className="text-14 text-gray6 border-1 border-gray4 rounded-4 py-15 h-120 focus:border-gray4 w-100% max-w-628"
           name="aboutPricing"

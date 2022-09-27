@@ -73,7 +73,7 @@ export const Tours: FC<ToursProps> = ({ listingTitle, listingGallery }) => {
               return (
                 <div
                   className={`flex justify-center items-center text-14 font-medium px-20 hover:text-primary ${
-                    typeImage == enableTypeImage ? 'text-primary border-b-2 border-b-primary' : 'text-gray8'
+                    typeImage == enableTypeImage ? 'text-primary border-b-2 border-b-primary' : 'text-gray9'
                   } cursor-pointer`}
                   key={index}
                   onClick={() => setEnableTypeImage(typeImage)}
@@ -95,7 +95,7 @@ export const Tours: FC<ToursProps> = ({ listingTitle, listingGallery }) => {
         }
       >
         <div className="flex justify-center">
-          <div className="w-60%">
+          <div className="sm-max:w-100% w-60%">
             <Swiper
               className="!pb-90"
               modules={[Pagination, Scrollbar, A11y]}

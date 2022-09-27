@@ -17,7 +17,7 @@ export const LocationTab: FC<LocationTabProps> = ({ listingId, listingLocation }
           return (
             <div
               className={`flex justify-start py-10 px-10 border-b-1 border-b-gray3 text-14 font-normal cursor-pointer ${
-                location === index ? 'text-primary' : 'text-gray8'
+                location === index ? 'text-primary' : 'text-gray9'
               }`}
               onClick={() => setLocation(index)}
               key={index}
@@ -33,7 +33,7 @@ export const LocationTab: FC<LocationTabProps> = ({ listingId, listingLocation }
       {listingLocation.map((item, index) => {
         return (
           location == index && (
-            <div key={index} className="w-100% md:w-85% h-289">
+            <div key={index} className="w-100% md:w-85% h-289 rounded-tr-6 rounded-br-6 overflow-hidden">
               <GoogleMapReact
                 defaultCenter={{ lat: listingLocation[location].lat, lng: listingLocation[location].lng }}
                 defaultZoom={8}

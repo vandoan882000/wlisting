@@ -16,7 +16,12 @@ export const review_data: ReviewData[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus porttitor nisl, sit amet finibus libero ultricies tincidunt. Sed fringilla, felis id sollicitudin finibus, nisi mauris accumsan orci, eu blandit eros velit quis diam. Integer eget eros id ipsum aliquam vestibulum.',
     reviewRating: 5.5,
     reviewDate: 'April 24, 2020 12:06 am',
-    reviewGallery: ['https://picsum.photos/id/1/200/200', 'https://picsum.photos/id/2/200/200'],
+    reviewGallery: [
+      'https://picsum.photos/id/1/400/400',
+      'https://picsum.photos/id/2/400/400',
+      'https://picsum.photos/id/2/400/400',
+      'https://picsum.photos/id/2/400/400',
+    ],
     reviewReact: {
       useful: 1,
       funny: 3,
@@ -30,7 +35,7 @@ export const review_data: ReviewData[] = [
       'Sed1 fringilla, felis id sollicitudin finibus, nisi mauris accumsan orci, eu blandit eros velit quis diam. Integer eget eros id ipsum aliquam vestibulum.',
     reviewRating: 5.5,
     reviewDate: 'April 24, 2020 12:06 am',
-    reviewGallery: ['https://picsum.photos/id/1/200/200', 'https://picsum.photos/id/2/200/200'],
+    reviewGallery: ['https://picsum.photos/id/1/400/400', 'https://picsum.photos/id/2/400/400'],
     reviewReact: {
       useful: 1,
       funny: 1,
@@ -44,7 +49,7 @@ export const review_data: ReviewData[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta, nisl nisi consectetur nisi, euismod consectetur nisi nisi eget nisi. Nunc euismod, nisi eget consectetur porta',
     reviewRating: 5.5,
     reviewDate: 'April 24, 2020 12:06 am',
-    reviewGallery: ['https://picsum.photos/id/1/200/200', 'https://picsum.photos/id/2/200/200'],
+    reviewGallery: ['https://picsum.photos/id/1/400/400'],
     reviewReact: {
       useful: 1,
       funny: 3,

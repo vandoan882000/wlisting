@@ -45,11 +45,11 @@ export const CustomSwiper: FC<CustomSwiperProps> & {
   children,
 }) => {
   return (
-    <div className="container relative pt-20 mt-15">
+    <div className="container relative pt-20 mt-25">
       <div className="row">
         <a
           href={link}
-          className="text-gray8 text-22 font-bold hover:text-primary mb-_41 !p-0 cursor-pointer z-2 w-fit"
+          className="text-gray9 text-22 font-bold hover:text-primary mb-_41 !p-0 cursor-pointer z-2 w-fit"
           style={{ fontWeight: titleFontWeight }}
         >
           <span className="mr-10">{title}</span>

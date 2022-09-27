@@ -1,7 +1,12 @@
+import 'leaflet/dist/leaflet.css';
+import 'react-leaflet-markercluster/dist/styles.min.css';
+
 import { CheckBox } from 'components/CheckBox/CheckBox';
 import { CustomMarker } from 'components/CustomMarker/CustomMarker';
 import { SearchItem } from 'components/SearchItem/SearchItem';
 import { listings_data } from 'data/listings_data';
+// import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+// import MarkerClusterGroup from 'react-leaflet-markercluster';
 import GoogleMapReact from 'google-map-react';
 import { FC } from 'react';
 
@@ -20,7 +25,7 @@ export const SearchContent: FC<SearchContentProps> = ({ onClick, location, categ
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-7">
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 pr-20">
           {listings_data.map((item, index) => {
             return (
               (item.listingCategoryId == category || category == undefined) &&
@@ -35,14 +40,14 @@ export const SearchContent: FC<SearchContentProps> = ({ onClick, location, categ
             <div className="flex justify-center items-center w-36 h-36 text-light bg-primary text-16 font-medium rounded-1/2 mr-8 cursor-pointer">
               1
             </div>
-            <div className="flex justify-center items-center w-36 h-36 text-gray8 bg-light border-1 border-gray4 rounded-1/2 text-16 font-medium mr-8 cursor-pointer">
+            <div className="flex justify-center items-center w-36 h-36 text-gray9 bg-light border-1 border-gray4 rounded-1/2 text-16 font-medium mr-8 cursor-pointer">
               2
             </div>
-            <div className="flex justify-center items-center w-36 h-36  text-gray8 bg-light border-1 border-gray4 font-medium rounded-1/2 mr-8 cursor-pointer">
+            <div className="flex justify-center items-center w-36 h-36  text-gray9 bg-light border-1 border-gray4 font-medium rounded-1/2 mr-8 cursor-pointer">
               3
             </div>
-            <div className="flex justify-center items-center w-36 h-36 text-gray8 font-medium rounded-1/2 mr-8 cursor-pointer">...</div>
-            <div className="flex justify-center items-center  h-36 px-13 text-gray8 bg-light border-1 border-gray4 font-medium rounded-18 mr-8 cursor-pointer">
+            <div className="flex justify-center items-center w-36 h-36 text-gray9 font-medium rounded-1/2 mr-8 cursor-pointer">...</div>
+            <div className="flex justify-center items-center  h-36 px-13 text-gray9 bg-light border-1 border-gray4 font-medium rounded-18 mr-8 cursor-pointer">
               <span className="mr-10">Next</span>
               <span>
                 <i className="far fa-chevron-right"></i>
@@ -50,7 +55,7 @@ export const SearchContent: FC<SearchContentProps> = ({ onClick, location, categ
             </div>
           </div>
         </div>
-        <div className="col-lg-5 relative bg-gray2 h-1000 p-0 ">
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 relative bg-gray2 h-1000 p-0 ">
           <div className="absolute top-20 left-20 z-100 flex items-center">
             <div className="flex justify-center items-center bg-light w-40 h-40 rounded-6 mr-10 shadow-2 cursor-pointer" onClick={onClick}>
               <i className="far fa-times"></i>
@@ -68,7 +73,6 @@ export const SearchContent: FC<SearchContentProps> = ({ onClick, location, categ
               <Marker position={[52.2297, 21.0122]} />
               <Marker position={[51.5074, -0.0901]} />
             </MarkerClusterGroup>
-            ;
           </MapContainer> */}
           <GoogleMapReact
             defaultCenter={defaultProps.center}

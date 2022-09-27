@@ -6,7 +6,7 @@ export const categories_data: CategoryData[] = [
     categoryName: 'Restaurant',
     categoryIcon: 'fas fa-utensils-alt',
     categoryCount: 20,
-    categoryColor: '#f95476',
+    categoryColor: '#ff8b81',
     categoryLink: '#',
   },
   {
@@ -14,7 +14,7 @@ export const categories_data: CategoryData[] = [
     categoryName: 'Destination',
     categoryIcon: 'far fa-map-marker-alt',
     categoryCount: 20,
-    categoryColor: '#2dde98',
+    categoryColor: '#4edace',
     categoryLink: '#',
   },
   {
@@ -22,7 +22,7 @@ export const categories_data: CategoryData[] = [
     categoryName: 'Hotel',
     categoryIcon: 'far fa-bed-alt',
     categoryCount: 20,
-    categoryColor: '#5353c5',
+    categoryColor: '#9f53e9',
     categoryLink: '#',
   },
   {
@@ -30,7 +30,7 @@ export const categories_data: CategoryData[] = [
     categoryName: 'Shopping',
     categoryIcon: 'far fa-shopping-cart',
     categoryCount: 20,
-    categoryColor: '#ffc20e',
+    categoryColor: '#f2b543',
     categoryLink: '#',
   },
 ];

@@ -1,44 +1,39 @@
+import { TypeListing } from 'components/TypeListing/TypeListing';
 import { FC } from 'react';
 
 export const Section2: FC = () => {
+  const data = [
+    {
+      color: '#ff8b81',
+      title: 'Paid Listings',
+      content:
+        'Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam crudelis fuisse.',
+      icon: 'far fa-bullseye',
+    },
+    {
+      color: '#9f53e9',
+      title: 'Promoted Listings',
+      content: 'Sed ut aliquid ex eo delectu rerum, quem modo ista sis aequitate, quam. Ut placet, inquam tum dicere exorsus est eligendi optio.',
+      icon: 'far fa-volume-up',
+    },
+    {
+      color: '#34befe',
+      title: 'Paid Claim Listings',
+      content:
+        'Si sine dubio praeclara sunt, explicabo nemo enim ad modum, quaeso, interpretaris? sicine. At vero eos et expedita distinctio nam libero tempore, cum memoriter, tum etiam.',
+      icon: 'far fa-edit',
+    },
+  ];
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-4 mt-42">
-          <div
-            className="w-50 h-50 flex justify-center items-center rounded-15"
-            style={{
-              background: '#ff8b81',
-            }}
-          >
-            <i className="far fa-bullseye text-light text-25"></i>
-          </div>
-          <div className="text-20 font-medium text-gray8 mt-10">Paid Listings</div>
-          <div className="font-normal text-14 text-gray6">
-            Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
-            crudelis fuisse.
-          </div>
-        </div>
-        <div className="col-lg-4 mt-42">
-          <div className="w-50 h-50 flex justify-center items-center rounded-15" style={{ background: '#9f53e9' }}>
-            <i className="far fa-star text-light text-25"></i>
-          </div>
-          <div className="text-20 font-medium text-gray8 mt-10">Promoted Listings</div>
-          <div className="font-normal text-14 text-gray6">
-            Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
-            crudelis fuisse.
-          </div>
-        </div>
-        <div className="col-lg-4 mt-42">
-          <div className="w-50 h-50 flex justify-center items-center rounded-15" style={{ background: '#34befe' }}>
-            <i className="far fa-edit text-light text-25"></i>
-          </div>
-          <div className="text-20 font-medium text-gray8 mt-10">Paid Claim Listings</div>
-          <div className="font-normal text-14 text-gray6">
-            Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
-            crudelis fuisse.
-          </div>
-        </div>
+        {data.map((item, index) => {
+          return (
+            <div className="col-lg-4 mt-42">
+              <TypeListing key={index} color={item.color} content={item.content} title={item.title} icon={item.icon} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

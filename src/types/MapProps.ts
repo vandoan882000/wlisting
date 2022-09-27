@@ -51,3 +51,7 @@ export interface ReactMapGLProps<T> extends MapGeneralProps<T> {
   /** MapGL config */
   apiUrl?: FactoryParameters['apiUrl'];
 }
+export interface ReactLeafletProps<T> extends MapGeneralProps<T> {
+  /** React-Leaflet config */
+  mapImageUrl: string;
+}

@@ -11,7 +11,7 @@ export const StatusButton: FC<StatusButtonProps> = ({ text, children, quantity =
   return (
     <div
       className={`flex justify-center items-center rounded-13 ${
-        isReact ? 'bg-primary text-light' : 'border-1 border-gray3 text-gray8'
+        isReact ? 'bg-primary text-light' : 'border-1 border-gray3 text-gray9'
       }  py-3 px-10 cursor-pointer w-fit mr-6 mt-10 select-none`}
       onClick={() => {
         setIsReact(prevState => !prevState);

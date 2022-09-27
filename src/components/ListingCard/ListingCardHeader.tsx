@@ -23,7 +23,7 @@ export const ListingCardHeader: FC<ListingCardHeaderProps> = ({ variant, listing
       <div
         className={`${
           variant == 'variant2' ? 'group-hover:opacity-100 opacity-0 transition-all delay-100' : ''
-        } absolute top-10 left-10 px-5 py-5 rounded-20 bg-light z-100`}
+        } absolute top-10 left-10 px-10 py-5 rounded-20 bg-light z-100`}
       >
         <Avatar avatar={current_user.userAvatar} name={current_user.userName} size={22} fontSize={12} />
       </div>

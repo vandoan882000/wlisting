@@ -2,7 +2,7 @@ import { AuthorInfo } from 'components/AuthorInfo/AuthorInfo';
 import { BusinessInfo } from 'components/BusinessInfo/BusinessInfo';
 import { Content2 } from 'components/Content2/Content2';
 import { Content3 } from 'components/Content3/Content3';
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { Hours } from 'components/Hours/Hours';
 import { LocationTab } from 'components/LocationTab/LocationTab';
 import { Modal } from 'components/Modal/Modal';
@@ -101,7 +101,7 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
                   style={{ width: 'clamp(100px, 20vw + 30px, 154px)', height: '36px', color: '#75737c', fontSize: '14px' }}
                 ></Select>
                 <div
-                  className="flex justify-center items-center bg-primary rounded-4 mr-10 px-15 py-8 cursor-pointer mb-10 whitespace-nowrap"
+                  className="flex justify-center items-center bg-primary rounded-4 mr-10 px-15 pt-8 pb-7 cursor-pointer mb-10 whitespace-nowrap"
                   onClick={() => {
                     setVisibleModalReview(visible => !visible);
                     document.body.classList.add('scroll-hidden');
@@ -122,7 +122,7 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
                 </Modal>
               </div>
             </div>
-            <Devider />
+            <Divider />
             <div className="flex flex-wrap">
               <div className="w-50% pr-10">
                 <Rate2 title="Check-in" score={6.0} />
@@ -137,9 +137,24 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
                 <Rate2 title="Location" score={5.5} />
               </div>
             </div>
-            {reviewData.map(review => {
-              return <ReviewCard key={review.reviewId} reviewId={review.reviewId} />;
+            {reviewData.map((review, index) => {
+              return (
+                <>
+                  <ReviewCard key={review.reviewId} reviewId={review.reviewId} />
+                  {index != reviewData.length - 1 && <Divider />}
+                </>
+              );
             })}
+            <div
+              className="fz-15 fw-400 text-primary cursor-pointer"
+              onClick={() => {
+                setVisibleModalReview(visible => !visible);
+                document.body.classList.add('scroll-hidden');
+              }}
+            >
+              Show {reviewData.length} Reviews
+              <i className="fal fa-chevron-right ml-10"></i>
+            </div>
           </Content3>
         </div>
         <div className="col-lg-3 pb-30 pt-10">

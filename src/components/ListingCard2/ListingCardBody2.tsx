@@ -32,7 +32,7 @@ export const ListingCardBody2: FC<ListingCardBody2Props> = ({
   return (
     <>
       <img className="absolute top-0 left-0 w-100% h-100% inline-block object-cover rounded-15" src={listingGallery[0].listingImageUrl} alt="" />
-      <div className="w-fit">
+      <div className="w-fit z-2">
         <Category
           categoryCount={1}
           categoryId={1}
@@ -48,7 +48,8 @@ export const ListingCardBody2: FC<ListingCardBody2Props> = ({
       <div className="text-14 font-normal text-gray4 mt-2 z-2">{listingLocations[0].address}</div>
       <a
         href={listingLink}
-        className="absolute top-0 left-0 w-100% h-100% bg-gray7 z-1 opacity-0 rounded-15 group-hover:opacity-20 ease-linear duration-200"
+        className="absolute top-0 left-0 w-100% h-100% z-1 rounded-15 ease-linear duration-200"
+        style={{ background: 'linear-gradient(180deg, rgba(33,34,35,0) 0%, #212223 100%)' }}
       ></a>
       <div
         className="text-light absolute bottom-27 right-20 opacity-0 group-hover:opacity-100 z-2 ease-linear duration-300"

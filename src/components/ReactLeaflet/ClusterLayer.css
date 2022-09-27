@@ -1,0 +1,16 @@
+.cluster {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50%;
+  background-color: rgba(33, 150, 243, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.leaflet-div-icon {
+  background-color: transparent !important;
+  border: unset !important;
+}

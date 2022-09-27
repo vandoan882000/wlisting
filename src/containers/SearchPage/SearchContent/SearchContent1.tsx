@@ -25,12 +25,15 @@ export const SearchContent1: FC<SearchContent1Props> = ({ category, location, on
                 <ListingCard variant="variant1">
                   <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
                   <ListingCard.Body
+                    listingAds={listing.listingAds}
+                    listingVerify={listing.listingVerify}
                     listingLocations={listing.listingLocations}
                     listingGallery={listing.listingGallery}
                     listingLink={listing.listingLink}
                     listingTitle={listing.listingTitle}
                   />
                   <ListingCard.Footer
+                    variant="variant1"
                     isInWishlist={listing.isInWishlist}
                     listingCategoryId={listing.listingCategoryId}
                     listingOpenStatus={listing.listingOpenStatus}
@@ -43,14 +46,14 @@ export const SearchContent1: FC<SearchContent1Props> = ({ category, location, on
           <div className="flex justify-center items-center w-36 h-36 text-light bg-primary text-16 font-medium rounded-1/2 mr-8 cursor-pointer">
             1
           </div>
-          <div className="flex justify-center items-center w-36 h-36 text-gray8 bg-light border-1 border-gray4 rounded-1/2 text-16 font-medium mr-8 cursor-pointer">
+          <div className="flex justify-center items-center w-36 h-36 text-gray9 bg-light border-1 border-gray4 rounded-1/2 text-16 font-medium mr-8 cursor-pointer">
             2
           </div>
-          <div className="flex justify-center items-center w-36 h-36  text-gray8 bg-light border-1 border-gray4 font-medium rounded-1/2 mr-8 cursor-pointer">
+          <div className="flex justify-center items-center w-36 h-36  text-gray9 bg-light border-1 border-gray4 font-medium rounded-1/2 mr-8 cursor-pointer">
             3
           </div>
-          <div className="flex justify-center items-center w-36 h-36 text-gray8 font-medium rounded-1/2 mr-8 cursor-pointer">...</div>
-          <div className="flex justify-center items-center  h-36 px-13 text-gray8 bg-light border-1 border-gray4 font-medium rounded-18 mr-8 cursor-pointer">
+          <div className="flex justify-center items-center w-36 h-36 text-gray9 font-medium rounded-1/2 mr-8 cursor-pointer">...</div>
+          <div className="flex justify-center items-center  h-36 px-13 text-gray9 bg-light border-1 border-gray4 font-medium rounded-18 mr-8 cursor-pointer">
             <span className="mr-10">Next</span>
             <span>
               <i className="far fa-chevron-right"></i>

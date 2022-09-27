@@ -1,4 +1,4 @@
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { MultiStepContext } from 'containers/Step/Step';
 import { Children, ComponentType, FC, ReactElement, useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -39,7 +39,7 @@ export const MultiStep: FC<MultiStepProps> & {
         <div className="row justify-center">
           <div className="col-lg-8 max-w-628 !p-0 flex flex-col">
             <div>
-              <span className="font-medium text-40 text-gray8 mr-8">{indexStep}</span>
+              <span className="font-medium text-40 text-gray9 mr-8">{indexStep}</span>
               <span className="font-medium text-20 text-gray6 mr-8">/</span>
               <span className="font-medium text-20 text-gray6">{Children.count(children)}</span>
               <div>
@@ -53,11 +53,11 @@ export const MultiStep: FC<MultiStepProps> & {
               </div>
             </div>
             <div>
-              <Devider />
+              <Divider />
               <div className="flex justify-end pt-17 pb-15">
                 {indexStep > 1 && (
                   <div
-                    className="text-16 font-medium text-gray8 rounded-6 bg-gray2 px-18 py-11 mr-10 cursor-pointer select-none"
+                    className="text-16 font-medium text-gray9 rounded-6 bg-gray2 px-18 py-11 mr-10 cursor-pointer select-none"
                     onClick={handleClickPrev}
                   >
                     <span className="mr-10">

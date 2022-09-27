@@ -59,6 +59,8 @@ export interface ListingCardData {
   listingEmail: string;
   listingPhone: string;
   listingLocations: ListingLocation[];
+  listingVerify: boolean;
+  listingAds: boolean;
 }
 
 export interface ListingLocation {

@@ -35,9 +35,9 @@ export const Hours: FC<HoursProps> = ({ listingOpenStatus }) => {
           return (
             <div className="flex justify-between mt-5" key={hour.listingDayId}>
               <div className="flex items-center">
-                <div className="text-13 font-medium text-gray7 mr-10">{hour.listingDate}</div>
+                <div className="text-13 font-medium text-gray8 mr-10">{hour.listingDate}</div>
                 {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? (
-                  <i className="fas fa-circle text-3 text-gray7 mr-10"></i>
+                  <i className="fas fa-circle text-3 text-gray8 mr-10"></i>
                 ) : (
                   ''
                 )}

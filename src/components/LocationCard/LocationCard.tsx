@@ -10,7 +10,7 @@ interface LocationCardProps {
 export const LocationCard: FC<LocationCardProps> = ({ name, count, image }) => {
   return (
     <Link
-      className="w-100% flex flex-col justify-end items-start min-h-338 bg-gray5 rounded-15 p-30 bg-cover bg-center cursor-pointer aspect-3/4"
+      className="w-100% flex flex-col justify-end items-start min-h-338 bg-gray5 rounded-15 px-30 py-20 bg-cover bg-center cursor-pointer aspect-3/4"
       to={`/search/category=all&location=${name
         .toLowerCase()
         .trim()

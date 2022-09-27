@@ -6,7 +6,7 @@ interface Content4Props {
 export const Content4: FC<Content4Props> = ({ children, text }) => {
   return (
     <div className="pt-80">
-      <div className="flex flex-col items-center font-medium text-32 text-gray8 text-center relative">
+      <div className="flex flex-col items-center font-medium text-32 text-gray9 text-center relative">
         {text}
         <svg width="60px" height="9px" viewBox="0 0 60 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <g id="Listing-Symbols" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

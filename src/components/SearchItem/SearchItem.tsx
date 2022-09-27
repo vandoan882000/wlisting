@@ -59,7 +59,7 @@ export const SearchItem: FC<SearchItemProps> = ({ listingId }) => {
             <div className="text-18 font-normal text-gray5 ml-3">({reviewList.length})</div>
           </div>
         </div>
-        <a href={listing.listingLink} className="inline-block text-18 font-medium text-gray8 mb-5">
+        <a href={listing.listingLink} className="inline-block text-18 font-medium text-gray9 mb-5">
           {listing.listingTitle}
         </a>
         <div className="text-14 font-normal text-gray6 mb-10">
@@ -75,7 +75,7 @@ export const SearchItem: FC<SearchItemProps> = ({ listingId }) => {
             <img className="absolute inset-0 w-100% h-100% top-0 left-0 object-cover rounded-1/2" src={authorComment.userAvatar} alt="" />
           </div>
           <div className="text-13 font-normal text-gray6 line-clamp-2">
-            <span className="text-13 text-gray8 font-bold mr-5">{authorComment.userName}</span>
+            <span className="text-13 text-gray9 font-bold mr-5">{authorComment.userName}</span>
             {reviewList[0].reviewContent}
           </div>
         </div>
@@ -84,7 +84,7 @@ export const SearchItem: FC<SearchItemProps> = ({ listingId }) => {
             <div className="relative bg-cover bg-center rounded-1/2 mr-12 w-22 h-22">
               <img className="absolute inset-0 w-100% h-100% top-0 left-0 object-cover rounded-1/2" src={user.userAvatar} alt="" />
             </div>
-            <div className="text-12 text-gray7 font-medium">{user.userName}</div>
+            <div className="text-12 text-gray8 font-medium">{user.userName}</div>
             <div className="text-13 flex items-center justify-center">
               <i className="fas fa-circle text-3 mx-10 text-gray6"></i> <span className="text-gray6 text-12 font-medium">$$</span>{' '}
               <i className="fas fa-circle text-3 mx-10 text-gray6"></i>{' '}

@@ -8,7 +8,7 @@ export const DownloadApp: FC = () => {
           <img className="w-100% h-100% ab bg-cover bg-center object-cover rounded-15" src="assets/download.png" alt="" />
         </div>
         <div className="col-lg-5">
-          <div className="text-70 font-bold text-gray7 mt-25">Mobile Apps</div>
+          <div className="text-70 font-bold text-gray8 mt-25">Mobile Apps</div>
           <div className="text-19 font-normal text-gray6 leading-1 mt-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus porttitor nisl, sit amet finibus libero ultricies tincidunt. Sed
             fringilla, felis id sollicitudin finibus, nisi mauris accumsan orci

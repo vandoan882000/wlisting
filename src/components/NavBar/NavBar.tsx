@@ -1,5 +1,5 @@
 import { Avatar } from 'components/Avatar/Avatar';
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { Modal } from 'components/Modal/Modal';
 import { Popover } from 'components/Popover/Popover';
 import { PopUp } from 'components/PopUp/PopUp';
@@ -36,7 +36,7 @@ export const NavBar: FC = () => {
   };
   const enableSearch = window.location.href.toString().includes('/listing/') || window.location.href.toString().includes('/search/');
   return (
-    <div className="container max-w-100%">
+    <div className="container">
       <div className="row flex items-center justify-between flex-nowrap w-100% py-16 m-0">
         <Link to="/" className="w-fit m-0 p-0">
           <img className="w-107 h-36 m-0" src="/assets/logo.png" />
@@ -58,39 +58,39 @@ export const NavBar: FC = () => {
             placeholder="West Hollywood, CA"
             style={{ boxShadow: 'none', outline: 'none', width: 'clamp(60px,15vw + 10px, 184px )' }}
           />
-          <button className="flex justify-center items-center w-53 h-42 bg-primary border-primary border-1 rounded-tr-6 rounded-br-6">
+          <button className="flex justify-center items-center w-53 h-42 bg-primary border-primary border-1">
             <i className="fa fa-search text-22 font-normal text-light"></i>
           </button>
         </div>
-        <div className={`flex lg-max:hidden w-fit items-center justify-end m-0 `}>
+        <div className={`flex lg-max:hidden w-fit items-center justify-end m-0 pr-0`}>
           <ul className="flex items-center list-none p-0 sm-max:flex-col">
             <li className="text-15 font-medium text-primary mr-30">
               <Link to="/">Home</Link>
             </li>
-            <li className="group relative text-15 font-medium text-gray8 mr-30">
+            <li className="group relative text-15 font-medium text-gray9 mr-30">
               <span className="cursor-pointer">
                 Explore <i className="fal fa-angle-down"></i>
               </span>
               <ul className="opacity-0 z-_1 group-hover:opacity-100 group-hover:z-100 absolute top-105% left-0 border-1 border-gray2 rounded-4 overflow-hidden shadow-2 translate-y-20 group-hover:translate-y-0 transition-all delay-200  bg-light">
-                <li className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                   Explore 1
                 </li>
-                <li className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                   Explore 2
                 </li>
-                <li className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                   Explore 3
                 </li>
               </ul>
             </li>
 
-            <li className="text-15 font-medium text-gray8 mr-30">
+            <li className="text-15 font-medium text-gray9 mr-30">
               <Link to="/">Blog</Link>
             </li>
             {!!userData && (
               <>
                 <li
-                  className="hover:text-primary text-15 font-medium text-gray8 mr-30 cursor-pointer"
+                  className="hover:text-primary text-15 font-medium text-gray9 mr-30 cursor-pointer"
                   onClick={() => {
                     setVisibleAddListing(visible => !visible);
                     document.body.classList.add('scroll-hidden');
@@ -114,17 +114,17 @@ export const NavBar: FC = () => {
                   </Popover.Toggle>
                   <Popover.Content>
                     <div className="flex flex-col overflow-hidden rounded-8">
-                      <div className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
+                      <div className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
                         Profile
                       </div>
-                      <div className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
+                      <div className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
                         Reviews
                       </div>
-                      <div className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
+                      <div className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
                         Listings
                       </div>
                       <div
-                        className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none"
+                        className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none"
                         onClick={handleLogout}
                       >
                         Logout
@@ -135,14 +135,14 @@ export const NavBar: FC = () => {
               </>
             )}
             {!currentUser && (
-              <li className="text-15 font-medium text-gray8 mr-30 cursor-pointer" onClick={() => setVisibleSignUp(visible => !visible)}>
+              <li className="text-15 font-medium text-gray9 mr-30 cursor-pointer" onClick={() => setVisibleSignUp(visible => !visible)}>
                 Sign up
               </li>
             )}
           </ul>
           {!userData && (
             <div
-              className="py-6 px-23 text-15 text-gray8 font-medium rounded-5 border-primary border-1 cursor-pointer"
+              className="py-6 px-23 text-15 text-gray9 font-medium rounded-5 border-primary border-1 cursor-pointer"
               onClick={() => {
                 setVisibleLogin(visible => !visible);
                 document.body.classList.add('scroll-hidden');
@@ -211,7 +211,7 @@ export const NavBar: FC = () => {
               <div className="flex items-center flex-wrap">
                 <div className="text-14 font-medium text-primary border-b-2 border-primary px-20 py-5 cursor-pointer select-none">Overview</div>
                 <div
-                  className="text-14 font-medium text-gray8 px-20 cursor-pointer hover:text-primary select-none"
+                  className="text-14 font-medium text-gray9 px-20 cursor-pointer hover:text-primary select-none"
                   onClick={() => {
                     setVisibleTerm(visible => !visible);
                     document.body.classList.add('scroll-hidden');
@@ -244,7 +244,7 @@ export const NavBar: FC = () => {
             navigation={
               <div className="flex items-center flex-wrap">
                 <div
-                  className="text-14 font-medium text-gray8 hover:text-primary px-20 cursor-pointer"
+                  className="text-14 font-medium text-gray9 hover:text-primary px-20 cursor-pointer"
                   onClick={() => setVisibleTerm(visible => !visible)}
                 >
                   Overview
@@ -254,7 +254,7 @@ export const NavBar: FC = () => {
             }
           >
             <Section7 />
-            <Devider />
+            <Divider />
             <Footer />
           </Modal>
         </div>
@@ -273,30 +273,30 @@ export const NavBar: FC = () => {
                       <li className="text-15 font-medium text-primary w-100% py-10 border-b-1 border-gray4 text-center">
                         <Link to="/">Home</Link>
                       </li>
-                      <li className="group relative text-15 font-medium text-gray8 w-100% py-10 border-b-1 border-gray4 text-center">
+                      <li className="group relative text-15 font-medium text-gray9 w-100% py-10 border-b-1 border-gray4 text-center">
                         <span className="cursor-pointer">
                           Explore <i className="fal fa-angle-down"></i>
                         </span>
                         <ul className="hidden group-target:block">
-                          <li className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                          <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                             Explore 1
                           </li>
-                          <li className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                          <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                             Explore 2
                           </li>
-                          <li className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                          <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                             Explore 3
                           </li>
                         </ul>
                       </li>
 
-                      <li className="text-15 font-medium text-gray8 w-100% py-10 border-b-1 border-gray4 text-center">
+                      <li className="text-15 font-medium text-gray9 w-100% py-10 border-b-1 border-gray4 text-center">
                         <Link to="/">Blog</Link>
                       </li>
                       {!!userData && (
                         <>
                           <li
-                            className="hover:text-primary text-15 font-medium text-gray8 cursor-pointer w-100% py-10 border-b-1 border-gray4 text-center"
+                            className="hover:text-primary text-15 font-medium text-gray9 cursor-pointer w-100% py-10 border-b-1 border-gray4 text-center"
                             onClick={() => {
                               setVisibleAddListing(visible => !visible);
                               document.body.classList.add('scroll-hidden');
@@ -320,17 +320,17 @@ export const NavBar: FC = () => {
                             </Popover.Toggle>
                             <Popover.Content>
                               <div className="flex flex-col overflow-hidden rounded-8">
-                                <div className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
+                                <div className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
                                   Profile
                                 </div>
-                                <div className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
+                                <div className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
                                   Reviews
                                 </div>
-                                <div className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
+                                <div className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none">
                                   Listings
                                 </div>
                                 <div
-                                  className="text-15 font-medium text-gray8 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none"
+                                  className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light select-none"
                                   onClick={handleLogout}
                                 >
                                   Logout
@@ -341,14 +341,14 @@ export const NavBar: FC = () => {
                         </>
                       )}
                       {!currentUser && (
-                        <li className="text-15 font-medium text-gray8 mr-30 cursor-pointer" onClick={() => setVisibleSignUp(visible => !visible)}>
+                        <li className="text-15 font-medium text-gray9 mr-30 cursor-pointer" onClick={() => setVisibleSignUp(visible => !visible)}>
                           Sign up
                         </li>
                       )}
                     </ul>
                     {!userData && (
                       <div
-                        className="py-6 px-23 text-15 text-gray8 font-medium rounded-5 border-primary border-1 cursor-pointer"
+                        className="py-6 px-23 text-15 text-gray9 font-medium rounded-5 border-primary border-1 cursor-pointer"
                         onClick={() => {
                           setVisibleLogin(visible => !visible);
                           document.body.classList.add('scroll-hidden');
@@ -419,7 +419,7 @@ export const NavBar: FC = () => {
                             Overview
                           </div>
                           <div
-                            className="text-14 font-medium text-gray8 px-20 cursor-pointer hover:text-primary select-none"
+                            className="text-14 font-medium text-gray9 px-20 cursor-pointer hover:text-primary select-none"
                             onClick={() => {
                               setVisibleTerm(visible => !visible);
                               document.body.classList.add('scroll-hidden');
@@ -452,7 +452,7 @@ export const NavBar: FC = () => {
                       navigation={
                         <div className="flex items-center flex-wrap">
                           <div
-                            className="text-14 font-medium text-gray8 hover:text-primary px-20 cursor-pointer"
+                            className="text-14 font-medium text-gray9 hover:text-primary px-20 cursor-pointer"
                             onClick={() => setVisibleTerm(visible => !visible)}
                           >
                             Overview
@@ -462,7 +462,7 @@ export const NavBar: FC = () => {
                       }
                     >
                       <Section7 />
-                      <Devider />
+                      <Divider />
                       <Footer />
                     </Modal>
                   </div>

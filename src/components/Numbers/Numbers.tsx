@@ -7,7 +7,7 @@ interface NumberProps {
   handleDecrease: () => void;
 }
 
-export const Number: FC<NumberProps> = ({ value, handleInCrease, handleDecrease, name }) => {
+export const Numbers: FC<NumberProps> = ({ value, handleInCrease, handleDecrease, name }) => {
   return (
     <div className="flex w-68 h-40 border-1 border-gray4">
       <input type="number" className="hidden" name={name} />

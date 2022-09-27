@@ -1,6 +1,7 @@
 import { Avatar } from 'components/Avatar/Avatar';
 import { Popover } from 'components/Popover/Popover';
 import { Rate1 } from 'components/Rate1/Rate1';
+import { ReviewGallery } from 'components/ReviewGallery/ReviewGallery';
 import { StatusButton } from 'components/StatusButton/StatusButton';
 import { review_data, ReviewData } from 'data/review_data';
 import { users_data } from 'data/users_data';
@@ -22,7 +23,7 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
   };
   const authorInfo = getAuthor(review.reviewAuthorId);
   return (
-    <div className="flex flex-col py-22 border-b-1 border-gray3">
+    <div className="flex flex-col py-22">
       <div className="flex justify-between items-center flex-wrap">
         <Avatar name={authorInfo.userName} avatar={authorInfo.userAvatar} size={50} fontSize={13} detail={true} />
         <div className="flex flex-wrap">
@@ -43,19 +44,19 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
                 <div className="flex flex-col rounded-10  py-9 bg-light z-100">
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
                     <i className="far fa-pen text-12 mr-8 text-gray5"></i>
-                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Edit</span>
+                    <span className="text-13 font-normal text-gray8 whitespace-nowrap">Edit</span>
                   </div>
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
                     <i className="far fa-star text-12 mr-8 text-gray5"></i>
-                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Write a review</span>
+                    <span className="text-13 font-normal text-gray8 whitespace-nowrap">Write a review</span>
                   </div>
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
                     <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
-                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Delete</span>
+                    <span className="text-13 font-normal text-gray8 whitespace-nowrap">Delete</span>
                   </div>
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
                     <i className="far fa-flag text-12 mr-8 text-gray5"></i>
-                    <span className="text-13 font-normal text-gray7 whitespace-nowrap">Report</span>
+                    <span className="text-13 font-normal text-gray8 whitespace-nowrap">Report</span>
                   </div>
                 </div>
               </Popover.Content>
@@ -64,6 +65,7 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
         </div>
       </div>
       <div className="text-14 font-normal text-gray6 mt-10 line-clamp-3">{review.reviewContent}</div>
+      <ReviewGallery gallery={review.reviewGallery} />
       <div className="flex flex-wrap">
         <StatusButton text="Useful" quantity={review.reviewReact.useful}>
           <img className="min-w-20" src="/assets/useful.png" alt="" />

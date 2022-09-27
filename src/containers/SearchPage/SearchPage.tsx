@@ -1,4 +1,4 @@
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { NavBar } from 'components/NavBar/NavBar';
 import { Footer } from 'containers/Footer/Footer';
 import { categories_data } from 'data/categories_data';
@@ -20,7 +20,7 @@ export const SearchPage: FC = () => {
       {showMap && <SearchContent category={categoryId} location={location as string} onClick={() => setShowMap(prevState => !prevState)} />}
       {!showMap && <SearchContent1 category={categoryId} location={location as string} onClick={() => setShowMap(prevState => !prevState)} />}
       <div className="mt-65">
-        <Devider />
+        <Divider />
       </div>
       <Footer />
     </>

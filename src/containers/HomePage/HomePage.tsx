@@ -1,5 +1,5 @@
 import { CustomSwiper } from 'components/CustomSwiper/CustomSwiper';
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { ListingCard2 } from 'components/ListingCard2/ListingCard2';
 import { NavBar } from 'components/NavBar/NavBar';
@@ -26,7 +26,7 @@ export const HomePage = () => {
       <ListingCards />
       <JoinUs />
       <ListingCards2 />
-      <CustomSwiper title="Recent Collections" link="#" titleFontWeight={500}>
+      <CustomSwiper title="Recent Collections" link="search/category=all&location=all" titleFontWeight={500}>
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
@@ -45,7 +45,7 @@ export const HomePage = () => {
         ))}
       </CustomSwiper>
       <CustomSwiper
-        link={'#'}
+        link={'search/category=all&location=all'}
         title="Top Viewed"
         slidesPerView={5}
         titleFontWeight={500}
@@ -78,12 +78,15 @@ export const HomePage = () => {
             <ListingCard variant="variant2">
               <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
+                listingAds={listing.listingAds}
+                listingVerify={listing.listingVerify}
                 listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
               />
               <ListingCard.Footer
+                variant="variant2"
                 isInWishlist={listing.isInWishlist}
                 listingCategoryId={listing.listingCategoryId}
                 listingOpenStatus={listing.listingOpenStatus}
@@ -92,7 +95,7 @@ export const HomePage = () => {
           </SwiperSlide>
         ))}
       </CustomSwiper>
-      <div className="container mt-50 pb-10">
+      <div className="container mt-50">
         <div className="row flex justify-center">
           <div className="col-lg-8 relative flex justify-center bg-center bg-cover">
             <img className="object-cover" src="/assets/adsplaceholder.png" alt="" />
@@ -101,7 +104,7 @@ export const HomePage = () => {
       </div>
       <CustomSwiper
         title="You Might Also Like"
-        link="#"
+        link="search/category=all&location=all"
         titleFontWeight={500}
         slidesPerView={5}
         breakpoints={{
@@ -133,12 +136,15 @@ export const HomePage = () => {
             <ListingCard variant="variant2">
               <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
+                listingAds={listing.listingAds}
+                listingVerify={listing.listingVerify}
                 listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
               />
               <ListingCard.Footer
+                variant="variant2"
                 isInWishlist={listing.isInWishlist}
                 listingCategoryId={listing.listingCategoryId}
                 listingOpenStatus={listing.listingOpenStatus}
@@ -148,9 +154,9 @@ export const HomePage = () => {
         ))}
       </CustomSwiper>
       <DownloadApp />
-      <Devider />
+      <Divider />
       <Footer />
-      <Devider />
+      <Divider />
       <CopyRight />
     </>
   );

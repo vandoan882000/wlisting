@@ -21,7 +21,7 @@ export const Avatar: FC<AvatarProps> = ({ name, avatar, comment, size, detail = 
       </div>
       <div className="flex flex-col justify-center">
         <div className="flex">
-          <div className="font-medium text-gray8" style={{ fontSize: `${fontSize}px` }}>
+          <div className="font-medium text-gray7" style={{ fontSize: `${fontSize}px` }}>
             {name}
           </div>
           {!!comment && <div className="text-13 text-gray5 font-normal">{comment} </div>}

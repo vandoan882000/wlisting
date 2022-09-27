@@ -70,7 +70,7 @@ export const Step8: FC = () => {
   };
   return (
     <div className="mb-110">
-      <div className="text-gray8 text-22 font-medium">Add your opening time</div>
+      <div className="text-gray9 text-22 font-medium">Add your opening time</div>
       <div className="flex flex-col w-100% flex-wrap mt-30">
         <div className="flex flex-col">
           <div className="flex items-center">
@@ -87,7 +87,7 @@ export const Step8: FC = () => {
               <div>No hours available</div>
             </div>
           </div>
-          {openState == 'open_hours' && <div className="text-14 font-medium text-gray8 mt-20 mb-9">Select hours</div>}
+          {openState == 'open_hours' && <div className="text-14 font-medium text-gray9 mt-20 mb-9">Select hours</div>}
           {openState == 'open_hours' &&
             dates.map((date, index) => {
               return (

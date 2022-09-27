@@ -13,7 +13,7 @@ export const TourCard: FC<TourCardProps> = ({ image, name, length }) => {
         <img className="absolute top-0 left-0 w-100% h-100% object-cover rounded-15" src={image} alt="" />
       </div>
       <div className="flex justify-between mt-6">
-        <div className="text-13 font-medium text-gray8">{name}</div>
+        <div className="text-13 font-medium text-gray9">{name}</div>
         <div className="text-13 font-normal text-gray6">+ {length} Photos</div>
       </div>
     </div>

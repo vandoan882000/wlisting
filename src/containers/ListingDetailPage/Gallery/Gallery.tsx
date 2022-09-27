@@ -4,8 +4,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 import { Modal } from 'components/Modal/Modal';
-import { ReviewPage } from 'containers/ReviewPage/ReviewPage';
 import { listings_data } from 'data/listings_data';
+import { review_data } from 'data/review_data';
 import { FC, useState } from 'react';
 import { A11y, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,13 +17,18 @@ interface GalleryProps {
 
 export const Gallery: FC<GalleryProps> = ({ listingId }) => {
   const [visibleModal, setVisibleModal] = useState(false);
-  const [visibleModalReview, setVisibleModalReview] = useState(false);
   const [enableTypeImage, setEnableTypeImage] = useState('Living room');
   const getListing = (listingId: number) => {
     const listing = listings_data.find((listing: ListingCardData) => listing.listingId === listingId);
     return listing ? listing : listings_data[0];
   };
   const listing = getListing(listingId);
+  const currentReviews = review_data.filter(review => listing.listingReviewsIds.includes(review.reviewId));
+  let currentGallery = [] as string[];
+  currentReviews.forEach(item => {
+    currentGallery = [...currentGallery, ...item.reviewGallery];
+  });
+  console.log(currentGallery);
   const listingTypeImage: string[] = [];
   listing.listingGallery.forEach(image => {
     if (!listingTypeImage.includes(image.listingImageName)) {
@@ -90,17 +95,17 @@ export const Gallery: FC<GalleryProps> = ({ listingId }) => {
           </div>
         </div>
         <div
-          className="absolute flex justify-center items-center w-fit h-36 bg-light rounded-4 bottom-10 right-10 cursor-pointer"
+          className="absolute flex justify-center items-center w-fit h-36 text-14 font-medium bg-light rounded-4 bottom-10 right-10 cursor-pointer"
           onClick={() => {
             setVisibleModal(visible => !visible);
             setEnableTypeImage('Living Room');
             document.body.classList.add('scroll-hidden');
           }}
         >
-          <span className="mr-5">
+          <span className="mr-5 text-16">
             <i className="far fa-image"></i>
           </span>
-          <div>View Photos</div>
+          <span>View Photos</span>
         </div>
         <Modal
           onBack={() => {
@@ -115,7 +120,7 @@ export const Gallery: FC<GalleryProps> = ({ listingId }) => {
                 return (
                   <div
                     className={`flex justify-center items-center text-14 font-medium px-20 hover:text-primary ${
-                      typeImage == enableTypeImage ? 'text-primary border-b-2 border-b-primary' : 'text-gray8'
+                      typeImage == enableTypeImage ? 'text-primary border-b-2 border-b-primary' : 'text-gray9'
                     } cursor-pointer`}
                     key={index}
                     onClick={() => setEnableTypeImage(typeImage)}
@@ -126,10 +131,7 @@ export const Gallery: FC<GalleryProps> = ({ listingId }) => {
               })}
               <div
                 className={`flex justify-center items-center text-14 font-medium px-20 hover:text-primary cursor-pointer `}
-                onClick={() => {
-                  setVisibleModalReview(visible => !visible);
-                  document.body.classList.add('scroll-hidden');
-                }}
+                onClick={() => setEnableTypeImage('Review')}
               >
                 Review photos
               </div>
@@ -137,7 +139,7 @@ export const Gallery: FC<GalleryProps> = ({ listingId }) => {
           }
         >
           <div className="flex justify-center">
-            <div className="w-60%">
+            <div className="sm-max:w-100% w-60%">
               <Swiper
                 className="!pb-90"
                 modules={[Pagination, Scrollbar, A11y]}
@@ -146,47 +148,62 @@ export const Gallery: FC<GalleryProps> = ({ listingId }) => {
                 pagination={{
                   clickable: true,
                   renderBullet: (index: number, className: string) => {
-                    const listingCurrent = listing.listingGallery.filter(item => item.listingImageName == enableTypeImage);
-                    return (
-                      '<div class="' +
-                      className +
-                      ' relative !w-60 !h-60 bg-cover bg-center cursor-pointer aspect-1/1">' +
-                      '<img class="absolute inset-0 w-100% h-100% object-cover"' +
-                      ' src=' +
-                      listingCurrent[index].listingImageUrl +
-                      'alt="" />' +
-                      '</div>'
-                    );
+                    if (enableTypeImage != 'Review') {
+                      const listingCurrent = listing.listingGallery.filter(item => item.listingImageName == enableTypeImage);
+                      return (
+                        '<div class="' +
+                        className +
+                        ' relative !w-60 !h-60 bg-cover bg-center cursor-pointer aspect-1/1 !rounded-none">' +
+                        '<img class="absolute inset-0 w-100% h-100% object-cover"' +
+                        ' src=' +
+                        listingCurrent[index].listingImageUrl +
+                        ' />' +
+                        '</div>'
+                      );
+                    } else {
+                      return (
+                        '<div class="' +
+                        className +
+                        ' relative !w-60 !h-60 bg-cover bg-center cursor-pointer aspect-1/1 !rounded-none">' +
+                        '<img class="absolute inset-0 w-100% h-100% object-cover"' +
+                        ' src=' +
+                        currentGallery[index] +
+                        ' ' +
+                        ' />' +
+                        '</div>'
+                      );
+                    }
                   },
                 }}
                 scrollbar={{ draggable: true }}
                 onSwiper={() => {}}
                 onSlideChange={() => console.log('slide change')}
               >
-                {listing.listingGallery.map((image, index) => {
-                  return (
-                    image.listingImageName == enableTypeImage && (
+                {enableTypeImage != 'Review' &&
+                  listing.listingGallery.map((image, index) => {
+                    return (
+                      image.listingImageName == enableTypeImage && (
+                        <SwiperSlide key={index}>
+                          <div className="relative w-100% h-100% bg-cover bg-center cursor-pointer aspect-16/9">
+                            <img className="absolute inset-0 w-100% h-100% object-cover" src={image.listingImageUrl} alt="" />
+                          </div>
+                        </SwiperSlide>
+                      )
+                    );
+                  })}
+                {enableTypeImage == 'Review' &&
+                  currentGallery.map((image, index) => {
+                    return (
                       <SwiperSlide key={index}>
                         <div className="relative w-100% h-100% bg-cover bg-center cursor-pointer aspect-16/9">
-                          <img className="absolute inset-0 w-100% h-100% object-cover" src={image.listingImageUrl} alt="" />
+                          <img className="absolute inset-0 w-100% h-100% object-cover" src={image} />
                         </div>
                       </SwiperSlide>
-                    )
-                  );
-                })}
+                    );
+                  })}
               </Swiper>
             </div>
           </div>
-        </Modal>
-        <Modal
-          title={'View all photos'}
-          visible={visibleModalReview}
-          onBack={() => {
-            setVisibleModalReview(visible => !visible);
-            document.body.classList.remove('scroll-hidden');
-          }}
-        >
-          <ReviewPage />
         </Modal>
       </div>
     </div>

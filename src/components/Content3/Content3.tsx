@@ -8,7 +8,7 @@ interface Content3Props {
 export const Content3: FC<Content3Props> = ({ title, children }) => {
   return (
     <div className="mt-20">
-      {title != '' && <div className="text-22 font-medium text-gray8">{title}</div>}
+      {title != '' && <div className="text-22 font-medium text-gray9">{title}</div>}
       {children}
     </div>
   );

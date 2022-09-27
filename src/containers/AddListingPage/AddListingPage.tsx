@@ -1,5 +1,5 @@
 import { Content4 } from 'components/Content4/Content4';
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { Footer } from 'containers/Footer/Footer';
 import { CopyRight } from 'containers/HomePage/CopyRight/CopyRight';
 import { FC } from 'react';
@@ -28,9 +28,9 @@ export const AddListingPage: FC = () => {
         <Section5 />
       </Content4>
       <Section6 />
-      <Devider />
+      <Divider />
       <Footer />
-      <Devider />
+      <Divider />
       <CopyRight />
     </>
   );

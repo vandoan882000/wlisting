@@ -13,7 +13,7 @@ export const NotFoundPage: FC = () => {
             Oh god, sorry about that, but this planet no longer exist!
           </div>
           <div className="flex mt-20 md-max:justify-center md:justify-start items-center flex-wrap">
-            <div className="bg-gray2 rounded-6 text-16 font-500 text-gray8 py-8 px-18 mr-10 whitespace-nowrap mt-6 cursor-pointer">
+            <div className="bg-gray2 rounded-6 text-16 font-500 text-gray9 py-8 px-18 mr-10 whitespace-nowrap mt-6 cursor-pointer">
               <i className="fal fa-arrow-left mr-5"></i>
               Go back
             </div>

@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 export const LocationCards2: FC = () => {
   return (
     <div className="container">
-      <div className="text-22 text-gray8 font-medium mb-10">Happening Cities</div>
+      <div className="text-22 text-gray9 font-medium mb-10">Happening Cities</div>
       <div className="row">
         <Swiper
           modules={[Navigation, A11y]}

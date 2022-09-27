@@ -36,11 +36,11 @@ export const Step3: FC = () => {
   };
   return (
     <div className="mb-125">
-      <div className="text-gray8 text-22 font-medium">Information of listing owner</div>
+      <div className="text-gray9 text-22 font-medium">Information of listing owner</div>
       <div className="flex flex-col w-100% flex-wrap mt-30">
-        <div className="text-14 text-gray8 font-medium mb-9">Logo or avatar</div>
+        <div className="text-14 text-gray9 font-medium mb-9">Logo or avatar</div>
         <SelectAvatar name="avatar" onChange={debounce(handleChange)} />
-        <div className="text-14 text-gray8 font-medium mt-20 mb-9">Introduce the listing owner</div>
+        <div className="text-14 text-gray9 font-medium mt-20 mb-9">Introduce the listing owner</div>
         <textarea
           className="border-1 border-gray4 rounded-4 py-15 w-100% h-120 text-14 focus:border-gray4"
           style={{ boxShadow: 'none' }}
@@ -48,7 +48,7 @@ export const Step3: FC = () => {
           name="introduce"
           onChange={debounce(handleChange)}
         ></textarea>
-        <div className="text-14 text-gray8 font-medium mt-20 mb-9">Phone number</div>
+        <div className="text-14 text-gray9 font-medium mt-20 mb-9">Phone number</div>
         <input
           className="w-100% text-14 text-gray5 font-medium border-gray4 border-1 rounded-4 py-15 focus:border-gray4"
           type="tel"
@@ -57,7 +57,7 @@ export const Step3: FC = () => {
           style={{ boxShadow: 'none' }}
           onChange={debounce(handleChange)}
         />
-        <div className="text-14 text-gray8 font-medium mt-20 mb-9">Email</div>
+        <div className="text-14 text-gray9 font-medium mt-20 mb-9">Email</div>
         <input
           className="w-100% text-14 text-gray5 font-medium border-gray4 border-1 rounded-4 py-15 focus:border-gray4"
           type="email"
@@ -66,7 +66,7 @@ export const Step3: FC = () => {
           style={{ boxShadow: 'none' }}
           onChange={debounce(handleChange)}
         />
-        <div className="text-14 text-gray8 font-medium mt-20 mb-9">Social</div>
+        <div className="text-14 text-gray9 font-medium mt-20 mb-9">Social</div>
         {socialState.map((social, index) => {
           return (
             <div key={index} className="flex mb-10">

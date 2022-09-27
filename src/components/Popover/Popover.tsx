@@ -69,7 +69,7 @@ export const Popover: FC<PopoverProps> & {
           variant == 'variant1'
             ? visible
               ? 'mr-20 my-10 rounded-20 !text-primary border-1 border-primary bg-light'
-              : 'mr-20 my-10 rounded-20 !text-gray8 border-1 border-gray4'
+              : 'mr-20 my-10 rounded-20 !text-gray7 border-1 border-gray4'
             : ''
         }  w-fit cursor-pointer`}
       >

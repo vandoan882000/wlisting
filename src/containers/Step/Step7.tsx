@@ -36,12 +36,12 @@ export const Step7: FC = () => {
   };
   return (
     <div className="mb-434">
-      <div className="text-gray8 text-22 font-medium">Please select your photos and videos</div>
+      <div className="text-gray9 text-22 font-medium">Please select your photos and videos</div>
       <div className="flex flex-col w-100% flex-wrap mt-20">
         <div className="flex flex-col">
-          <div className="text-14 font-medium text-gray8 mb-9">Photos</div>
+          <div className="text-14 font-medium text-gray9 mb-9">Photos</div>
           <ImageInputFile name="gallery" onChange={handleChangeImage} />
-          <div className="text-14 font-medium text-gray8 mt-20 mb-9">Youtube or Vimeo</div>
+          <div className="text-14 font-medium text-gray9 mt-20 mb-9">Youtube or Vimeo</div>
           {videoValue.map((video, index) => {
             return (
               <div className="flex items-center h-46 mb-10" key={index}>
@@ -57,7 +57,7 @@ export const Step7: FC = () => {
                     className="flex justify-center items-center h-100% px-15 py-5 border-1 border-gray4 rounded-4 cursor-pointer"
                     onClick={() => setVideoValue(prevState => [...prevState, ''])}
                   >
-                    <i className="far fa-plus text-20 text-gray8"></i>
+                    <i className="far fa-plus text-20 text-gray9"></i>
                   </div>
                 )}
                 {index != videoValue.length - 1 && (
@@ -65,7 +65,7 @@ export const Step7: FC = () => {
                     className="flex justify-center items-center h-100% px-15 py-5 border-1 border-gray4 rounded-4 cursor-pointer"
                     onClick={() => setVideoValue(prevState => [...prevState.filter((item, indexValue) => indexValue != index)])}
                   >
-                    <i className="far fa-times text-20 text-gray8"></i>
+                    <i className="far fa-times text-20 text-gray9"></i>
                   </div>
                 )}
               </div>

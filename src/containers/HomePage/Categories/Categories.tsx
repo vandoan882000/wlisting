@@ -5,8 +5,8 @@ import { FC } from 'react';
 
 export const Categories: FC = () => {
   return (
-    <div className="container mt-15 mb-15">
-      <div className="text-22 font-medium text-gray8 mb-6">Find the Best Businesses in Town</div>
+    <div className="container mt-5">
+      <div className="text-22 font-medium text-gray9 mb-6">Find the Best Businesses in Town</div>
       <div className="row">
         {categories_data.slice(0, 4).map(category => (
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-2" key={category.categoryId}>

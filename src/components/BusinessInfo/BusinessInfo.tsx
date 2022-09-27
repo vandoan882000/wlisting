@@ -1,4 +1,4 @@
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { FC } from 'react';
 import { ListingSocial } from 'types/Listing';
 
@@ -14,28 +14,28 @@ export const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) =>
       <div className="mt-15">
         <div className="flex justify-start items-center mb-15">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
-            <i className="far fa-link text-gray7"></i>
+            <i className="far fa-link text-gray8"></i>
           </div>
-          <a href={`mailto:${email}`} className="text-14 font-normal text-gray7">
+          <a href={`mailto:${email}`} className="text-14 font-normal text-gray8">
             {email}
           </a>
         </div>
         <div className="flex justify-start items-center mb-15">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
-            <i className="far fa-phone-alt text-gray7"></i>
+            <i className="far fa-phone-alt text-gray8"></i>
           </div>
-          <a href={`tel:${phone}`} className="text-14 font-normal text-gray7">
+          <a href={`tel:${phone}`} className="text-14 font-normal text-gray8">
             {phone}
           </a>
         </div>
         <div className="flex justify-start items-center mb-15">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
-            <i className="far fa-comment-alt text-gray7"></i>
+            <i className="far fa-comment-alt text-gray8"></i>
           </div>
           <a className="text-14 font-normal text-gray7">Message the business</a>
         </div>
       </div>
-      <Devider />
+      <Divider />
       <div className="flex items-center w-100% pt-13">
         {social.map((item, index) => {
           switch (item.name) {

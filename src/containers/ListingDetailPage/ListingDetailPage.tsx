@@ -1,5 +1,5 @@
 import { CustomSwiper } from 'components/CustomSwiper/CustomSwiper';
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { NavBar } from 'components/NavBar/NavBar';
 import { Footer } from 'containers/Footer/Footer';
@@ -51,12 +51,15 @@ export const ListingDetailPage = () => {
             <ListingCard variant="variant1">
               <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
+                listingAds={listing.listingAds}
+                listingVerify={listing.listingVerify}
                 listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
               />
               <ListingCard.Footer
+                variant="variant1"
                 isInWishlist={listing.isInWishlist}
                 listingCategoryId={listing.listingCategoryId}
                 listingOpenStatus={listing.listingOpenStatus}
@@ -99,12 +102,15 @@ export const ListingDetailPage = () => {
             <ListingCard variant="variant1">
               <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
+                listingAds={listing.listingAds}
+                listingVerify={listing.listingVerify}
                 listingLocations={listing.listingLocations}
                 listingGallery={listing.listingGallery}
                 listingLink={listing.listingLink}
                 listingTitle={listing.listingTitle}
               />
               <ListingCard.Footer
+                variant="variant1"
                 isInWishlist={listing.isInWishlist}
                 listingCategoryId={listing.listingCategoryId}
                 listingOpenStatus={listing.listingOpenStatus}
@@ -113,7 +119,7 @@ export const ListingDetailPage = () => {
           </SwiperSlide>
         ))}
       </CustomSwiper>
-      <Devider style={{ marginTop: '50px' }} />
+      <Divider style={{ marginTop: '50px' }} />
       <Footer />
     </>
   );

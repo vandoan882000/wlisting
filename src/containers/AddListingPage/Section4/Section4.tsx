@@ -12,7 +12,7 @@ export const Section4: FC = () => {
               alt=""
             />
           </div>
-          <div className="text-26 font-medium text-gray8 mt-15">Who are we?</div>
+          <div className="text-26 font-medium text-gray9 mt-15">Who are we?</div>
           <div className="text-15 font-normal text-gray6 mt-5">
             Si sine metu degendae praesidia firmissima filium morte multavit si sine metu degendae. Omne animal, simul atque in sanguinem suum tam
             crudelis fuisse, nihil molestiae consequatur. Et quidem se oratio, tua praesertim, qui studiose antiqua persequeris, claris et voluptatem.

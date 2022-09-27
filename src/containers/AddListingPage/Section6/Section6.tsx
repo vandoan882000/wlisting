@@ -1,4 +1,4 @@
-import { Devider } from 'components/Divider/Devider';
+import { Divider } from 'components/Divider/Divider';
 import { Modal } from 'components/Modal/Modal';
 import { Footer } from 'containers/Footer/Footer';
 import { FC, useState } from 'react';
@@ -12,7 +12,7 @@ export const Section6: FC = () => {
       <div className="row relative w-100% bg-center bg-cover h-500">
         <img className="inset-0 w-100% h-100% absolute object-cover z-_1 rounded-15 !m-0 !p-0" src="/assets/ready-earn.png" alt="" />
         <div className="col-lg-6 p-60 flex flex-col justify-center">
-          <div className="text-gray8 font-medium text-60">Ready to earn?</div>
+          <div className="text-gray9 font-medium text-60">Ready to earn?</div>
           <div
             className="flex text-light bg-primary rounded-6 w-fit px-15 py-10 cursor-pointer mt-15"
             onClick={() => {
@@ -38,7 +38,7 @@ export const Section6: FC = () => {
         navigation={
           <div className="flex items-center">
             <div
-              className="text-14 font-medium text-gray8 hover:text-primary px-20 cursor-pointer"
+              className="text-14 font-medium text-gray9 hover:text-primary px-20 cursor-pointer"
               onClick={() => setVisibleTerm(visible => !visible)}
             >
               Overview
@@ -48,7 +48,7 @@ export const Section6: FC = () => {
         }
       >
         <Section7 />
-        <Devider />
+        <Divider />
         <Footer />
       </Modal>
     </div>

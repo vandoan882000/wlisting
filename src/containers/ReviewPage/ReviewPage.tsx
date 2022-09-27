@@ -49,14 +49,18 @@ export const ReviewPage: FC = () => {
               </div>
             </PopUp.Toggle>
             <PopUp.Content>
-              <div className="p-15">
+              <div className="pb-15">
                 <Rating>Check-in</Rating>
                 <Rating>Accuracy</Rating>
                 <Rating>Cleanliness</Rating>
                 <Rating>Location</Rating>
-                <div className="text-14 text-gray8 font-medium">Message</div>
-                <textarea className="w-100% rounded-4 border-1 border-gray4 h-95 mt-7" name="" id=""></textarea>
-                <div className="text-14 text-gray8 font-medium mb-7">Image</div>
+                <div className="text-14 text-gray9 font-medium">Message</div>
+                <textarea
+                  className="w-100% rounded-4 border-1 border-gray4 h-95 mt-7 focus:border-gray4 focus:outline-none"
+                  style={{ boxShadow: 'none' }}
+                  name="messageReview"
+                ></textarea>
+                <div className="text-14 text-gray9 font-medium mb-7">Image</div>
                 <ImageInputFile name="imageReview" />
               </div>
             </PopUp.Content>

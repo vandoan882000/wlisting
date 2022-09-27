@@ -4,11 +4,11 @@ import { FC } from 'react';
 
 export const LocationCards: FC = () => {
   return (
-    <div className="container mt-45">
-      <div className="text-22 text-gray8 font-medium mb-10">Happening Cities</div>
+    <div className="container mt-64">
+      <div className="text-22 text-gray9 font-medium mb-10">Happening Cities</div>
       <div className="row relative">
         <a
-          href="#"
+          href="/search/category=all&location=all"
           className="absolute top-50% right-0 flex justify-center items-center translate-x-10 translate-y-_50% w-46 h-46 rounded-1/2 shadow-1 bg-light text-25 z-100 cursor-pointer"
         >
           <i className="fal fa-angle-right"></i>

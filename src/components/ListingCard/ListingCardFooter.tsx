@@ -2,17 +2,19 @@ import { Category } from 'components/Category/Category';
 import { OpenStatusButton } from 'components/OpenStatusButton/OpenStatusButton';
 import { WishListButton } from 'components/WishListButton/WishListButton';
 import { categories_data } from 'data/categories_data';
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { CategoryData } from 'types/Category';
 import { ListingDateStatus } from 'types/Listing';
 
+type VariantType = 'variant1' | 'variant2';
 interface ListingCardFooterProps {
   listingCategoryId: number;
   listingOpenStatus: ListingDateStatus[];
   isInWishlist: boolean;
+  variant: VariantType;
 }
 
-export const ListingCardFooter: FC<ListingCardFooterProps> = ({ listingCategoryId, listingOpenStatus, isInWishlist }) => {
+export const ListingCardFooter: FC<ListingCardFooterProps> = ({ listingCategoryId, listingOpenStatus, isInWishlist, variant }) => {
   const [wishlist, setWishlist] = useState(isInWishlist);
   const getDateStatus = (listingOpenStatus: ListingDateStatus[]) => {
     let state = false;
@@ -54,12 +56,14 @@ export const ListingCardFooter: FC<ListingCardFooterProps> = ({ listingCategoryI
       </div>
       <div className="flex items-center">
         <OpenStatusButton isOpen={getDateStatus(listingOpenStatus)} />
-        <div
-          className="flex justify-center items-center border-1 border-gray3 rounded-6 bg-light w-28 h-28 cursor-pointer"
-          onClick={() => setWishlist(!wishlist)}
-        >
-          <WishListButton isInWishList={wishlist} color={'#0f0f36'} />
-        </div>
+        {variant == 'variant1' && (
+          <div
+            className="flex justify-center items-center border-1 border-gray3 rounded-6 bg-light w-28 h-28 cursor-pointer"
+            onClick={() => setWishlist(!wishlist)}
+          >
+            <WishListButton isInWishList={wishlist} color={'#0f0f36'} />
+          </div>
+        )}
       </div>
     </div>
   );
