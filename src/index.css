@@ -39,27 +39,10 @@ details summary::-webkit-details-marker {
 .add-listing-detail[open] summary div span {
   color: #5353c5;
 }
-#checklisting:checked ~ div > span {
-  visibility: visible;
-}
-#checklisting:checked ~ div {
-  visibility: visible;
-  background-color: #5353c5;
-  border: 1px solid #5353c5;
-}
-#checklisting ~ div  {
-  background: none;
-  border: 1px solid #dbdade;
-}
 .swiper {
   padding-top: 36px !important;
 }
-.input-teplate-select ~ div {
-  display: none;
-}
-.input-teplate-select:checked ~ div {
-  display: block;
-}
+
 
 .scroll-hidden::-webkit-scrollbar {
   display: none;
@@ -69,9 +52,6 @@ details summary::-webkit-details-marker {
   scrollbar-width: none;  /* Firefox */
 }
 
-.leaflet-control-zoom {
-  display: none;
-}
 
 .price-select-search:checked ~ div {
   background-color: #5353c5;

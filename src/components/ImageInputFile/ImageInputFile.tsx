@@ -3,9 +3,10 @@ import React, { ChangeEvent, FC, useState } from 'react';
 interface ImageInputFileProps {
   name?: string;
   onChange?: (event: ChangeEvent) => void;
+  getData?: (data: never[]) => void;
 }
 
-export const ImageInputFile: FC<ImageInputFileProps> = ({ name = 'imageInput', onChange }) => {
+export const ImageInputFile: FC<ImageInputFileProps> = ({ name = 'imageInput', onChange, getData }) => {
   const [listImg, setListImg] = useState([]);
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const files = (event.target as HTMLInputElement).files;
@@ -17,10 +18,12 @@ export const ImageInputFile: FC<ImageInputFileProps> = ({ name = 'imageInput', o
     fileReader.addEventListener('load', e => {
       const data1 = (e.target as FileReader).result;
       setListImg(prevState => [...prevState, data1 as never]);
+      getData?.([...listImg, data1 as never]);
     });
   };
   const removeImage = (image: string) => {
     setListImg(prevState => [...prevState.filter(currentImage => currentImage != image)]);
+    getData?.([...listImg.filter(currentImage => currentImage != image)]);
   };
   return (
     <div className="flex ">

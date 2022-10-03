@@ -1,9 +1,9 @@
+import { CopyRight } from 'components/CopyRight/CopyRight';
 import { Divider } from 'components/Divider/Divider';
+import Footer from 'components/Footer/Footer';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { Modal } from 'components/Modal/Modal';
 import { NavBar } from 'components/NavBar/NavBar';
-import { Footer } from 'containers/Footer/Footer';
-import { CopyRight } from 'containers/HomePage/CopyRight/CopyRight';
 import { listings_data } from 'data/listings_data';
 import { useState } from 'react';
 import { ListingCardData } from 'types/Listing';
@@ -50,12 +50,12 @@ export const AddListingDonePage = () => {
                 </span>
                 <span className="text-14 text-gray9 font-medium">Edit</span>
               </div>
-              <div className="flex justify-center items-center px-13 py-5 rounded-4 bg-primary text-light cursor-pointer">
+              <a className="flex justify-center items-center px-13 py-5 rounded-4 bg-primary text-light cursor-pointer" href="/listing/1">
                 <span className="mr-7">
                   <i className="fal fa-eye"></i>
                 </span>
                 <span className="text-14 text-light font-medium">Preview</span>
-              </div>
+              </a>
             </div>
           </div>
           <div className="col-lg-5 lg:pl-100">
@@ -64,7 +64,7 @@ export const AddListingDonePage = () => {
                 <ListingCard.Header variant="variant1" listingRatingScore={10} listingUserId={listing.listingUserId} />
                 <ListingCard.Body
                   listingAds={listing.listingAds}
-                  listingVerify={listing.listingVerify}
+                  listingVerify={false}
                   listingLocations={listing.listingLocations}
                   listingGallery={[
                     {
@@ -78,8 +78,8 @@ export const AddListingDonePage = () => {
                 />
                 <ListingCard.Footer
                   variant="variant1"
-                  isInWishlist={listing.isInWishlist}
-                  listingCategoryId={listing.listingCategoryId}
+                  isInWishlist={false}
+                  listingCategoryId={listingAdd.category}
                   listingOpenStatus={listingAdd.open}
                 />
               </ListingCard>

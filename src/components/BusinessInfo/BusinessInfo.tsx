@@ -1,5 +1,5 @@
 import { Divider } from 'components/Divider/Divider';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { ListingSocial } from 'types/Listing';
 
 interface BusinessInfoProps {
@@ -8,7 +8,7 @@ interface BusinessInfoProps {
   social: ListingSocial[];
 }
 
-export const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) => {
+const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) => {
   return (
     <>
       <div className="mt-15">
@@ -41,25 +41,45 @@ export const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) =>
           switch (item.name) {
             case 'facebook':
               return (
-                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#325d94] rounded-1/2 mr-10">
+                <a
+                  key={index}
+                  href={item.value}
+                  className="flex justify-center items-center w-34 h-34 rounded-1/2 mr-10"
+                  style={{ backgroundColor: '#325d94' }}
+                >
                   <i className="fab fa-facebook-square text-light"></i>
                 </a>
               );
             case 'switter':
               return (
-                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#00aadb] rounded-1/2 mr-10">
+                <a
+                  key={index}
+                  href={item.value}
+                  className="flex justify-center items-center w-34 h-34 rounded-1/2 mr-10"
+                  style={{ backgroundColor: '#00aadb' }}
+                >
                   <i className="fab fa-twitter text-light"></i>
                 </a>
               );
             case 'tumblr':
               return (
-                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#2f4e6b] rounded-1/2 mr-10">
+                <a
+                  key={index}
+                  href={item.value}
+                  className="flex justify-center items-center w-34 h-34 rounded-1/2 mr-10"
+                  style={{ backgroundColor: '#2f4e6b' }}
+                >
                   <i className="fab fab fa-tumblr text-light"></i>
                 </a>
               );
             case 'flickr':
               return (
-                <a key={index} href={item.value} className="flex justify-center items-center w-34 h-34 bg-[#ff0084] rounded-1/2 mr-10">
+                <a
+                  key={index}
+                  href={item.value}
+                  className="flex justify-center items-center w-34 h-34 rounded-1/2 mr-10"
+                  style={{ backgroundColor: '#ff0084' }}
+                >
                   <i className="fab fa-flickr text-light"></i>
                 </a>
               );
@@ -69,3 +89,5 @@ export const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) =>
     </>
   );
 };
+
+export default memo(BusinessInfo);

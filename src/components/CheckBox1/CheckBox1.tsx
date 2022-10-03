@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC, memo } from 'react';
 
 interface CheckBox1Prop {
   color: string;
@@ -7,7 +7,7 @@ interface CheckBox1Prop {
   size: number;
 }
 
-export const CheckBox1: FC<CheckBox1Prop> = ({ color, background, fontSize, size }) => {
+const CheckBox1: FC<CheckBox1Prop> = ({ color, background, fontSize, size }) => {
   return (
     <div
       className={`flex justify-center items-center rounded-1/2 w-40 h-40 bg-secondary`}
@@ -19,3 +19,4 @@ export const CheckBox1: FC<CheckBox1Prop> = ({ color, background, fontSize, size
     </div>
   );
 };
+export default memo(CheckBox1);

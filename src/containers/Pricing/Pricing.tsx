@@ -1,48 +1,12 @@
 import { Content4 } from 'components/Content4/Content4';
+import { CopyRight } from 'components/CopyRight/CopyRight';
 import { Divider } from 'components/Divider/Divider';
+import Footer from 'components/Footer/Footer';
 import { NavBar } from 'components/NavBar/NavBar';
-import { PricingItem, PricingType } from 'components/PricingItem/PricingItem';
-import { Footer } from 'containers/Footer/Footer';
+import { PricingItem } from 'components/PricingItem/PricingItem';
+import { pricing } from 'data/pricing';
 import { FC, useState } from 'react';
-
-interface PricingDatas {
-  type: PricingType;
-  price: string;
-  description: string;
-  activeOption: string[];
-  deactiveOption: string[];
-}
-const pricing_data: PricingDatas[] = [
-  {
-    type: 'basic',
-    price: 'free',
-    description: 'Si sine dubio praeclara sunt',
-    activeOption: ['Si sine metu', 'At magnum periculum', 'Certe inquam pertinax'],
-    deactiveOption: ['Ut placet inquam', 'Si sine metu', 'Probabo inquit modo', 'Tum dicere exorsus'],
-  },
-  {
-    type: 'professional',
-    price: '$30',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    activeOption: ['Si sine metu', 'At magnum periculum', 'Certe inquam pertinax', 'Ut placet inquam', 'Si sine metu'],
-    deactiveOption: ['Probabo inquit modo', 'Tum dicere exorsus'],
-  },
-  {
-    type: 'bussiness',
-    price: '$90',
-    description: 'At vero eos censes aut interrogari ut placet, inquam tum dicere.',
-    activeOption: [
-      'Si sine metu',
-      'At magnum periculum',
-      'Certe inquam pertinax',
-      'Ut placet inquam',
-      'Si sine metu',
-      'Probabo inquit modo',
-      'Tum dicere exorsus',
-    ],
-    deactiveOption: [],
-  },
-];
+import { PricingDatas } from 'types/Pricing';
 
 export const Pricing: FC = () => {
   const [pricingActive, setPricingActive] = useState<PricingDatas>({
@@ -52,7 +16,9 @@ export const Pricing: FC = () => {
     activeOption: ['Si sine metu', 'At magnum periculum', 'Certe inquam pertinax', 'Ut placet inquam', 'Si sine metu'],
     deactiveOption: ['Probabo inquit modo', 'Tum dicere exorsus'],
   });
-
+  const handleCreateListing = () => {
+    console.log(pricingActive);
+  };
   return (
     <>
       <NavBar />
@@ -64,7 +30,7 @@ export const Pricing: FC = () => {
           </div>
           <div className="row">
             <div className="col-lg-6 flex flex-col items-end md:pr-35">
-              {pricing_data.map(item => {
+              {pricing.map(item => {
                 return (
                   <PricingItem
                     type={item.type}
@@ -113,6 +79,7 @@ export const Pricing: FC = () => {
                 <a
                   href="/step"
                   className="flex justify-center items-center py-10 w-100% text-16 text-light font-medium rounded-6 bg-secondary mt-20 cursor-pointer"
+                  onClick={handleCreateListing}
                 >
                   Create a listing
                 </a>
@@ -123,6 +90,8 @@ export const Pricing: FC = () => {
       </Content4>
       <Divider />
       <Footer />
+      <Divider />
+      <CopyRight />
     </>
   );
 };

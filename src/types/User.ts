@@ -7,4 +7,6 @@ export interface User {
   userPassword: string;
   userRole: Role;
   userAvatar: string;
+  userQuantityReviews: number;
+  userQuantityPhotos: number;
 }

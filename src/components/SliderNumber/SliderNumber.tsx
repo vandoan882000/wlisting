@@ -102,10 +102,14 @@ export const SliderNumber: FC<SliderNumberProps> = ({ value, min, max, step, onC
         handleDecrease={() => {
           setValueCurrent(prev => prev - 1);
           handleResize();
+          onChanged(getResult());
+          console.log(valueCurrent, value0, getResult());
         }}
         handleInCrease={() => {
           setValueCurrent(prev => Number(prev) + 1);
           handleResize();
+          onChanged(getResult());
+          console.log(valueCurrent, value0, getResult());
         }}
       />
     </>

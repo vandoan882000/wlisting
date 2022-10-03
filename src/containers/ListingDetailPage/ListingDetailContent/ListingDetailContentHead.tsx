@@ -1,5 +1,5 @@
 import { Category } from 'components/Category/Category';
-import { CheckBox1 } from 'components/CheckBox1/CheckBox1';
+import CheckBox1 from 'components/CheckBox1/CheckBox1';
 import { Popover } from 'components/Popover/Popover';
 import { Rate1 } from 'components/Rate1/Rate1';
 import { WishListButton } from 'components/WishListButton/WishListButton';
@@ -98,7 +98,7 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
           >
             <WishListButton color={'#0f0f36'} isInWishList={wishlist} fontSize={14} /> <span className="ml-5">Save</span>
           </div>
-          <Popover title="" variant="variant2">
+          <Popover title="" variant="variant2" style={{ marginTop: '10px' }}>
             <Popover.Toggle>
               <div className="px-12 py-2 border-1 text-gray9 border-gray4 rounded-4">
                 <i className="far fa-ellipsis-v"></i>
@@ -107,19 +107,27 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
             <Popover.Content>
               <div className="flex flex-col rounded-10 py-9 bg-light z-100">
                 <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-pen text-12 mr-8 text-gray5"></i>
+                  <span className="flex items-center w-26">
+                    <i className="far fa-pen text-12 text-gray5"></i>
+                  </span>
                   <span className="text-13 font-normal text-gray8 whitespace-nowrap">Edit</span>
                 </div>
                 <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-star text-12 mr-8 text-gray5"></i>
+                  <span className="flex items-center w-26">
+                    <i className="far fa-star text-12 text-gray5"></i>
+                  </span>
                   <span className="text-13 font-normal text-gray8 whitespace-nowrap">Write a review</span>
                 </div>
                 <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
+                  <span className="flex items-center w-26">
+                    <i className="far fa-trash-alt text-12 text-gray5"></i>
+                  </span>
                   <span className="text-13 font-normal text-gray8 whitespace-nowrap">Delete</span>
                 </div>
                 <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                  <i className="far fa-flag text-12 mr-8 text-gray5"></i>
+                  <span className="flex items-center w-26">
+                    <i className="far fa-flag text-12 text-gray5"></i>
+                  </span>
                   <span className="text-13 font-normal text-gray8 whitespace-nowrap">Report</span>
                 </div>
               </div>

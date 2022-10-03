@@ -1,21 +1,28 @@
 import { Avatar } from 'components/Avatar/Avatar';
 import { FC } from 'react';
-import { Role } from 'types/User';
 
 interface AuthorInfoProps {
-  userId: number;
   userName: string;
   userDescription: string;
   userUsername: string;
-  userPassword: string;
-  userRole: Role;
   userAvatar: string;
+  userQuantityReviews: number;
+  userQuantityPhotos: number;
 }
-export const AuthorInfo: FC<AuthorInfoProps> = ({ userAvatar, userDescription, userName }) => {
+export const AuthorInfo: FC<AuthorInfoProps> = ({ userAvatar, userDescription, userName, userQuantityReviews, userQuantityPhotos }) => {
   return (
     <>
       <div className="w-fit">
-        <Avatar variant="variant2" name={userName} avatar={userAvatar} size={50} fontSize={22} detail={true} />
+        <Avatar
+          variant="variant2"
+          name={userName}
+          avatar={userAvatar}
+          size={50}
+          fontSize={22}
+          detail={true}
+          userQuantityReviews={userQuantityReviews}
+          userQuantityPhotos={userQuantityPhotos}
+        />
       </div>
       <div className="text-14 font-normal text-gray6 mt-5">{userDescription}</div>
       <div className="relative w-40% bg-cover bg-center aspect-162/44 mt-16">

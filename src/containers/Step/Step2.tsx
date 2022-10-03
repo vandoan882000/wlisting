@@ -38,7 +38,11 @@ export const Step2: FC = () => {
       <div className="text-gray9 text-22 font-medium">Please select your category and location</div>
       <div className="flex flex-col w-100% flex-wrap mt-30">
         <div className="text-14 font-medium text-gray9 mb-9">Categories</div>
-        <Select items={categories} style={{ width: '340px', height: '46px' }}></Select>
+        <Select
+          items={categories}
+          onChange={index => step.onChange('category', categories_data[index as number].categoryId)}
+          style={{ width: '340px', height: '46px' }}
+        ></Select>
         <div className="text-14 font-medium text-gray9 mt-20">Location</div>
         <div className="flex flex-col mt-9 mb-10">
           {location.map((item, index) => {

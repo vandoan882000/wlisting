@@ -1,5 +1,5 @@
 import { AuthorInfo } from 'components/AuthorInfo/AuthorInfo';
-import { BusinessInfo } from 'components/BusinessInfo/BusinessInfo';
+import BusinessInfo from 'components/BusinessInfo/BusinessInfo';
 import { Content2 } from 'components/Content2/Content2';
 import { Content3 } from 'components/Content3/Content3';
 import { Divider } from 'components/Divider/Divider';
@@ -16,7 +16,7 @@ import { categories_data } from 'data/categories_data';
 import { listings_data } from 'data/listings_data';
 import { review_data } from 'data/review_data';
 import { users_data } from 'data/users_data';
-import { FC, useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 import { CategoryData } from 'types/Category';
 import { ListingCardData } from 'types/Listing';
 import { User } from 'types/User';
@@ -58,11 +58,10 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
     });
   };
   const [reviewData, setReviewData] = useState(searchReview(''));
-  console.log(reviewData);
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-9 pb-30 pt-10 md:pr-57">
+        <div className="col-lg-9 pt-10 md:pr-57">
           <ListingDetailContent.Header {...listing} {...category} />
           <Content3 title="Description">
             <div className="text-14 font-normal text-gray6 mt-5 leading-1">{listing.listingDescription}</div>
@@ -73,7 +72,7 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
           <Content3 title="Location">
             <LocationTab listingLocation={listing.listingLocations} listingId={listingId} />
           </Content3>
-          <Tours listingTitle={listing.listingTitle} listingGallery={listing.listingGallery} />
+          <Tours listingId={listing.listingId} />
           <Content3 title="Reviews">
             <div className="flex justify-between flex-wrap">
               <div className="flex justify-center items-center mb-10">
@@ -139,10 +138,10 @@ export const ListingDetailContent: FC<ListingDetailContentProps> & {
             </div>
             {reviewData.map((review, index) => {
               return (
-                <>
-                  <ReviewCard key={review.reviewId} reviewId={review.reviewId} />
+                <Fragment key={index}>
+                  <ReviewCard key={review.reviewId} reviewId={review.reviewId} listingId={listing.listingId} listingTitle={listing.listingTitle} />
                   {index != reviewData.length - 1 && <Divider />}
-                </>
+                </Fragment>
               );
             })}
             <div

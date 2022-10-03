@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 type VariantAvatar = 'variant1' | 'variant2';
 interface AvatarProps {
@@ -9,8 +9,20 @@ interface AvatarProps {
   fontSize: number;
   detail?: boolean;
   variant?: VariantAvatar;
+  userQuantityReviews?: number;
+  userQuantityPhotos?: number;
 }
-export const Avatar: FC<AvatarProps> = ({ name, avatar, comment, size, detail = false, fontSize, variant = 'variant1' }) => {
+export const Avatar: FC<AvatarProps> = ({
+  name,
+  avatar,
+  comment,
+  size,
+  detail = false,
+  fontSize,
+  variant = 'variant1',
+  userQuantityReviews,
+  userQuantityPhotos,
+}) => {
   return (
     <div className="flex">
       <div
@@ -28,9 +40,9 @@ export const Avatar: FC<AvatarProps> = ({ name, avatar, comment, size, detail = 
         </div>
         {detail && (
           <div className="flex items-center">
-            <div className="text-14 font-normal text-gray6 mr-5">1203 Reviews</div>
+            <div className="text-14 font-normal text-gray6 mr-5">{userQuantityReviews} Reviews</div>
             <i className="fas fa-circle text-gray6 text-3"></i>
-            <div className="text-14 font-normal text-gray6 ml-5">12 Photos</div>
+            <div className="text-14 font-normal text-gray6 ml-5">{userQuantityPhotos} Photos</div>
           </div>
         )}
       </div>

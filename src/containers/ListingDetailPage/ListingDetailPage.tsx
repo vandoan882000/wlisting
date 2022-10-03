@@ -1,8 +1,9 @@
+import { CopyRight } from 'components/CopyRight/CopyRight';
 import { CustomSwiper } from 'components/CustomSwiper/CustomSwiper';
 import { Divider } from 'components/Divider/Divider';
+import Footer from 'components/Footer/Footer';
 import { ListingCard } from 'components/ListingCard/ListingCard';
 import { NavBar } from 'components/NavBar/NavBar';
-import { Footer } from 'containers/Footer/Footer';
 import { listings_data } from 'data/listings_data';
 import { useParams } from 'react-router';
 import { SwiperSlide } from 'swiper/react';
@@ -19,7 +20,7 @@ export const ListingDetailPage = () => {
       <ListingDetailContent listingId={Number(id)} />
       <CustomSwiper
         title="You Might Also Like"
-        link="#"
+        link="/search/category=all&location=all"
         titleFontWeight={500}
         slidesPerView={5}
         breakpoints={{
@@ -48,8 +49,8 @@ export const ListingDetailPage = () => {
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
-            <ListingCard variant="variant1">
-              <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+            <ListingCard variant="variant2">
+              <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
                 listingAds={listing.listingAds}
                 listingVerify={listing.listingVerify}
@@ -59,7 +60,7 @@ export const ListingDetailPage = () => {
                 listingTitle={listing.listingTitle}
               />
               <ListingCard.Footer
-                variant="variant1"
+                variant="variant2"
                 isInWishlist={listing.isInWishlist}
                 listingCategoryId={listing.listingCategoryId}
                 listingOpenStatus={listing.listingOpenStatus}
@@ -70,7 +71,7 @@ export const ListingDetailPage = () => {
       </CustomSwiper>
       <CustomSwiper
         title="New York City"
-        link="#"
+        link="/search/category=all&location=all"
         titleFontWeight={500}
         slidesPerView={5}
         breakpoints={{
@@ -99,8 +100,8 @@ export const ListingDetailPage = () => {
         <CustomSwiper.Button iconNext={<i className="fal fa-angle-right"></i>} iconPrev={<i className="fal fa-angle-left"></i>} />
         {listings_data.map(listing => (
           <SwiperSlide key={listing.listingId}>
-            <ListingCard variant="variant1">
-              <ListingCard.Header variant="variant1" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
+            <ListingCard variant="variant2">
+              <ListingCard.Header variant="variant2" listingRatingScore={listing.listingRatingScore} listingUserId={listing.listingUserId} />
               <ListingCard.Body
                 listingAds={listing.listingAds}
                 listingVerify={listing.listingVerify}
@@ -110,7 +111,7 @@ export const ListingDetailPage = () => {
                 listingTitle={listing.listingTitle}
               />
               <ListingCard.Footer
-                variant="variant1"
+                variant="variant2"
                 isInWishlist={listing.isInWishlist}
                 listingCategoryId={listing.listingCategoryId}
                 listingOpenStatus={listing.listingOpenStatus}
@@ -119,8 +120,10 @@ export const ListingDetailPage = () => {
           </SwiperSlide>
         ))}
       </CustomSwiper>
-      <Divider style={{ marginTop: '50px' }} />
+      <Divider />
       <Footer />
+      <Divider />
+      <CopyRight />
     </>
   );
 };

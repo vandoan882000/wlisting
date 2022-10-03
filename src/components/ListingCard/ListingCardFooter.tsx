@@ -58,7 +58,7 @@ export const ListingCardFooter: FC<ListingCardFooterProps> = ({ listingCategoryI
         <OpenStatusButton isOpen={getDateStatus(listingOpenStatus)} />
         {variant == 'variant1' && (
           <div
-            className="flex justify-center items-center border-1 border-gray3 rounded-6 bg-light w-28 h-28 cursor-pointer"
+            className="flex justify-center items-center ml-10 border-1 border-gray3 rounded-6 bg-light w-28 h-28 cursor-pointer"
             onClick={() => setWishlist(!wishlist)}
           >
             <WishListButton isInWishList={wishlist} color={'#0f0f36'} />

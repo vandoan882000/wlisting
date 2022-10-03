@@ -1,6 +1,5 @@
 import { FC } from 'react';
-
-export type PricingType = 'basic' | 'professional' | 'bussiness';
+import { PricingType } from 'types/Pricing';
 
 interface PricingItemProps {
   type: PricingType;

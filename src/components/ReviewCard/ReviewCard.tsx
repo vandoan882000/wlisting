@@ -9,9 +9,11 @@ import { FC } from 'react';
 import { User } from 'types/User';
 
 interface ReviewCardProps {
+  listingId: number;
+  listingTitle: string;
   reviewId: number;
 }
-export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
+export const ReviewCard: FC<ReviewCardProps> = ({ reviewId, listingId, listingTitle }) => {
   const getReview = (reviewId: number) => {
     const review = review_data.find((review: ReviewData) => review.reviewId === reviewId);
     return review ? review : review_data[0];
@@ -25,7 +27,16 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
   return (
     <div className="flex flex-col py-22">
       <div className="flex justify-between items-center flex-wrap">
-        <Avatar name={authorInfo.userName} avatar={authorInfo.userAvatar} size={50} fontSize={13} detail={true} />
+        <Avatar
+          name={authorInfo.userName}
+          avatar={authorInfo.userAvatar}
+          variant="variant2"
+          size={50}
+          fontSize={13}
+          detail={true}
+          userQuantityReviews={authorInfo.userQuantityReviews}
+          userQuantityPhotos={authorInfo.userQuantityPhotos}
+        />
         <div className="flex flex-wrap">
           <div className="flex flex-col">
             <span>
@@ -41,21 +52,29 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
                 </div>
               </Popover.Toggle>
               <Popover.Content>
-                <div className="flex flex-col rounded-10  py-9 bg-light z-100">
+                <div className="flex flex-col rounded-10 py-9 bg-light z-100">
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                    <i className="far fa-pen text-12 mr-8 text-gray5"></i>
+                    <span className="flex items-center w-26">
+                      <i className="far fa-pen text-12 text-gray5"></i>
+                    </span>
                     <span className="text-13 font-normal text-gray8 whitespace-nowrap">Edit</span>
                   </div>
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                    <i className="far fa-star text-12 mr-8 text-gray5"></i>
+                    <span className="flex items-center w-26">
+                      <i className="far fa-star text-12 text-gray5"></i>
+                    </span>
                     <span className="text-13 font-normal text-gray8 whitespace-nowrap">Write a review</span>
                   </div>
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                    <i className="far fa-trash-alt text-12 mr-8 text-gray5"></i>
+                    <span className="flex items-center w-26">
+                      <i className="far fa-trash-alt text-12 text-gray5"></i>
+                    </span>
                     <span className="text-13 font-normal text-gray8 whitespace-nowrap">Delete</span>
                   </div>
                   <div className="flex items-center w-100% h-29 hover:bg-gray2 pl-12 pr-21 cursor-pointer">
-                    <i className="far fa-flag text-12 mr-8 text-gray5"></i>
+                    <span className="flex items-center w-26">
+                      <i className="far fa-flag text-12 text-gray5"></i>
+                    </span>
                     <span className="text-13 font-normal text-gray8 whitespace-nowrap">Report</span>
                   </div>
                 </div>
@@ -65,7 +84,7 @@ export const ReviewCard: FC<ReviewCardProps> = ({ reviewId }) => {
         </div>
       </div>
       <div className="text-14 font-normal text-gray6 mt-10 line-clamp-3">{review.reviewContent}</div>
-      <ReviewGallery gallery={review.reviewGallery} />
+      <ReviewGallery gallery={review.reviewGallery} listingId={listingId} listingTitle={listingTitle} />
       <div className="flex flex-wrap">
         <StatusButton text="Useful" quantity={review.reviewReact.useful}>
           <img className="min-w-20" src="/assets/useful.png" alt="" />

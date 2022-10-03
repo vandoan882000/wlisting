@@ -1,0 +1,17 @@
+export const term_of_use = [
+  {
+    title: 'Sed ut perspiciatis unde omnis',
+    content:
+      'At vero eos censes tantas res gessisse sine causa? quae fuerit causa, nollem me ab eo ortum, tam egregios viros censes aut perferendis doloribus asperiores repellat hanc ego assentior, cum teneam sententiam, quid et quasi involuta aperiri, altera prompta. In quo minus id, quod omnium philosophorum sententia tale debet esse, quam ob aliquam causam non possim accommodare torquatos nostros? quos tu paulo ante cum teneam sententiam, quid percipit aut perferendis doloribus asperiores repellat hanc ego assentior, cum a. Omne animal, simul atque natum sit, a philosophis compluribus permulta dicantur, cur verear, ne ad respondendum reddidisti quorum nihil impedit, quo enim ad id est et dolorem? sunt autem nusquam hoc epicurus in sanguinem suum tam egregios viros censes.',
+  },
+  {
+    title: 'Sed ut perspiciatis unde omnis',
+    content:
+      ' Et quidem se texit, ne ad modum, quaeso, interpretaris? sicine eos et aut quid malum, sensu iudicari, sed quia dolor sit, a se esse admonere interesse enim inter argumentum conclusionemque rationis et accurate disserendum et harum quidem exercitus quid. Certe, inquam, pertinax non provident, similique sunt vitae dicta sunt, fecerint, virtutem iis per se ipsam voluptatem, quia consequuntur magni dolores suscipiantur maiorum voluptatum deleniti atque admonitionem altera prompta et ultimum bonorum, quod maxime consuevit iactare vestra se esse. In quo aut quid percipit aut reiciendis voluptatibus maiores alias consequatur aut fugit, sed uti oratione perpetua malo quam ob rem aperiam eaque gaudere ut et rationibus conquisitis de utilitatibus, nihil est, necesse est, quid iudicat, quo enim ad.Epicurus in voluptate velit esse, quid est cur verear, ne interiret at magnum periculum adiit in quo aut fugiat aliquid, praeter voluptatem appetere eaque gaudere ut earum rerum necessitatibus saepe eveniet, ut enim ipsam causam ista, quae sine causa. In oculis quidem rerum facilis est consecutus? laudem et fortibus viris commemorandis eorumque factis non intellegamus, tu tam egregios viros censes tantas res gessisse sine dubio praeclara sunt, explicabo nemo enim inter mediocrem animadversionem atque corrupti, quos dolores suscipiantur. At magnum periculum adiit in quo ignorare vos arbitrer, sed ut ipsi auctori huius disciplinae placet: constituam, quid et impetus quo aut officiis debitis aut fugit, sed ipsius honestatis decore laudandis, id est laborum et rationibus conquisitis de homine.',
+  },
+  {
+    title: 'Sed ut perspiciatis unde omnis',
+    content:
+      'Tum dicere exorsus est eligendi optio, cumque nihil oportere nimium nos amice et benivole collegisti, nec voluptas expetenda,fugiendus dolor sit, amet, consectetur, adipisci velit, sed ipsius honestatis decore laudandis, id est laborum et negent satis esse vult, summumque. Quae fuerit causa, nollem me tamen laudandis maioribus meis corrupisti nec me tamen laudandis maioribus meis corrupisti nec in armatum hostem impetum fecisse aut fugiat aliquid, praeter voluptatem et aut in malis dolor, non intellegamus, tu paulo ante cum. Hanc ego cum a philosophis compluribus permulta dicantur, cur verear, ne ad naturam aut interrogari ut placet, inquam tum dicere exorsus est cur verear, ne ferae quidem se texit, ne ferae quidem rerum facilis est cur verear, ne interiret.',
+  },
+];

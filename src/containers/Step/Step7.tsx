@@ -31,7 +31,6 @@ export const Step7: FC = () => {
       const data1 = (e.target as FileReader).result;
       setGallery(prevState => [...prevState, data1 as never]);
       step.onChange('gallery', [...gallery, data1 as never]);
-      console.log([...gallery, data1 as never]);
     });
   };
   return (

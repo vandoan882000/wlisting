@@ -1,11 +1,14 @@
 import { Avatar } from 'components/Avatar/Avatar';
+import { CheckBox } from 'components/CheckBox/CheckBox';
+import { Content5 } from 'components/Content5/Content5';
+import { CopyRight } from 'components/CopyRight/CopyRight';
 import { Divider } from 'components/Divider/Divider';
+import Footer from 'components/Footer/Footer';
 import { Modal } from 'components/Modal/Modal';
 import { Popover } from 'components/Popover/Popover';
 import { PopUp } from 'components/PopUp/PopUp';
 import { AddListingPage } from 'containers/AddListingPage/AddListingPage';
-import { Section7 } from 'containers/AddListingPage/Section7/Section7';
-import { Footer } from 'containers/Footer/Footer';
+import { term_of_use } from 'data/term_of_use';
 import { users_data } from 'data/users_data';
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -20,6 +23,7 @@ export const NavBar: FC = () => {
   const [referentPassWord, setReferentPassWord] = useState<HTMLInputElement | null>(null);
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('currentUser'));
   const userData = JSON.parse(currentUser as string) as User;
+  const [visibleExplore, setVisibleExplore] = useState(false);
   const handleLogin = () => {
     const user = users_data.find(user => {
       return user.userUsername == referentUserName?.value && user.userPassword == referentPassWord?.value;
@@ -30,6 +34,10 @@ export const NavBar: FC = () => {
       setVisibleLogin(prevState => !prevState);
     }
   };
+  const [isAgree, setAgree] = useState(false);
+  const toggleAgree = () => {
+    setAgree(!isAgree);
+  };
   const handleLogout = () => {
     localStorage.setItem('currentUser', '');
     setCurrentUser(JSON.stringify(''));
@@ -38,9 +46,11 @@ export const NavBar: FC = () => {
   return (
     <div className="container">
       <div className="row flex items-center justify-between flex-nowrap w-100% py-16 m-0">
+        {/* Logo */}
         <Link to="/" className="w-fit m-0 p-0">
           <img className="w-107 h-36 m-0" src="/assets/logo.png" />
         </Link>
+        {/* Search Input */}
         <div
           className={`${
             enableSearch ? 'flex lg-max:hidden' : 'hidden'
@@ -62,6 +72,7 @@ export const NavBar: FC = () => {
             <i className="fa fa-search text-22 font-normal text-light"></i>
           </button>
         </div>
+        {/* menu destop */}
         <div className={`flex lg-max:hidden w-fit items-center justify-end m-0 pr-0`}>
           <ul className="flex items-center list-none p-0 sm-max:flex-col">
             <li className="text-15 font-medium text-primary mr-30">
@@ -71,7 +82,7 @@ export const NavBar: FC = () => {
               <span className="cursor-pointer">
                 Explore <i className="fal fa-angle-down"></i>
               </span>
-              <ul className="opacity-0 z-_1 group-hover:opacity-100 group-hover:z-100 absolute top-105% left-0 border-1 border-gray2 rounded-4 overflow-hidden shadow-2 translate-y-20 group-hover:translate-y-0 transition-all delay-200  bg-light">
+              <ul className="w-200 opacity-0 z-_1 group-hover:opacity-100 group-hover:z-100 absolute top-105% left-0 border-1 border-gray2 rounded-4 overflow-hidden shadow-2 translate-y-20 group-hover:translate-y-0 translate-x-_25 transition-all delay-200 bg-light">
                 <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
                   Explore 1
                 </li>
@@ -253,11 +264,43 @@ export const NavBar: FC = () => {
               </div>
             }
           >
-            <Section7 />
+            <div className="container">
+              <div className="row pt-50 pb-80">
+                <div className="col-lg-9">
+                  {term_of_use.map((item, index) => {
+                    return (
+                      <Content5 key={index} fontSize={26} title={item.title}>
+                        {item.content}
+                      </Content5>
+                    );
+                  })}
+                </div>
+                <div className="col-lg-3">
+                  <div className="text-gray6 text-20 font-normal">
+                    Quae fuerit causa, nollem me tamen laudandis maioribus meis corrupisti nec voluptas sit.
+                  </div>
+                  <div className="flex mt-20">
+                    <CheckBox borderStyle="box" checked={!!isAgree} onChange={toggleAgree} size={22} />
+                    <div className="font-normal text-14 text-gray6 ml-10">I agree with the above terms</div>
+                  </div>
+                  <a
+                    href="/pricing"
+                    className={`font-medium text-16 text-light rounded-6 bg-primary w-100% py-13 flex justify-center items-center cursor-pointer mt-25 select-none ${
+                      !isAgree ? 'opacity-30 cursor-not-allowed pointer-events-none' : ''
+                    }`}
+                  >
+                    Continute
+                  </a>
+                </div>
+              </div>
+            </div>
             <Divider />
             <Footer />
+            <Divider />
+            <CopyRight />
           </Modal>
         </div>
+        {/* menu mobile */}
         <div className="hidden lg-max:block w-fit">
           <PopUp onApply={() => {}} title="" variant="full">
             <PopUp.Toggle>
@@ -270,28 +313,41 @@ export const NavBar: FC = () => {
                 <div className="row flex items-center justify-center flex-nowrap w-100% py-20 m-0">
                   <div className={`w-100% items-center justify-center flex flex-col`}>
                     <ul className="flex items-center list-none p-0 flex-col w-100%">
-                      <li className="text-15 font-medium text-primary w-100% py-10 border-b-1 border-gray4 text-center">
-                        <Link to="/">Home</Link>
+                      <li className="w-100% text-15 font-medium text-primary border-b-1 border-gray4 text-center">
+                        <Link className="flex justify-center items-center py-10 w-100%" to="/">
+                          Home
+                        </Link>
                       </li>
-                      <li className="group relative text-15 font-medium text-gray9 w-100% py-10 border-b-1 border-gray4 text-center">
-                        <span className="cursor-pointer">
-                          Explore <i className="fal fa-angle-down"></i>
+                      <li className="group relative text-15 font-medium text-gray9 w-100% border-b-1 border-gray4 text-center">
+                        <span
+                          className="flex justify-center items-center py-10 w-100% cursor-pointer"
+                          onClick={() => {
+                            setVisibleExplore(prev => !prev);
+                          }}
+                        >
+                          Explore
+                          {!visibleExplore && <i className="fal fa-angle-down ml-5 text-18"></i>}
+                          {visibleExplore && <i className="fal fa-angle-up ml-5 text-18"></i>}
                         </span>
-                        <ul className="hidden group-target:block">
-                          <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
-                            Explore 1
-                          </li>
-                          <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
-                            Explore 2
-                          </li>
-                          <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
-                            Explore 3
-                          </li>
-                        </ul>
+                        {visibleExplore && (
+                          <ul className="group-target:block">
+                            <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                              Explore 1
+                            </li>
+                            <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                              Explore 2
+                            </li>
+                            <li className="text-15 font-medium text-gray9 mr-30 whitespace-nowrap cursor-pointer px-30 py-10 !m-0 hover:bg-primary hover:text-light">
+                              Explore 3
+                            </li>
+                          </ul>
+                        )}
                       </li>
 
-                      <li className="text-15 font-medium text-gray9 w-100% py-10 border-b-1 border-gray4 text-center">
-                        <Link to="/">Blog</Link>
+                      <li className="text-15 font-medium text-gray9 w-100% border-b-1 border-gray4 text-center">
+                        <Link className="flex justify-center items-center py-10 w-100%" to="/">
+                          Blog
+                        </Link>
                       </li>
                       {!!userData && (
                         <>
@@ -340,131 +396,26 @@ export const NavBar: FC = () => {
                           </Popover>
                         </>
                       )}
-                      {!currentUser && (
-                        <li className="text-15 font-medium text-gray9 mr-30 cursor-pointer" onClick={() => setVisibleSignUp(visible => !visible)}>
-                          Sign up
-                        </li>
-                      )}
                     </ul>
                     {!userData && (
-                      <div
-                        className="py-6 px-23 text-15 text-gray9 font-medium rounded-5 border-primary border-1 cursor-pointer"
-                        onClick={() => {
-                          setVisibleLogin(visible => !visible);
-                          document.body.classList.add('scroll-hidden');
-                        }}
-                      >
-                        Log in
-                      </div>
-                    )}
-
-                    <Modal
-                      onBack={() => {
-                        setVisibleSignUp(visible => !visible);
-                        document.body.classList.remove('scroll-hidden');
-                      }}
-                      title="Sign Up"
-                      visible={visibleSignUp}
-                    >
-                      <div className="flex flex-col items-center">
-                        <div className="text-22 mt-20 mb-20">Sign Up</div>
-                        <label>
-                          <input ref={setReferentUserName} className="w-300 mb-30" style={{ boxShadow: 'none' }} type="text" placeholder="UserName" />
-                        </label>
-                        <label>
-                          <input ref={setReferentPassWord} className="w-300" style={{ boxShadow: 'none' }} type="password" placeholder="Password" />
-                        </label>
+                      <>
                         <div
-                          className="bg-primary py-10 px-30 rounded-6 text-light mt-20 cursor-pointer"
-                          onClick={() => {
-                            console.log(referentPassWord?.value, referentUserName?.value);
-                          }}
+                          className="flex justify-center items-center py-15 w-100% text-15 font-medium text-gray9 cursor-pointer"
+                          onClick={() => setVisibleSignUp(visible => !visible)}
                         >
                           Sign up
                         </div>
-                      </div>
-                    </Modal>
-                    <Modal
-                      onBack={() => {
-                        setVisibleLogin(visible => !visible);
-                        document.body.classList.remove('scroll-hidden');
-                      }}
-                      title="Login"
-                      visible={visibleLogin}
-                    >
-                      <div className="flex flex-col items-center">
-                        <div className="text-22 mt-20 mb-20">Login</div>
-                        <label>
-                          <input ref={setReferentUserName} className="w-300 mb-30" style={{ boxShadow: 'none' }} type="text" placeholder="UserName" />
-                        </label>
-                        <label>
-                          <input ref={setReferentPassWord} className="w-300" style={{ boxShadow: 'none' }} type="password" placeholder="Password" />
-                        </label>
-                        <div className="bg-primary py-10 px-30 rounded-6 text-light mt-20 cursor-pointer" onClick={handleLogin}>
-                          Login
+                        <div
+                          className="py-6 px-23 mt-10 text-15 text-gray9 font-medium rounded-5 border-primary border-1 cursor-pointer"
+                          onClick={() => {
+                            setVisibleLogin(visible => !visible);
+                            document.body.classList.add('scroll-hidden');
+                          }}
+                        >
+                          Log in
                         </div>
-                      </div>
-                    </Modal>
-                    <Modal
-                      onBack={() => {
-                        setVisibleAddListing(visible => !visible);
-                        document.body.classList.remove('scroll-hidden');
-                      }}
-                      title="Home"
-                      visible={visibleAddListing}
-                      variant="variant2"
-                      navigation={
-                        <div className="flex items-center flex-wrap">
-                          <div className="text-14 font-medium text-primary border-b-2 border-primary px-20 py-5 cursor-pointer select-none">
-                            Overview
-                          </div>
-                          <div
-                            className="text-14 font-medium text-gray9 px-20 cursor-pointer hover:text-primary select-none"
-                            onClick={() => {
-                              setVisibleTerm(visible => !visible);
-                              document.body.classList.add('scroll-hidden');
-                            }}
-                          >
-                            Term of use
-                          </div>
-                          <div
-                            className="flex justify-center items-center px-14 text-14 min-w-125 font-medium text-light bg-primary rounded-4 py-10 cursor-pointer select-none"
-                            onClick={() => {
-                              setVisibleTerm(visible => !visible);
-                              document.body.classList.add('scroll-hidden');
-                            }}
-                          >
-                            <i className="far fa-pen mr-10"></i>Get start
-                          </div>
-                        </div>
-                      }
-                    >
-                      <AddListingPage />
-                    </Modal>
-                    <Modal
-                      onBack={() => {
-                        setVisibleTerm(visible => !visible);
-                        document.body.classList.remove('scroll-hidden');
-                      }}
-                      title="Term of use"
-                      visible={visibleTerm}
-                      variant="variant2"
-                      navigation={
-                        <div className="flex items-center flex-wrap">
-                          <div
-                            className="text-14 font-medium text-gray9 hover:text-primary px-20 cursor-pointer"
-                            onClick={() => setVisibleTerm(visible => !visible)}
-                          >
-                            Overview
-                          </div>
-                          <div className="text-14 font-medium  px-20 text-primary border-b-2 border-primary cursor-pointer py-5">Term of use</div>
-                        </div>
-                      }
-                    >
-                      <Section7 />
-                      <Divider />
-                      <Footer />
-                    </Modal>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

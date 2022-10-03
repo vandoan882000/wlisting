@@ -9,6 +9,8 @@ export const users_data: User[] = [
     userPassword: 'password1',
     userRole: 'admin',
     userAvatar: 'https://images.pexels.com/photos/1136575/pexels-photo-1136575.jpeg?cs=srgb&dl=pexels-brenoanp-1136575.jpg&w=500&fm=jpg',
+    userQuantityReviews: 120,
+    userQuantityPhotos: 15,
   },
   {
     userId: 2,
@@ -19,6 +21,8 @@ export const users_data: User[] = [
     userRole: 'admin',
     userAvatar:
       'https://images.pexels.com/photos/11293719/pexels-photo-11293719.jpeg?cs=srgb&dl=pexels-vietnam-photographer-11293719.jpg&w=500&fm=jpg',
+    userQuantityReviews: 120,
+    userQuantityPhotos: 15,
   },
   {
     userId: 3,
@@ -28,6 +32,8 @@ export const users_data: User[] = [
     userPassword: 'password1',
     userRole: 'admin',
     userAvatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&w=500&fm=jpg',
+    userQuantityReviews: 120,
+    userQuantityPhotos: 15,
   },
   {
     userId: 4,
@@ -37,5 +43,7 @@ export const users_data: User[] = [
     userPassword: 'password1',
     userRole: 'admin',
     userAvatar: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-733872.jpg&w=500&fm=jpg',
+    userQuantityReviews: 120,
+    userQuantityPhotos: 15,
   },
 ];

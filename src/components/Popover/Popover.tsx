@@ -82,7 +82,7 @@ export const Popover: FC<PopoverProps> & {
       {visible &&
         createPortal(
           <div ref={setPopperElement} className="pointer-events-auto" style={{ ...styles.popper, zIndex }} {...attributes.popper}>
-            <div className={`rounded-10 border-gray3 border-1 ${variant == 'variant1' ? 'min-w-280' : 'my-10'} `} style={style}>
+            <div className={`rounded-10 border-gray3 border-1 ${variant == 'variant1' ? 'min-w-280' : 'mb-10 bg-light'} `} style={style}>
               {!!title && <div className="p-15">{title}</div>}
               <form onSubmit={handleSubmit}>
                 {Children.map(children, child => {
