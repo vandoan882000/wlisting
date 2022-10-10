@@ -32,13 +32,83 @@ export const Step: FC<StepProps> = () => {
     maxPrice: 2,
     minPrice: 1,
     open: [
-      { listingDayId: 1, listingDate: 'Mon', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
-      { listingDayId: 2, listingDate: 'Tue', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
-      { listingDayId: 3, listingDate: 'Wed', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
-      { listingDayId: 4, listingDate: 'Thu', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
-      { listingDayId: 5, listingDate: 'Fri', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
-      { listingDayId: 6, listingDate: 'Sat', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
-      { listingDayId: 0, listingDate: 'Sun', listingOpenTime: '9:00', listingCloseTime: '21:00', listingOpenStatus: true },
+      {
+        listingDayId: 1,
+        listingDate: 'Mon',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
+      {
+        listingDayId: 2,
+        listingDate: 'Tue',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
+      {
+        listingDayId: 3,
+        listingDate: 'Wed',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
+      {
+        listingDayId: 4,
+        listingDate: 'Thu',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
+      {
+        listingDayId: 5,
+        listingDate: 'Fri',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
+      {
+        listingDayId: 6,
+        listingDate: 'Sat',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
+      {
+        listingDayId: 0,
+        listingDate: 'Sun',
+        listingDateTime: [
+          {
+            open: '9:00',
+            close: '21:00',
+          },
+        ],
+        listingOpenStatus: false,
+      },
     ],
     social: [],
     tags: 'tag1',

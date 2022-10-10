@@ -61,6 +61,8 @@ export interface ListingCardData {
   listingLocations: ListingLocation[];
   listingVerify: boolean;
   listingAds: boolean;
+  listingLocationId: number;
+  listingTemplate: number;
 }
 
 export interface ListingLocation {
@@ -96,6 +98,10 @@ export type ListingDate = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun';
 /**
  * Listing Date Status
  */
+export interface Time {
+  start: string;
+  end: string;
+}
 export interface ListingDateStatus {
   /**
    * Day id
@@ -105,14 +111,7 @@ export interface ListingDateStatus {
    * listing Date
    */
   listingDate: ListingDate;
-  /**
-   * Open time
-   */
-  listingOpenTime: string;
-  /**
-   * close time
-   */
-  listingCloseTime: string;
+  listingDateTime: Time[];
   /**
    * open status
    */

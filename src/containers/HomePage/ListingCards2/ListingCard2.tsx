@@ -28,7 +28,7 @@ export const ListingCards2: FC = () => {
       <div className="font-medium text-22 text-gray9 text-left mb-10">New York City</div>
       <div className="flex justify-between w-100% flex-wrap">
         <div className="flex items-center mb-15 flex-wrap">
-          {lstLongName.map((name, index) => {
+          {lstLongName.slice(0, 5).map((name, index) => {
             return (
               <div
                 className={`text-14 font-medium  px-19 py-6 cursor-pointer hover:text-primary whitespace-nowrap ${

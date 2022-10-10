@@ -50,7 +50,7 @@ export const AddListingDonePage = () => {
                 </span>
                 <span className="text-14 text-gray9 font-medium">Edit</span>
               </div>
-              <a className="flex justify-center items-center px-13 py-5 rounded-4 bg-primary text-light cursor-pointer" href="/listing/1">
+              <a className="flex justify-center items-center px-13 py-5 rounded-4 bg-primary text-light cursor-pointer" href="/detail/id=1">
                 <span className="mr-7">
                   <i className="fal fa-eye"></i>
                 </span>
@@ -80,7 +80,7 @@ export const AddListingDonePage = () => {
                   variant="variant1"
                   isInWishlist={false}
                   listingCategoryId={listingAdd.category}
-                  listingOpenStatus={listingAdd.open}
+                  listingOpenStatus={listing.listingOpenStatus}
                 />
               </ListingCard>
             </div>

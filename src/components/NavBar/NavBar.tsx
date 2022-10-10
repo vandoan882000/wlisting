@@ -24,6 +24,7 @@ export const NavBar: FC = () => {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('currentUser'));
   const userData = JSON.parse(currentUser as string) as User;
   const [visibleExplore, setVisibleExplore] = useState(false);
+
   const handleLogin = () => {
     const user = users_data.find(user => {
       return user.userUsername == referentUserName?.value && user.userPassword == referentPassWord?.value;
@@ -39,7 +40,7 @@ export const NavBar: FC = () => {
     setAgree(!isAgree);
   };
   const handleLogout = () => {
-    localStorage.setItem('currentUser', '');
+    localStorage.setItem('currentUser', 'null');
     setCurrentUser(JSON.stringify(''));
   };
   const enableSearch = window.location.href.toString().includes('/listing/') || window.location.href.toString().includes('/search/');
@@ -145,7 +146,7 @@ export const NavBar: FC = () => {
                 </Popover>
               </>
             )}
-            {!currentUser && (
+            {!userData && (
               <li className="text-15 font-medium text-gray9 mr-30 cursor-pointer" onClick={() => setVisibleSignUp(visible => !visible)}>
                 Sign up
               </li>
@@ -174,10 +175,22 @@ export const NavBar: FC = () => {
             <div className="flex flex-col items-center">
               <div className="text-22 mt-20 mb-20">Sign Up</div>
               <label>
-                <input ref={setReferentUserName} className="w-300 mb-30" style={{ boxShadow: 'none' }} type="text" placeholder="UserName" />
+                <input
+                  ref={setReferentUserName}
+                  className="w-300 mb-30 border-1 focus:border-gray6"
+                  style={{ boxShadow: 'none' }}
+                  type="text"
+                  placeholder="UserName"
+                />
               </label>
               <label>
-                <input ref={setReferentPassWord} className="w-300" style={{ boxShadow: 'none' }} type="password" placeholder="Password" />
+                <input
+                  ref={setReferentPassWord}
+                  className="w-300 focus:border-gray6"
+                  style={{ boxShadow: 'none' }}
+                  type="password"
+                  placeholder="Password"
+                />
               </label>
               <div
                 className="bg-primary py-10 px-30 rounded-6 text-light mt-20 cursor-pointer"
@@ -200,10 +213,22 @@ export const NavBar: FC = () => {
             <div className="flex flex-col items-center">
               <div className="text-22 mt-20 mb-20">Login</div>
               <label>
-                <input ref={setReferentUserName} className="w-300 mb-30" style={{ boxShadow: 'none' }} type="text" placeholder="UserName" />
+                <input
+                  ref={setReferentUserName}
+                  className="w-300 mb-30 focus:border-gray6"
+                  style={{ boxShadow: 'none' }}
+                  type="text"
+                  placeholder="UserName"
+                />
               </label>
               <label>
-                <input ref={setReferentPassWord} className="w-300" style={{ boxShadow: 'none' }} type="password" placeholder="Password" />
+                <input
+                  ref={setReferentPassWord}
+                  className="w-300 focus:border-gray6"
+                  style={{ boxShadow: 'none' }}
+                  type="password"
+                  placeholder="Password"
+                />
               </label>
               <div className="bg-primary py-10 px-30 rounded-6 text-light mt-20 cursor-pointer" onClick={handleLogin}>
                 Login

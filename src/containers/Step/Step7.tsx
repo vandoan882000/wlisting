@@ -39,32 +39,32 @@ export const Step7: FC = () => {
       <div className="flex flex-col w-100% flex-wrap mt-20">
         <div className="flex flex-col">
           <div className="text-14 font-medium text-gray9 mb-9">Photos</div>
-          <ImageInputFile name="gallery" onChange={handleChangeImage} />
+          <ImageInputFile name="gallery" onChange={handleChangeImage} variant="variant2" />
           <div className="text-14 font-medium text-gray9 mt-20 mb-9">Youtube or Vimeo</div>
           {videoValue.map((video, index) => {
             return (
               <div className="flex items-center h-46 mb-10" key={index}>
                 <input
                   type="text"
-                  className="h-100% text-gray5 font-medium text-14 border-1 border-gray4 rounded-4 mr-10 focus:border-gray4"
+                  className="h-100% text-gray6 placeholder:text-gray6 text-14 border-1 border-gray4 rounded-4 mr-10 focus:border-gray4 font-normal "
                   name="video"
                   onChange={debounce(handleChangeVideo(index))}
                   style={{ boxShadow: 'none', width: 'clamp(100px, 20vw + 20px, 340px)' }}
                 />
                 {index == videoValue.length - 1 && (
                   <div
-                    className="flex justify-center items-center h-100% px-15 py-5 border-1 border-gray4 rounded-4 cursor-pointer"
+                    className="flex justify-center items-center w-46 h-100% px-15 py-5 border-1 border-gray4 rounded-4 cursor-pointer"
                     onClick={() => setVideoValue(prevState => [...prevState, ''])}
                   >
-                    <i className="far fa-plus text-20 text-gray9"></i>
+                    <i className="fal fa-plus text-gray7 text-25"></i>
                   </div>
                 )}
                 {index != videoValue.length - 1 && (
                   <div
-                    className="flex justify-center items-center h-100% px-15 py-5 border-1 border-gray4 rounded-4 cursor-pointer"
+                    className="flex justify-center items-center w-46 h-100% px-15 py-5 border-1 border-gray4 rounded-4 cursor-pointer"
                     onClick={() => setVideoValue(prevState => [...prevState.filter((item, indexValue) => indexValue != index)])}
                   >
-                    <i className="far fa-times text-20 text-gray9"></i>
+                    <i className="fal fa-times text-25 text-gray7"></i>
                   </div>
                 )}
               </div>

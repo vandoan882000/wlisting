@@ -48,7 +48,7 @@ export const Step2: FC = () => {
           {location.map((item, index) => {
             return (
               <div key={index} className="flex mt-9 mb-10">
-                <div className="w-340 border-1 border-gray4 rounded-4 mr-10">
+                <div className="w-340 h-46 border-1 border-gray4 rounded-4 mr-10">
                   <input
                     type="text"
                     name="location"
@@ -62,13 +62,13 @@ export const Step2: FC = () => {
                   </span>
                 </div>
                 {index == location.length - 1 && (
-                  <div className="flex justify-center items-center border-1 border-gray4 rounded-4 text-gray9 px-10 text-25 cursor-pointer">
+                  <div className="flex justify-center items-center w-46 h-46 border-1 border-gray4 rounded-4 text-gray9 px-10 text-25 cursor-pointer">
                     <i className="fal fa-plus"></i>
                   </div>
                 )}
                 {index != location.length - 1 && (
                   <div
-                    className="flex justify-center items-center border-1 border-gray4 rounded-4 text-gray9 px-10 text-25 cursor-pointer"
+                    className="flex justify-center items-center w-46 h-46 border-1 border-gray4 rounded-4 text-gray9 px-10 text-25 cursor-pointer"
                     onClick={() => {
                       location.filter((item, indexValue) => indexValue != index);
                     }}

@@ -108,8 +108,7 @@ export const SearchFilter: FC<SearchFilterProps> = ({ onClick, showMap, category
                         key={cate.categoryId}
                         name={cate.categoryName}
                         onChange={() => setCategory(cate.categoryName)}
-                        option={category}
-                        value={cate.categoryName}
+                        checked={category == cate.categoryName}
                         label={cate.categoryName}
                         style={{ marginBottom: '15px' }}
                       />

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Category } from 'components/Category/Category';
 import { OpenStatusButton } from 'components/OpenStatusButton/OpenStatusButton';
 import { WishListButton } from 'components/WishListButton/WishListButton';
@@ -22,15 +23,17 @@ export const ListingCardFooter: FC<ListingCardFooterProps> = ({ listingCategoryI
     const currentDate = new Date(dates);
     const currentDay = currentDate.getDay();
 
-    listingOpenStatus.forEach((open: ListingDateStatus) => {
-      const openDateTime = new Date();
-      openDateTime.setHours(Number(open.listingOpenTime.split(':')[0]), Number(open.listingOpenTime.split(':')[1]), 0, 0);
+    listingOpenStatus.forEach((times: ListingDateStatus) => {
+      times.listingDateTime.forEach(time => {
+        const openDateTime = new Date();
+        openDateTime.setHours(Number(time.start.split(':')[0]), Number(time.start.split(':')[1]), 0, 0);
 
-      const closeDateTime = new Date();
-      closeDateTime.setHours(Number(open.listingCloseTime.split(':')[0]), Number(open.listingCloseTime.split(':')[1]), 0, 0);
-      if (open.listingDayId == currentDay && currentDate >= openDateTime && currentDate <= closeDateTime) {
-        state = true;
-      }
+        const closeDateTime = new Date();
+        closeDateTime.setHours(Number(time.end.split(':')[0]), Number(time.end.split(':')[1]), 0, 0);
+        if (times.listingDayId == currentDay && currentDate >= openDateTime && currentDate <= closeDateTime) {
+          state = true;
+        }
+      });
     });
     return state;
   };

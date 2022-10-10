@@ -11,8 +11,8 @@ interface BusinessInfoProps {
 const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) => {
   return (
     <>
-      <div className="mt-15">
-        <div className="flex justify-start items-center mb-15">
+      <div className="mt-10">
+        <div className="flex justify-start items-center mb-10">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
             <i className="far fa-link text-gray8"></i>
           </div>
@@ -20,7 +20,7 @@ const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) => {
             {email}
           </a>
         </div>
-        <div className="flex justify-start items-center mb-15">
+        <div className="flex justify-start items-center mb-10">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
             <i className="far fa-phone-alt text-gray8"></i>
           </div>
@@ -28,7 +28,7 @@ const BusinessInfo: FC<BusinessInfoProps> = ({ email, phone, social }) => {
             {phone}
           </a>
         </div>
-        <div className="flex justify-start items-center mb-15">
+        <div className="flex justify-start items-center mb-10">
           <div className="flex justify-center items-center w-34 h-34 bg-gray2 rounded-1/2 mr-10">
             <i className="far fa-comment-alt text-gray8"></i>
           </div>

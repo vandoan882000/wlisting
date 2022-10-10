@@ -24,7 +24,7 @@ export const pages: Page[] = [
     roles: adminRoles,
   },
   {
-    path: '/listing/:id',
+    path: '/detail/id=:id',
     component: ListingDetailPage,
     roles: adminRoles,
   },

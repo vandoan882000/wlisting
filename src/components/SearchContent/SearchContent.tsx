@@ -25,8 +25,8 @@ export const SearchContent: FC<SearchContentProps> = ({ onClick, location, categ
       (item.listingCategoryId == category || category == undefined) &&
       (item.listingLocations[0].longName
         .toLowerCase()
-        .trim()
-        .includes(location.toLowerCase().trim()) ||
+        .replaceAll(' ', '')
+        .includes(location.toLowerCase().replaceAll(' ', '')) ||
         location == 'all'),
   );
   return (

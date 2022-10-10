@@ -6,20 +6,23 @@ interface HoursProps {
 }
 
 export const Hours: FC<HoursProps> = ({ listingOpenStatus }) => {
-  const getDateStatus = (day: number, timeOpen: string, timeClose: string) => {
+  const getDateStatus = (date: number, listingOpenStatus: ListingDateStatus) => {
+    let state = false;
     const dates = Date.now();
     const currentDate = new Date(dates);
     const currentDay = currentDate.getDay();
 
-    const openDateTime = new Date();
-    openDateTime.setHours(Number(timeOpen.split(':')[0]), Number(timeOpen.split(':')[1]), 0, 0);
+    listingOpenStatus.listingDateTime.forEach(time => {
+      const openDateTime = new Date();
+      openDateTime.setHours(Number(time.start.split(':')[0]), Number(time.start.split(':')[1]), 0, 0);
 
-    const closeDateTime = new Date();
-    closeDateTime.setHours(Number(timeClose.split(':')[0]), Number(timeClose.split(':')[1]), 0, 0);
-    if (day === currentDay && currentDate >= openDateTime && currentDate <= closeDateTime) {
-      return true;
-    }
-    return false;
+      const closeDateTime = new Date();
+      closeDateTime.setHours(Number(time.end.split(':')[0]), Number(time.end.split(':')[1]), 0, 0);
+      if (date == currentDay && currentDate >= openDateTime && currentDate <= closeDateTime) {
+        state = true;
+      }
+    });
+    return state;
   };
   const formatTime = (time: string) => {
     if (Number(time.split(':')[0]) > 12) {
@@ -36,18 +39,16 @@ export const Hours: FC<HoursProps> = ({ listingOpenStatus }) => {
             <div className="flex justify-between mt-5" key={hour.listingDayId}>
               <div className="flex items-center">
                 <div className="text-13 font-medium text-gray8 mr-10">{hour.listingDate}</div>
-                {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? (
-                  <i className="fas fa-circle text-3 text-gray8 mr-10"></i>
-                ) : (
-                  ''
-                )}
+                {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour) ? <i className="fas fa-circle text-3 text-gray8 mr-10"></i> : ''}
 
                 <div className="text-12 font-medium text-secondary">
-                  {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour.listingOpenTime, hour.listingCloseTime) ? 'Open Now' : ''}
+                  {hour.listingOpenStatus && getDateStatus(hour.listingDayId, hour) ? 'Open Now' : ''}
                 </div>
               </div>
               <div className="text-13 font-normal text-gray6">
-                {hour.listingOpenStatus ? `${formatTime(hour.listingOpenTime)} - ${formatTime(hour.listingCloseTime)}` : 'Closed'}
+                {hour.listingDateTime.map((time, index) => {
+                  return <span key={index}>{hour.listingOpenStatus ? `${formatTime(time.start)} - ${formatTime(time.end)}` : 'Closed'}</span>;
+                })}
               </div>
             </div>
           );
@@ -56,3 +57,5 @@ export const Hours: FC<HoursProps> = ({ listingOpenStatus }) => {
     </>
   );
 };
+{
+}

@@ -8,7 +8,7 @@ import { FC, useContext, useState } from 'react';
 
 import { DetailsContext } from '../ListingDetailPage';
 
-export const Gallery: FC = () => {
+export const Gallery4: FC = () => {
   const { listing } = useContext(DetailsContext);
   const [visibleModal, setVisibleModal] = useState(false);
   const [enableTypeImage, setEnableTypeImage] = useState('Living room');
@@ -17,7 +17,7 @@ export const Gallery: FC = () => {
     <div className="container max-w-none">
       <div className="row h-449 flex relative">
         <div
-          className="col-sm-12 col-md-12 col-lg-6 pl-10 pt-5 pr-5 pb-5 bg-cover bg-center relative lg-max:!w-100%"
+          className="col-sm-12 col-md-12 col-lg-9 pl-10 pt-5 pr-5 pb-5 bg-cover bg-center relative lg-max:!w-100%"
           onClick={() => {
             setVisibleModal(visible => !visible);
             setEnableTypeImage(listing.listingGallery[0].listingImageName);
@@ -26,8 +26,8 @@ export const Gallery: FC = () => {
         >
           <img className="absolute top-0 left-0 object-cover w-100% h-100% cursor-pointer" src={`${listing.listingGallery[0].listingImageUrl}`}></img>
         </div>
-        <div className="lg-max:hidden col-lg-6 pl-5 !pr-0 flex flex-wrap">
-          <div className="w-50% h-50% px-5 pb-5">
+        <div className="lg-max:hidden col-lg-3 pl-5 !pr-0 flex flex-wrap">
+          <div className="w-100% h-100% px-5">
             <div
               className="w-100% h-100% bg-[url('https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center cursor-pointer"
               onClick={() => {
@@ -36,39 +36,6 @@ export const Gallery: FC = () => {
                 document.body.classList.add('scroll-hidden');
               }}
               style={{ backgroundImage: `url('${listing.listingGallery[1].listingImageUrl}')` }}
-            ></div>
-          </div>
-          <div className="w-50% h-50% pl-5 pb-5">
-            <div
-              className="w-100% h-100% bg-[url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center cursor-pointer"
-              onClick={() => {
-                setVisibleModal(visible => !visible);
-                setEnableTypeImage(listing.listingGallery[2].listingImageName);
-                document.body.classList.add('scroll-hidden');
-              }}
-              style={{ backgroundImage: `url('${listing.listingGallery[2].listingImageUrl}')` }}
-            ></div>
-          </div>
-          <div className="w-50% h-50% px-5 pt-5">
-            <div
-              className="w-100% h-100% bg-[url('https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center cursor-pointer"
-              onClick={() => {
-                setVisibleModal(visible => !visible);
-                setEnableTypeImage(listing.listingGallery[3].listingImageName);
-                document.body.classList.add('scroll-hidden');
-              }}
-              style={{ backgroundImage: `url('${listing.listingGallery[3].listingImageUrl}')` }}
-            ></div>
-          </div>
-          <div className="w-50% h-50% pt-5 pl-5">
-            <div
-              className="w-100% h-100% bg-[url('https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center cursor-pointer"
-              onClick={() => {
-                setVisibleModal(visible => !visible);
-                setEnableTypeImage(listing.listingGallery[4].listingImageName);
-                document.body.classList.add('scroll-hidden');
-              }}
-              style={{ backgroundImage: `url('${listing.listingGallery[4].listingImageUrl}')` }}
             ></div>
           </div>
         </div>

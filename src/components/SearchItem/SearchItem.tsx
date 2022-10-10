@@ -5,7 +5,7 @@ import { listings_data } from 'data/listings_data';
 import { review_data } from 'data/review_data';
 import { users_data } from 'data/users_data';
 import { FC, useState } from 'react';
-import { ListingCardData, ListingDateStatus } from 'types/Listing';
+import { ListingCardData } from 'types/Listing';
 import { User } from 'types/User';
 
 interface SearchItemProps {
@@ -22,30 +22,31 @@ export const SearchItem: FC<SearchItemProps> = ({ listingId }) => {
     const current_user = users_data.find((user: User) => user.userId === userId);
     return current_user ? current_user : users_data[0];
   };
-  const getDateStatus = (listingOpenStatus: ListingDateStatus[]) => {
-    let state = false;
-    const dates = Date.now();
-    const currentDate = new Date(dates);
-    const currentDay = currentDate.getDay();
+  // TODO: Open state
+  // const getDateStatus = (listingOpenStatus: ListingDateStatus[]) => {
+  //   let state = false;
+  //   const dates = Date.now();
+  //   const currentDate = new Date(dates);
+  //   const currentDay = currentDate.getDay();
 
-    listingOpenStatus.forEach((open: ListingDateStatus) => {
-      const openDateTime = new Date();
-      openDateTime.setHours(Number(open.listingOpenTime.split(':')[0]), Number(open.listingOpenTime.split(':')[1]), 0, 0);
+  //   // listingOpenStatus.forEach(item => {
+  //   //   const openDateTime = new Date();
+  //   //   openDateTime.setHours(Number(open.listingOpenTime.split(':')[0]), Number(open.listingOpenTime.split(':')[1]), 0, 0);
 
-      const closeDateTime = new Date();
-      closeDateTime.setHours(Number(open.listingCloseTime.split(':')[0]), Number(open.listingCloseTime.split(':')[1]), 0, 0);
-      if (open.listingDayId == currentDay && currentDate >= openDateTime && currentDate <= closeDateTime) {
-        state = true;
-      }
-    });
-    return state;
-  };
+  //   //   const closeDateTime = new Date();
+  //   //   closeDateTime.setHours(Number(open.listingCloseTime.split(':')[0]), Number(open.listingCloseTime.split(':')[1]), 0, 0);
+  //   //   if (open.listingDayId == currentDay && currentDate >= openDateTime && currentDate <= closeDateTime) {
+  //   //     state = true;
+  //   //   }
+  //   // });
+  //   return state;
+  // };
   const user = getUser(listing.listingUserId);
   const categoryList = categories_data.filter(cate => cate.categoryId === listing.listingCategoryId);
   const category = categoryList[0];
   const reviewList = review_data.filter(review => listing.listingReviewsIds.includes(review.reviewId));
   const authorComment = getUser(reviewList[0].reviewAuthorId);
-  const openStatus = getDateStatus(listing.listingOpenStatus);
+  // const openStatus = getDateStatus(listing.listingOpenStatus);
   return (
     <div className="flex pb-20 flex-wrap">
       <a href={listing.listingLink} className="w-100% sm-max:mb-10 sm:w-40% min-w-280 relative bg-center bg-cover aspect-4/3 rounded-14">
@@ -88,7 +89,7 @@ export const SearchItem: FC<SearchItemProps> = ({ listingId }) => {
             <div className="text-13 flex items-center justify-center">
               <i className="fas fa-circle text-3 mx-10 text-gray6"></i> <span className="text-gray6 text-12 font-medium">$$</span>{' '}
               <i className="fas fa-circle text-3 mx-10 text-gray6"></i>{' '}
-              <span className="text-secondary font-semibold">{openStatus ? 'Open Now' : 'Close'}</span>
+              {/* <span className="text-secondary font-semibold">{openStatus ? 'Open Now' : 'Close'}</span> */}
             </div>
           </div>
           <div className="cursor-pointer" onClick={() => setWishlist(!wishlist)}>

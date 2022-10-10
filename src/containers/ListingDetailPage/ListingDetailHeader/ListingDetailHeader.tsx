@@ -4,50 +4,29 @@ import { Popover } from 'components/Popover/Popover';
 import { Rate1 } from 'components/Rate1/Rate1';
 import { WishListButton } from 'components/WishListButton/WishListButton';
 import { review_data, ReviewData } from 'data/review_data';
-import { FC, useState } from 'react';
-import { ListingLocation } from 'types/Listing';
+import { FC, useContext, useState } from 'react';
 
-interface ListingDetailContentHead {
-  categoryName: string;
-  categoryIcon: string;
-  categoryColor: string;
-  categoryLink: string;
-  listingTitle: string;
-  listingRatingScore: number;
-  listingLink: string;
-  listingLocations: ListingLocation[];
-  listingReviewsIds: number[];
-  listingVerify: boolean;
-}
+import { DetailsContext } from '../ListingDetailPage';
 
-export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
-  categoryName,
-  categoryIcon,
-  categoryColor,
-  categoryLink,
-  listingReviewsIds,
-  listingTitle,
-  listingRatingScore,
-  listingLocations,
-  listingVerify,
-}) => {
+export const ListingDetailHeader: FC = () => {
+  const { listing, category } = useContext(DetailsContext);
   const [wishlist, setWishlist] = useState(true);
   const getQuantityReview = (listingReviewsIds: number[]) => {
     return review_data.filter((review: ReviewData) => listingReviewsIds.includes(review.reviewId));
   };
-  const quantityReview = getQuantityReview(listingReviewsIds);
+  const quantityReview = getQuantityReview(listing.listingReviewsIds);
   return (
     <>
-      <div className="flex items-center justify-between flex-wrap mt-21">
+      <div className="flex items-center justify-between flex-wrap mt-30">
         <div className="w-fit mb-5">
           <Category
             categoryId={1}
             categoryCount={1}
-            categoryColor={categoryColor}
-            categoryIcon={categoryIcon}
-            categoryLink={categoryLink}
+            categoryColor={category.categoryColor}
+            categoryIcon={category.categoryIcon}
+            categoryLink={category.categoryLink}
             textColor="dark"
-            categoryName={categoryName}
+            categoryName={category.categoryName}
             variant="variant2"
           />
         </div>
@@ -137,8 +116,8 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
       </div>
       <div className="flex items-center justify-between flex-wrap">
         <div className="flex justify-start items-center flex-wrap">
-          <div className="text-gray9 text-28 font-medium mr-15">{listingTitle}</div>
-          {listingVerify && (
+          <div className="text-gray9 text-28 font-medium mr-15">{listing.listingTitle}</div>
+          {listing.listingVerify && (
             <div className="flex justify-center items-center text-13 font-normal text-gray8">
               <CheckBox1 fontSize={11} size={16} color={'#ffffff'} background={'#4ea7f3'} />
               <span className="ml-4">Claimed</span>
@@ -146,7 +125,7 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
           )}
         </div>
         <div className="flex justify-center items-center">
-          <Rate1>{listingRatingScore.toFixed(1)}</Rate1>
+          <Rate1>{listing.listingRatingScore.toFixed(1)}</Rate1>
           <div className="w-1 h-14 bg-gray4 ml-10 mr-10"></div>
           <div className="flex justify-center items-center flex-nowrap whitespace-nowrap text-18 font-normal text-gray6">
             <span className="mr-5">{quantityReview.length}</span> <span>Reviews</span>
@@ -158,14 +137,11 @@ export const ListingDetailContentHead: FC<ListingDetailContentHead> = ({
           <span>
             <i className="far fa-map-marker-alt mr-5 text-primary"></i>
           </span>
-          <div className="text-gray6 text-16 font-normal mr-5">{listingLocations[0].address}</div>
+          <div className="text-gray6 text-16 font-normal mr-5">{listing.listingLocations[0].address}</div>
         </div>
         <div className="text-14 font-400 text-tertiary underline whitespace-nowrap">
-          {listingLocations.length > 1 ? `+${listingLocations.length - 1}` : listingLocations.length} Locations
+          {listing.listingLocations.length > 1 ? `+${listing.listingLocations.length - 1}` : listing.listingLocations.length} Locations
         </div>
-      </div>
-      <div className="relative w-100% bg-cover bg-left aspect-740/290 asp flex flex-col rounded-6 mt-30">
-        <img className="w-100% h-100% absolute top-0 left-0 object-cover z-_1 rounded-6" src="/assets/saleimg.png" alt="" />
       </div>
     </>
   );

@@ -24,7 +24,7 @@ export const Step4: FC = () => {
           onChange={debounce(handleChange)}
         />
         <div className="text-14 font-medium text-gray9 mt-20 mb-9">Description</div>
-        <CKEditor name="description" className="text-14 text-gray6 font-normal border-1 border-gray4 rounded-4 py-15 w-95% max-w-628 h-120" />
+        <CKEditor name="description" className="text-14 text-gray6 font-normal border-1 border-gray4 rounded-4 py-15 w-95% max-w-628 h-286" />
         <div className="text-14 font-medium text-gray9 mt-20 mb-9">Tags</div>
         <Select
           items={['Tag1', 'Tag2', 'Tag3', 'Tag4', 'Tag5']}

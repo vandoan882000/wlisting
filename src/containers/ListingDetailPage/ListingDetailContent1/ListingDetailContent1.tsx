@@ -1,4 +1,5 @@
-import { Content3 } from 'components/Content3/Content3';
+import { Content1 } from 'components/Content1/Content1';
+import { Content6 } from 'components/Content6/Content6';
 import { Divider } from 'components/Divider/Divider';
 import { LocationTab } from 'components/LocationTab/LocationTab';
 import { Modal } from 'components/Modal/Modal';
@@ -11,11 +12,11 @@ import { review_data } from 'data/review_data';
 import { FC, Fragment, useContext, useState } from 'react';
 
 import { DetailsContext } from '../ListingDetailPage';
-import { Tours } from '../Tours/Tours';
+import { Tours1 } from '../Tours1/Tours1';
 import { UtilitiesCards } from '../UtilitiesCards/UtilitiesCards';
 
 const selectSortReview = ['Date time', 'az', 'za'];
-export const ListingDetailContent: FC = () => {
+export const ListingDetailContent1: FC = () => {
   const { listing } = useContext(DetailsContext);
   const [visibleModalReview, setVisibleModalReview] = useState(false);
 
@@ -28,20 +29,92 @@ export const ListingDetailContent: FC = () => {
   const [reviewData, setReviewData] = useState(searchReview(''));
   return (
     <>
-      <div className="relative w-100% bg-cover bg-left aspect-740/290 asp flex flex-col rounded-6 mt-30">
-        <img className="w-100% h-100% absolute top-0 left-0 object-cover z-_1 rounded-6" src="/assets/saleimg.png" alt="" />
-      </div>
-      <Content3 title="Description">
-        <div className="text-14 font-normal text-gray6 mt-5 leading-1">{listing.listingDescription}</div>
-      </Content3>
-      <Content3 title="Amenities">
+      <Content6 title="Description">
+        <div className="text-gray6 text-14 font-normal">{listing.listingDescription}</div>
+      </Content6>
+      <Content6 title="Price Range">
+        <div className="text-gray6 text-14 font-normal">Sed dapibus porttitor nisl, sit amet finibus libero ultricies tincidunt.</div>
+        <div className="flex justify-start items-center mt-5">
+          <div className="text-26 font-normal text-primary">{listing.listingMinPrice}</div>
+          <div className="text-26 font-normal text-primary">- {listing.listingMaxPrice}</div>
+        </div>
+      </Content6>
+      <Content6 title="Business Info">
+        <div className="container px-0">
+          <div className="row">
+            <div className="col-lg-4">
+              <Content1 link={`mailto:${listing.listingEmail}`}>
+                <div className="flex flex-col items-center w-100% pt-5">
+                  <div className="flex justify-center items-center w-33 h-33 rounded-10 bg-primary text-light">
+                    <i className="far fa-link"></i>
+                  </div>
+                  <div className="mt-10 text-14 text-gray7 font-normal">{listing.listingEmail}</div>
+                </div>
+              </Content1>
+            </div>
+            <div className="col-lg-4">
+              <Content1 link={`tel:${listing.listingPhone}`}>
+                <div className="flex flex-col items-center w-100% pt-5">
+                  <div className="flex justify-center items-center w-33 h-33 rounded-10 bg-primary text-light">
+                    <i className="far fa-phone-alt"></i>
+                  </div>
+                  <div className="mt-10 text-14 text-gray7 font-normal">{listing.listingPhone}</div>
+                </div>
+              </Content1>
+            </div>
+            <div className="col-lg-4">
+              <Content1 link="">
+                <div className="flex flex-col items-center w-100% pt-5">
+                  <div className="flex justify-center items-center w-33 h-33 rounded-10 bg-primary text-light">
+                    <i className="far fa-comments-alt"></i>
+                  </div>
+                  <div className="mt-10 text-14 text-gray7 font-normal">Message the business</div>
+                </div>
+              </Content1>
+            </div>
+            {listing.listingSocials.map((social, index) => {
+              return (
+                <a href={social.value} className="col-lg-6 flex mt-20" key={index}>
+                  {social.name === 'facebook' && (
+                    <div className="flex justify-center items-center w-30 h-30 rounded-1/2 text-light" style={{ background: '#325d94' }}>
+                      <i className="fab fa-facebook-square"></i>
+                    </div>
+                  )}
+                  {social.name === 'switter' && (
+                    <div className="flex justify-center items-center w-30 h-30 rounded-1/2 text-light" style={{ background: '#00aadb' }}>
+                      <i className="fab fa-twitter"></i>
+                    </div>
+                  )}
+                  {social.name === 'tumblr' && (
+                    <div className="flex justify-center items-center w-30 h-30 rounded-1/2 text-light" style={{ background: '#2f4e6b' }}>
+                      <i className="fab fa-tumblr"></i>
+                    </div>
+                  )}
+                  {social.name === 'flickr' && (
+                    <div className="flex justify-center items-center w-30 h-30 rounded-1/2 text-light" style={{ background: '#ff0084' }}>
+                      <i className="fab fa-flickr"></i>
+                    </div>
+                  )}
+                  <div className="ml-8">
+                    <div className="text-14 font-medium text-gray7 capitalize">{social.name}</div>
+                    <div className="text-12 text-gray5 font-normal">{social.value}</div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </Content6>
+      <Content6 title="Amenities">
         <UtilitiesCards listingAmenitiesId={listing.listingAmenitiesIds} listingName={listing.listingTitle} />
-      </Content3>
-      <Content3 title="Location">
+      </Content6>
+      <Content6 title="Location">
         <LocationTab listingLocation={listing.listingLocations} listingId={listing.listingId} />
-      </Content3>
-      <Tours listingId={listing.listingId} />
-      <Content3 title="Reviews">
+      </Content6>
+      <Content6 title="Tour this hotel">
+        <Tours1 listingId={listing.listingId} />
+      </Content6>
+      <Content6 title="Reviews">
         <div className="flex justify-between flex-wrap">
           <div className="flex justify-center items-center mb-10">
             <Rate1>{7.8}</Rate1>
@@ -122,7 +195,7 @@ export const ListingDetailContent: FC = () => {
           Show {reviewData.length} Reviews
           <i className="fal fa-chevron-right ml-10"></i>
         </div>
-      </Content3>
+      </Content6>
     </>
   );
 };
