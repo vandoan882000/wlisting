@@ -57,3 +57,13 @@ details summary::-webkit-details-marker {
   background-color: #5353c5;
   color: #ffffff
 }
+
+.wil-instagram-shopify.wil-instagram-shopify-with-placement .Grid_grid + div + div{
+  display: none !important;
+}
+.wil-instagram-shopify.wil-instagram-shopify-with-placement .Grid_grid + div + div.InstaCard1_container{
+  display: block !important;
+}
+.template-product.template-collection #shopify-section-template--14298202538047__collection-return.shopify-section .text-center.page-content.page-content--bottom {
+  padding-bottom: 0 !important;
+}
